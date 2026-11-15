@@ -1,0 +1,14 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 5785.29it/s]
+prefill n_new=128 m_cached=0: 37.4 ms
+prefill n_new=512 m_cached=0: 60.0 ms
+prefill n_new=2048 m_cached=0: 242.3 ms
+prefill n_new=128 m_cached=2048: 39.1 ms
+prefill n_new=512 m_cached=2048: 90.3 ms
+prefill n_new=2048 m_cached=2048: 357.1 ms
+prefill n_new=128 m_cached=8192: 68.7 ms
+prefill n_new=512 m_cached=8192: 161.9 ms
+prefill n_new=2048 m_cached=8192: 553.6 ms
+decode step batch=1 ctx=2048: 30.75 ms
+decode step batch=8 ctx=2048: 35.75 ms
+decode step batch=16 ctx=2048: 49.28 ms
+saved /workspace/kvpick/feasibility/results/E5_prefill_cached.json

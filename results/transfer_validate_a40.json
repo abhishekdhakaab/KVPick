@@ -1,0 +1,435 @@
+{
+ "gpu": "NVIDIA A40",
+ "gpu1": "NVIDIA A40",
+ "rtt_ms": 0.5,
+ "layers": 36,
+ "points": [
+  {
+   "n_new": 512,
+   "format": "raw",
+   "gbps": 1.0,
+   "serial_ms_median": 604.516695253551,
+   "pipelined_ms_median": 604.621578939259,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.003766268491744995,
+    "transfer_ms": 604.5148009434342,
+    "decompress_ms": 0.0
+   },
+   "predicted_serial_ms": 604.479776,
+   "err_pct_serial": 0.006107607734256277,
+   "predicted_serial_ms_final_model": 604.479776,
+   "err_pct_serial_final_model": 0.006107607734256277
+  },
+  {
+   "n_new": 512,
+   "format": "raw",
+   "gbps": 3.0,
+   "serial_ms_median": 201.8502363935113,
+   "pipelined_ms_median": 201.9271794706583,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.003281049430370331,
+    "transfer_ms": 201.84788946062326,
+    "decompress_ms": 0.0
+   },
+   "predicted_serial_ms": 201.826592,
+   "err_pct_serial": 0.011715202281813398,
+   "predicted_serial_ms_final_model": 201.826592,
+   "err_pct_serial_final_model": 0.011715202281813398
+  },
+  {
+   "n_new": 512,
+   "format": "raw",
+   "gbps": 10.0,
+   "serial_ms_median": 60.91947201639414,
+   "pipelined_ms_median": 60.996430926024914,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.0026347115635871887,
+    "transfer_ms": 60.91683730483055,
+    "decompress_ms": 0.0
+   },
+   "predicted_serial_ms": 60.8979776,
+   "err_pct_serial": 0.03529578032184286,
+   "predicted_serial_ms_final_model": 60.8979776,
+   "err_pct_serial_final_model": 0.03529578032184286
+  },
+  {
+   "n_new": 512,
+   "format": "raw",
+   "gbps": 25.0,
+   "serial_ms_median": 24.676918983459473,
+   "pipelined_ms_median": 24.710465222597122,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.00232551246881485,
+    "transfer_ms": 24.67567566782236,
+    "decompress_ms": 0.0
+   },
+   "predicted_serial_ms": 24.65919104,
+   "err_pct_serial": 0.07189182901708457,
+   "predicted_serial_ms_final_model": 24.65919104,
+   "err_pct_serial_final_model": 0.07189182901708457
+  },
+  {
+   "n_new": 512,
+   "format": "int4_kivi",
+   "gbps": 1.0,
+   "serial_ms_median": 189.98838402330875,
+   "pipelined_ms_median": 189.77860640734434,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.20837225019931793,
+    "transfer_ms": 189.26227185875177,
+    "decompress_ms": 0.5177399143576622
+   },
+   "predicted_serial_ms": 189.85148800879,
+   "err_pct_serial": 0.07210689573969319,
+   "predicted_serial_ms_final_model": 189.60683200477837,
+   "err_pct_serial_final_model": 0.20123326490723165
+  },
+  {
+   "n_new": 512,
+   "format": "int4_kivi",
+   "gbps": 3.0,
+   "serial_ms_median": 63.94602172076702,
+   "pipelined_ms_median": 63.56056593358517,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.18289033323526382,
+    "transfer_ms": 63.42127453535795,
+    "decompress_ms": 0.30206143856048584
+   },
+   "predicted_serial_ms": 64.02236800879001,
+   "err_pct_serial": -0.11924939735516726,
+   "predicted_serial_ms_final_model": 63.77771200477838,
+   "err_pct_serial_final_model": 0.2639005237065126
+  },
+  {
+   "n_new": 512,
+   "format": "int4_kivi",
+   "gbps": 10.0,
+   "serial_ms_median": 19.955027848482132,
+   "pipelined_ms_median": 19.631054252386093,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.194489024579525,
+    "transfer_ms": 19.38654948025942,
+    "decompress_ms": 0.3739893436431885
+   },
+   "predicted_serial_ms": 19.982176008790017,
+   "err_pct_serial": -0.1358618815885838,
+   "predicted_serial_ms_final_model": 19.737520004778386,
+   "err_pct_serial_final_model": 1.1020018910738958
+  },
+  {
+   "n_new": 512,
+   "format": "int4_kivi",
+   "gbps": 25.0,
+   "serial_ms_median": 8.731981739401817,
+   "pipelined_ms_median": 14.793195761740208,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.20321272313594818,
+    "transfer_ms": 8.066163398325443,
+    "decompress_ms": 0.4626056179404259
+   },
+   "predicted_serial_ms": 8.657555208790015,
+   "err_pct_serial": 0.859671452470059,
+   "predicted_serial_ms_final_model": 8.412899204778384,
+   "err_pct_serial_final_model": 3.7927773393766553
+  },
+  {
+   "n_new": 2048,
+   "format": "raw",
+   "gbps": 1.0,
+   "serial_ms_median": 2416.441388428211,
+   "pipelined_ms_median": 2416.5468607097864,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.0021150335669517517,
+    "transfer_ms": 2416.4362885057926,
+    "decompress_ms": 0.0
+   },
+   "predicted_serial_ms": 2416.419104,
+   "err_pct_serial": 0.000922208741615335,
+   "predicted_serial_ms_final_model": 2416.419104,
+   "err_pct_serial_final_model": 0.000922208741615335
+  },
+  {
+   "n_new": 2048,
+   "format": "raw",
+   "gbps": 3.0,
+   "serial_ms_median": 805.8405965566635,
+   "pipelined_ms_median": 805.9667870402336,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.007440336048603058,
+    "transfer_ms": 805.8398198336363,
+    "decompress_ms": 0.0
+   },
+   "predicted_serial_ms": 805.806368,
+   "err_pct_serial": 0.004247739658405477,
+   "predicted_serial_ms_final_model": 805.806368,
+   "err_pct_serial_final_model": 0.004247739658405477
+  },
+  {
+   "n_new": 2048,
+   "format": "raw",
+   "gbps": 10.0,
+   "serial_ms_median": 242.12333839386702,
+   "pipelined_ms_median": 242.25482810288668,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.0036293640732765198,
+    "transfer_ms": 242.11970902979374,
+    "decompress_ms": 0.0
+   },
+   "predicted_serial_ms": 242.0919104,
+   "err_pct_serial": 0.012981843885282824,
+   "predicted_serial_ms_final_model": 242.0919104,
+   "err_pct_serial_final_model": 0.012981843885282824
+  },
+  {
+   "n_new": 2048,
+   "format": "raw",
+   "gbps": 25.0,
+   "serial_ms_median": 97.16485068202019,
+   "pipelined_ms_median": 97.26699814200401,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.004066154360771179,
+    "transfer_ms": 97.16323297470808,
+    "decompress_ms": 0.0
+   },
+   "predicted_serial_ms": 97.13676416,
+   "err_pct_serial": 0.028914409763460776,
+   "predicted_serial_ms_final_model": 97.13676416,
+   "err_pct_serial_final_model": 0.028914409763460776
+  },
+  {
+   "n_new": 2048,
+   "format": "int4_kivi",
+   "gbps": 1.0,
+   "serial_ms_median": 757.3726419359446,
+   "pipelined_ms_median": 756.0992492362857,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.7213931530714035,
+    "transfer_ms": 755.5117206647992,
+    "decompress_ms": 1.014895737171173
+   },
+   "predicted_serial_ms": 757.4982400077295,
+   "err_pct_serial": -0.016580642059792167,
+   "predicted_serial_ms_final_model": 756.8894720065307,
+   "err_pct_serial_final_model": 0.06383625975572992
+  },
+  {
+   "n_new": 2048,
+   "format": "int4_kivi",
+   "gbps": 3.0,
+   "serial_ms_median": 254.02692798525095,
+   "pipelined_ms_median": 252.75665055960417,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.70977583527565,
+    "transfer_ms": 252.18395050615072,
+    "decompress_ms": 1.1332016438245773
+   },
+   "predicted_serial_ms": 254.1817600077295,
+   "err_pct_serial": -0.060913899751835095,
+   "predicted_serial_ms_final_model": 253.57299200653074,
+   "err_pct_serial_final_model": 0.17901590194137046
+  },
+  {
+   "n_new": 2048,
+   "format": "int4_kivi",
+   "gbps": 10.0,
+   "serial_ms_median": 77.8407072648406,
+   "pipelined_ms_median": 76.57382823526859,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.7486185058951378,
+    "transfer_ms": 76.02344267070293,
+    "decompress_ms": 1.2818165123462677
+   },
+   "predicted_serial_ms": 78.02099200772953,
+   "err_pct_serial": -0.23107209771322643,
+   "predicted_serial_ms_final_model": 77.41222400653076,
+   "err_pct_serial_final_model": 0.553508523761946
+  },
+  {
+   "n_new": 2048,
+   "format": "int4_kivi",
+   "gbps": 25.0,
+   "serial_ms_median": 32.70219825208187,
+   "pipelined_ms_median": 31.084634363651276,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.7062414661049843,
+    "transfer_ms": 30.71584179997444,
+    "decompress_ms": 1.0721059516072273
+   },
+   "predicted_serial_ms": 32.722508807729525,
+   "err_pct_serial": -0.06206906618008683,
+   "predicted_serial_ms_final_model": 32.11374080653076,
+   "err_pct_serial_final_model": 1.8324163762056758
+  },
+  {
+   "n_new": 8192,
+   "format": "raw",
+   "gbps": 1.0,
+   "serial_ms_median": 9664.208084344864,
+   "pipelined_ms_median": 9664.378923363984,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.004599802196025848,
+    "transfer_ms": 9664.203484542668,
+    "decompress_ms": 0.0
+   },
+   "predicted_serial_ms": 9664.176416,
+   "err_pct_serial": 0.0003276879839570882,
+   "predicted_serial_ms_final_model": 9664.176416,
+   "err_pct_serial_final_model": 0.0003276879839570882
+  },
+  {
+   "n_new": 8192,
+   "format": "raw",
+   "gbps": 3.0,
+   "serial_ms_median": 3221.756422892213,
+   "pipelined_ms_median": 3221.873420290649,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.004979781806468964,
+    "transfer_ms": 3221.7556526884437,
+    "decompress_ms": 0.0
+   },
+   "predicted_serial_ms": 3221.725472,
+   "err_pct_serial": 0.0009606930348901599,
+   "predicted_serial_ms_final_model": 3221.725472,
+   "err_pct_serial_final_model": 0.0009606930348901599
+  },
+  {
+   "n_new": 8192,
+   "format": "raw",
+   "gbps": 10.0,
+   "serial_ms_median": 966.906251385808,
+   "pipelined_ms_median": 967.0235468074679,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.003937631845474243,
+    "transfer_ms": 966.8971644714475,
+    "decompress_ms": 0.0
+   },
+   "predicted_serial_ms": 966.8676416,
+   "err_pct_serial": 0.003993285548799854,
+   "predicted_serial_ms_final_model": 966.8676416,
+   "err_pct_serial_final_model": 0.003993285548799854
+  },
+  {
+   "n_new": 8192,
+   "format": "raw",
+   "gbps": 25.0,
+   "serial_ms_median": 387.07694318145514,
+   "pipelined_ms_median": 387.2065106406808,
+   "serial_breakdown_ms": {
+    "compress_ms": 0.003913417458534241,
+    "transfer_ms": 387.0730297639966,
+    "decompress_ms": 0.0
+   },
+   "predicted_serial_ms": 387.04705664,
+   "err_pct_serial": 0.007721681625637454,
+   "predicted_serial_ms_final_model": 387.04705664,
+   "err_pct_serial_final_model": 0.007721681625637454
+  },
+  {
+   "n_new": 8192,
+   "format": "int4_kivi",
+   "gbps": 1.0,
+   "serial_ms_median": 3026.554001495242,
+   "pipelined_ms_median": 3020.81336453557,
+   "serial_breakdown_ms": {
+    "compress_ms": 2.6681385934352875,
+    "transfer_ms": 3020.4431591555476,
+    "decompress_ms": 3.4427037462592125
+   },
+   "predicted_serial_ms": 3045.6433440398023,
+   "err_pct_serial": -0.6267753767662001,
+   "predicted_serial_ms_final_model": 3026.0630400131986,
+   "err_pct_serial_final_model": 0.01622443007801283
+  },
+  {
+   "n_new": 8192,
+   "format": "int4_kivi",
+   "gbps": 3.0,
+   "serial_ms_median": 1013.2281184196472,
+   "pipelined_ms_median": 1007.8172739595175,
+   "serial_breakdown_ms": {
+    "compress_ms": 2.7050087228417397,
+    "transfer_ms": 1007.1573685854673,
+    "decompress_ms": 3.3657411113381386
+   },
+   "predicted_serial_ms": 1032.3774240398025,
+   "err_pct_serial": -1.854874503669596,
+   "predicted_serial_ms_final_model": 1012.7971200131988,
+   "err_pct_serial_final_model": 0.042555255927548025
+  },
+  {
+   "n_new": 8192,
+   "format": "int4_kivi",
+   "gbps": 10.0,
+   "serial_ms_median": 308.50404873490334,
+   "pipelined_ms_median": 303.09117678552866,
+   "serial_breakdown_ms": {
+    "compress_ms": 2.7196602895855904,
+    "transfer_ms": 302.5140883401036,
+    "decompress_ms": 3.17250844091177
+   },
+   "predicted_serial_ms": 327.73435203980256,
+   "err_pct_serial": -5.867649572042343,
+   "predicted_serial_ms_final_model": 308.15404801319886,
+   "err_pct_serial_final_model": 0.11357979035520706
+  },
+  {
+   "n_new": 8192,
+   "format": "int4_kivi",
+   "gbps": 25.0,
+   "serial_ms_median": 127.21359822899103,
+   "pipelined_ms_median": 121.83094210922718,
+   "serial_breakdown_ms": {
+    "compress_ms": 2.727868966758251,
+    "transfer_ms": 121.31863366812468,
+    "decompress_ms": 3.149664029479027
+   },
+   "predicted_serial_ms": 146.54041923980253,
+   "err_pct_serial": -13.188730529823713,
+   "predicted_serial_ms_final_model": 126.96011521319885,
+   "err_pct_serial_final_model": 0.1996556283573948
+  }
+ ],
+ "note": "measured on real GPU0->pinned host->GPU1 copies paced by the link emulator (peer copy path had a fixed 50-100 ms cost on this node, D30); predicted = cost model (serial)",
+ "crossover": [
+  {
+   "n_new": 512,
+   "measured_recompute_ms": 61.23490445315838,
+   "model_recompute_ms": 67.86047977892612,
+   "measured_send_ms_by_gbps": {
+    "1.0": 190.0571584701538,
+    "1.5": 127.14281212538481,
+    "2.0": 95.64470499753952,
+    "2.5": 76.84310805052519,
+    "3.0": 64.14184346795082,
+    "3.5": 55.22698722779751,
+    "4.0": 48.51391538977623,
+    "5.0": 38.93840312957764
+   },
+   "measured_crossover_gbps_grid": 3.5,
+   "predicted_crossover_gbps": 2.9
+  },
+  {
+   "n_new": 2048,
+   "measured_recompute_ms": 245.7297844812274,
+   "model_recompute_ms": 219.1124065766409,
+   "measured_send_ms_by_gbps": {
+    "1.0": 757.3487386107445,
+    "1.5": 505.73014840483665,
+    "2.0": 379.8872483894229,
+    "2.5": 304.38529048115015,
+    "3.0": 254.0100682526827,
+    "3.5": 218.10998395085335,
+    "4.0": 191.04586821049452,
+    "5.0": 153.28339859843254
+   },
+   "measured_crossover_gbps_grid": 3.5,
+   "predicted_crossover_gbps": 3.5
+  }
+ ],
+ "final_model_note": "err_pct_serial_final_model uses cost_tables_a40.json with our A40 kernel times; err_pct_serial used torch.compile placeholders at run time",
+ "final_model_summary": {
+  "max_abs_err_pct": 3.7927773393766553,
+  "mean_abs_err_pct": 0.3560743814601761,
+  "n_points": 24
+ }
+}

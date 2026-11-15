@@ -1,0 +1,4 @@
+ninja                     1.13.2
+numpy                     2.1.2
+torch                     2.8.0+cu128
+NVIDIA RTX A5000, 580.159.04

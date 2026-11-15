@@ -1,0 +1,82 @@
+env logs saved
+== [16:40:43] G1_capture (timeout 1500s): python kv_capture.py --save-kv-dir /root/kvpick_kv --n-wikitext 20 --n-long 5
+   -> exit 0 after 53s  (total 54s)
+ "R2_pass": true
+}
+saved /workspace/kvpick/feasibility/results/G1_kv_stats.json
+== [16:41:36] G2_axes (timeout 900s): python axes_eval.py --kv-dir /root/kvpick_kv --max-files 25
+   -> exit 0 after 27s  (total 81s)
+ "threshold_pct": 20
+}
+saved /workspace/kvpick/feasibility/results/G2_axes.json
+== [16:42:03] G8_checker (timeout 600s): python checker_proto.py --device cuda
+   -> exit 1 after 4s  (total 85s)
+    x = torch.randn(2048, 8, 128, generator=gen, device=device)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected a 'cuda' device type for generator but found 'cpu'
+== [16:42:07] G4_headroom (timeout 1500s): python bench_quant.py --compile
+   -> exit 0 after 87s  (total 172s)
+ "note": "pass means PyTorch/compile stay below 50% of the copy ceiling, i.e. a custom kernel has room"
+}
+saved /workspace/kvpick/feasibility/results/G4_headroom.json
+== [16:43:34] G5_crossover (timeout 900s): python crossover.py
+   -> exit 0 after 22s  (total 194s)
+n=2048: recompute 243.5 ms, raw 302 MB; send==recompute at Gbps: raw 9.9, int8_row 5.2, int4_row_g32 3.1, int4_kivi 3.1
+n=8192: recompute 1082.3 ms, raw 1208 MB; send==recompute at Gbps: raw 8.9, int8_row 4.6, int4_row_g32 2.8, int4_kivi 2.9
+saved /workspace/kvpick/feasibility/results/G5_crossover.json
+== [16:43:56] G3_quality (timeout 2700s): python quality_roundtrip.py
+   -> exit 0 after 1056s  (total 1250s)
+ }
+}
+saved /workspace/kvpick/feasibility/results/G3_quality.json
+== [17:01:32] G6_link (timeout 600s): python link_gpu_test.py
+   -> exit 0 after 113s  (total 1363s)
+ "rtt_ms": 0.5
+}
+saved /workspace/kvpick/feasibility/results/G6_link.json
+ALL DONE in 1363s
+<stdin>:2: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+{
+ "part": "part2a",
+ "started_at": "2026-10-16T16:40:42Z",
+ "steps": [
+  {
+   "name": "G1_capture",
+   "exit": 0,
+   "seconds": 53
+  },
+  {
+   "name": "G2_axes",
+   "exit": 0,
+   "seconds": 27
+  },
+  {
+   "name": "G8_checker",
+   "exit": 1,
+   "seconds": 4
+  },
+  {
+   "name": "G4_headroom",
+   "exit": 0,
+   "seconds": 87
+  },
+  {
+   "name": "G5_crossover",
+   "exit": 0,
+   "seconds": 22
+  },
+  {
+   "name": "G3_quality",
+   "exit": 0,
+   "seconds": 1056
+  },
+  {
+   "name": "G6_link",
+   "exit": 0,
+   "seconds": 113
+  }
+ ],
+ "ended_at": "2026-10-16T17:03:25.935860Z",
+ "wall_s": 1363,
+ "gpu": "NVIDIA A40, 46068 MiB"
+}

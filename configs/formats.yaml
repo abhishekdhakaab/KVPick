@@ -1,0 +1,20 @@
+# Wire formats. KV4 is the one with a custom kernel; INT8 is served by torch.compile (no headroom, feasibility G4).
+kv4:
+  keys:   {bits: 4, axis: channel, group_tokens: 32, scheme: asymmetric, meta_dtype: float16}
+  values: {bits: 4, axis: row, group_dims: 32, scheme: asymmetric, meta_dtype: float16}
+  packing: two codes per byte, low nibble = even d, high nibble = odd d
+  bytes_per_token_per_layer: 1280      # 2 x (512 payload + 128 meta) for H=8, D=128; K meta amortised over 32 tokens
+  compression_vs_bf16: 3.2
+int8_row:
+  keys:   {bits: 8, axis: row, group_dims: 128, scheme: asymmetric, meta_dtype: float16}
+  values: {bits: 8, axis: row, group_dims: 128, scheme: asymmetric, meta_dtype: float16}
+  bytes_per_token_per_layer: 2112
+  compression_vs_bf16: 1.94
+raw:
+  bytes_per_token_per_layer: 4096
+model:
+  id: Qwen/Qwen3-4B-Instruct-2507
+  layers: 36
+  kv_heads: 8
+  head_dim: 128
+  kv_bytes_per_token_bf16: 147456

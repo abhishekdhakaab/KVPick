@@ -1,0 +1,2 @@
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files:  29%|██▊       | 2/7 [00:00<00:01,  4.71it/s]Fetching 7 files:  57%|█████▋    | 4/7 [00:00<00:00,  6.93it/s]Fetching 7 files:  86%|████████▌ | 6/7 [00:00<00:00,  9.85it/s]Fetching 7 files:  86%|████████▌ | 6/7 [00:20<00:00,  9.85it/s]Fetching 7 files: 100%|██████████| 7/7 [01:58<00:00, 28.94s/it]Fetching 7 files: 100%|██████████| 7/7 [01:58<00:00, 16.87s/it]
+done ~/.cache/huggingface/hub/models--Qwen--Qwen3-0.6B/snapshots/c1899de289a04d12100db370d81485cdf75e47ca

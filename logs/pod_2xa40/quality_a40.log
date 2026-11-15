@@ -1,0 +1,210 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 6237.44it/s]
+/root/kvpick/kvpick/quality/roundtrip.py:212: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  M["raw_injection_max_abs_logit_diff"] = float((direct - via).abs().max())
+[21:17:16] raw injection sanity: max |logit diff| = 9.38e-02
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[21:17:22]   ppl batch 1/13 done
+[21:17:26]   ppl batch 2/13 done
+[21:17:29]   ppl batch 3/13 done
+[21:17:33]   ppl batch 4/13 done
+[21:17:36]   ppl batch 5/13 done
+[21:17:40]   ppl batch 6/13 done
+[21:17:43]   ppl batch 7/13 done
+[21:17:46]   ppl batch 8/13 done
+[21:17:50]   ppl batch 9/13 done
+[21:17:53]   ppl batch 10/13 done
+[21:17:57]   ppl batch 11/13 done
+[21:18:00]   ppl batch 12/13 done
+[21:18:02]   ppl batch 13/13 done
+[21:18:03] ppl: raw 8.943, int8_row 8.942, int4_row 14.176, int4_row_g32 9.045, int4_kivi 8.949
+[21:20:05] gsm8k raw: acc 0.890
+[21:22:06] gsm8k int8_row: acc 0.900
+[21:24:15] gsm8k int4_row: acc 0.640
+[21:26:19] gsm8k int4_row_g32: acc 0.880
+[21:28:15] gsm8k int4_kivi: acc 0.860
+[21:29:31] qasper raw: F1 0.395
+[21:30:51] qasper int8_row: F1 0.392
+[21:32:12] qasper int4_row: F1 0.245
+[21:33:33] qasper int4_row_g32: F1 0.375
+[21:34:50] qasper int4_kivi: F1 0.372
+{
+ "model": "Qwen/Qwen3-4B-Instruct-2507",
+ "device": "cuda",
+ "dtype": "torch.bfloat16",
+ "formats": [
+  "raw",
+  "int8_row",
+  "int4_row",
+  "int4_row_g32",
+  "int4_kivi"
+ ],
+ "raw_injection_max_abs_logit_diff": 0.09375,
+ "R4": {
+  "best_8bit_ppl_rel_change": -0.00010853178394998331,
+  "best_4bit_ppl_rel_change": 0.0007590860825310575,
+  "thresholds": {
+   "8bit": 0.02,
+   "4bit": 0.05
+  },
+  "R4_pass": true
+ },
+ "kernel_in_loop": true
+}
+ppl {
+ "raw": {
+  "ppl": 8.942648619119849
+ },
+ "int8_row": {
+  "ppl": 8.941678057511977,
+  "rel_change": -0.00010853178394998331,
+  "rel_change_ci95": {
+   "point": -0.00010853178394998331,
+   "ci95": [
+    -0.0007899890575397556,
+    0.0005730149339665808
+   ],
+   "n": 50
+  }
+ },
+ "int4_row": {
+  "ppl": 14.175736466997753,
+  "rel_change": 0.5851832125763379,
+  "rel_change_ci95": {
+   "point": 0.5851832125763379,
+   "ci95": [
+    0.5325482022836064,
+    0.6444659656481874
+   ],
+   "n": 50
+  }
+ },
+ "int4_row_g32": {
+  "ppl": 9.044914670162342,
+  "rel_change": 0.011435767567098853,
+  "rel_change_ci95": {
+   "point": 0.011435767567098853,
+   "ci95": [
+    0.008092361886347137,
+    0.015250788312455889
+   ],
+   "n": 50
+  }
+ },
+ "int4_kivi": {
+  "ppl": 8.949436859227587,
+  "rel_change": 0.0007590860825310575,
+  "rel_change_ci95": {
+   "point": 0.0007590860825310575,
+   "ci95": [
+    -0.00043712315944960666,
+    0.0019643779081217334
+   ],
+   "n": 50
+  }
+ }
+}
+gsm8k {
+ "raw": {
+  "accuracy": 0.89,
+  "frac_without_final_marker": 0.09
+ },
+ "int8_row": {
+  "accuracy": 0.9,
+  "frac_without_final_marker": 0.09,
+  "delta_ci95": {
+   "point": 0.010000000000000009,
+   "ci95": [
+    0.0,
+    0.030000000000000027
+   ],
+   "n": 100
+  }
+ },
+ "int4_row": {
+  "accuracy": 0.64,
+  "frac_without_final_marker": 0.23,
+  "delta_ci95": {
+   "point": -0.25,
+   "ci95": [
+    -0.36,
+    -0.15000000000000002
+   ],
+   "n": 100
+  }
+ },
+ "int4_row_g32": {
+  "accuracy": 0.88,
+  "frac_without_final_marker": 0.09,
+  "delta_ci95": {
+   "point": -0.010000000000000009,
+   "ci95": [
+    -0.06000000000000005,
+    0.040000000000000036
+   ],
+   "n": 100
+  }
+ },
+ "int4_kivi": {
+  "accuracy": 0.86,
+  "frac_without_final_marker": 0.1,
+  "delta_ci95": {
+   "point": -0.030000000000000027,
+   "ci95": [
+    -0.07000000000000006,
+    0.010000000000000009
+   ],
+   "n": 100
+  }
+ }
+}
+qasper {
+ "raw": {
+  "f1": 0.39513069687160834
+ },
+ "int8_row": {
+  "f1": 0.3922025922964449,
+  "delta_ci95": {
+   "point": -0.0029281045751633483,
+   "ci95": [
+    -0.008522875816993514,
+    0.0
+   ],
+   "n": 50
+  }
+ },
+ "int4_row": {
+  "f1": 0.24464013954026928,
+  "delta_ci95": {
+   "point": -0.15049055733133904,
+   "ci95": [
+    -0.2448502484520754,
+    -0.05820162682193862
+   ],
+   "n": 50
+  }
+ },
+ "int4_row_g32": {
+  "f1": 0.37471229793847066,
+  "delta_ci95": {
+   "point": -0.020418398933137627,
+   "ci95": [
+    -0.06028848137976782,
+    0.017204921302453217
+   ],
+   "n": 50
+  }
+ },
+ "int4_kivi": {
+  "f1": 0.37199640023731173,
+  "delta_ci95": {
+   "point": -0.02313429663429656,
+   "ci95": [
+    -0.05205786435786438,
+    -0.0048781531531531435
+   ],
+   "n": 50
+  }
+ }
+}
+saved /root/kvpick/results/quality_a40.json

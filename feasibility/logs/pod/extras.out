@@ -1,0 +1,34 @@
+== G8 17:03:30
+good_row_8b                  expected PASS   got PASS   OK  failed=[] (0.41s)
+good_row_g32_4b              expected PASS   got PASS   OK  failed=[] (0.02s)
+good_chan_g32_4b             expected PASS   got PASS   OK  failed=[] (0.03s)
+m1_skip_groups               expected REJECT got REJECT OK  failed=['match_normal_T97', 'match_normal_T512', 'match_outlier_0.1pct_x50', 'match_edge_rows', 'perturbation', 'speed'] (0.03s)
+m2_cached_output             expected REJECT got REJECT OK  failed=['match_outlier_0.1pct_x50', 'perturbation'] (0.02s)
+m3_first_row_scale           expected REJECT got REJECT OK  failed=['match_normal_T97', 'match_normal_T512', 'match_outlier_0.1pct_x50', 'match_edge_rows'] (0.02s)
+m4_clipped_amax              expected REJECT got REJECT OK  failed=['memory', 'match_normal_T97', 'match_normal_T512', 'match_outlier_0.1pct_x50', 'match_edge_rows', 'perturbation', 'speed'] (0.12s)
+m5_hidden_buffer             expected REJECT got REJECT OK  failed=['memory', 'speed'] (0.04s)
+m6_truncate                  expected REJECT got REJECT OK  failed=['match_normal_T97', 'match_normal_T512', 'match_outlier_0.1pct_x50', 'match_edge_rows'] (0.02s)
+ "mutants_rejected": 6,
+ "false_rejects": 0,
+ "R10_pass": true,
+== E5 17:03:34
+prefill n_new=128 m_cached=0: 37.4 ms
+prefill n_new=512 m_cached=0: 60.0 ms
+prefill n_new=2048 m_cached=0: 242.3 ms
+prefill n_new=128 m_cached=2048: 39.1 ms
+prefill n_new=512 m_cached=2048: 90.3 ms
+prefill n_new=2048 m_cached=2048: 357.1 ms
+prefill n_new=128 m_cached=8192: 68.7 ms
+prefill n_new=512 m_cached=8192: 161.9 ms
+prefill n_new=2048 m_cached=8192: 553.6 ms
+decode step batch=1 ctx=2048: 30.75 ms
+decode step batch=8 ctx=2048: 35.75 ms
+decode step batch=16 ctx=2048: 49.28 ms
+saved /workspace/kvpick/feasibility/results/E5_prefill_cached.json
+== G4b 17:04:14
+T=2048 int4_row_g32: eager 8531us 4% | default 637us 56% | dynamic 1205us 30% | max_autotune_nocg 637us 56%
+T=2048 int4_chan_g32: eager 7622us 5% | default 993us 36% | dynamic 1674us 21% | max_autotune_nocg 667us 53%
+T=8192 int4_row_g32: eager 33977us 4% | default 2517us 56% | dynamic 4818us 29% | max_autotune_nocg 2518us 56%
+T=8192 int4_chan_g32: eager 30324us 5% | default 4036us 35% | dynamic 6802us 21% | max_autotune_nocg 2583us 55%
+saved /workspace/kvpick/feasibility/results/G4b_compile_modes.json
+== EXTRAS DONE 17:05:01

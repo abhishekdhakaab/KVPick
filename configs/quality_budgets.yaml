@@ -1,0 +1,9 @@
+# Quality budget classes, defined BEFORE classifying formats. A format satisfies a budget if, on EVERY task in the
+# quality eval (WikiText ppl, GSM8K accuracy, Qasper F1), its point-estimate loss vs RAW is within the limit.
+# ppl is a relative change (%), accuracy/F1 are absolute points (%).
+budgets:
+  strict:  {max_ppl_rel_pct: 0.5, max_task_points: 0.5}
+  normal:  {max_ppl_rel_pct: 2.0, max_task_points: 2.5}
+  lenient: {max_ppl_rel_pct: 5.0, max_task_points: 5.0}
+order: [strict, normal, lenient]        # strict is the tightest; a format that meets strict meets all
+format_quality_rank: [raw, int8_row, int4_kivi, int4_row_g32, int4_row]   # tie-break: earlier = higher quality

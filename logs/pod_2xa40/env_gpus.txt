@@ -1,0 +1,5 @@
+NVIDIA A40, 46068 MiB, 570.211.01
+NVIDIA A40, 46068 MiB, 570.211.01
+ninja                     1.13.2
+torch                     2.8.0+cu128
+transformers              5.20.1

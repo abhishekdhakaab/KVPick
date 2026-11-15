@@ -1,0 +1,12 @@
+torch>=2.8
+numpy
+scipy
+matplotlib
+pytest
+huggingface_hub
+transformers>=5
+datasets
+safetensors
+accelerate
+pyyaml
+ninja

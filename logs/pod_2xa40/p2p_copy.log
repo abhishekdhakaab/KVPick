@@ -1,0 +1,3 @@
+{'MB': 100, 'median_ms': 98.4780502319336, 'GBps': 1.0647814386357306, 'gbps': 8.518251509085845}
+{'MB': 1000, 'median_ms': 147.801025390625, 'GBps': 7.094510996988732, 'gbps': 56.75608797590986}
+saved /root/kvpick/feasibility/results/G7_p2p_copy.json

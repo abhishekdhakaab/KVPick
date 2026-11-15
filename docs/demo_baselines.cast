@@ -1,0 +1,12 @@
+{"version": 2, "width": 80, "height": 24, "timestamp": 1792363833, "env": {"SHELL": "/bin/bash", "TERM": null}}
+[0.006017, "o", "\u001b[1mKVPick vs KVServe vs KIVI: a live kernel-speed comparison\u001b[0m\r\n"]
+[2.009001, "o", "\r\n\u001b[1;34m$ nvidia-smi --query-gpu=name,memory.total,driver_version --format=csv,noheader\u001b[0m\r\n"]
+[3.231523, "o", "NVIDIA A40, 46068 MiB, 595.91.07\r\n"]
+[5.237012, "o", "\r\n\u001b[2mKVServe's kernel is vendored verbatim (not reimplemented) -- see the attribution header:\u001b[0m\r\n"]
+[6.24049, "o", "\r\n\u001b[1;34m$ sed -n '1,9p' csrc/baselines/kvserve_kernels.cu\u001b[0m\r\n"]
+[7.445844, "o", "// kvserve_kernels.cu -- benchmarking harness around KVServe's quantize/dequantize CUDA kernels.\r\n//\r\n// The four __global__ kernels below (quantize_channel_kernel, quantize_token_kernel,\r\n// dequantize_channel_kernel, dequantize_token_kernel) and their small device helpers\r\n// (to_f32, rn, QuantParams, quant_params, quant_value) are VENDORED VERBATIM from\r\n// KVServe (github.com/hpdps-group/KVServe), file\r\n// kvserve_v1/compression/runtime/csrc/kvs_compress.cu, Apache-2.0 license, copyright\r\n// contributors to the vLLM project. Not a single arithmetic line is changed. They are\r\n// copied here, instead of imported, because in the original file they sit in an\r\n"]
+[9.449095, "o", "\r\n\u001b[1;34m$ python3 scripts/bench_baselines.py --T 2048,8192\u001b[0m\r\n"]
+[27.349257, "o", "T=2048:\r\n  k: kvpick_v2 18.0us (8.8 ns/tok) | kvserve_channel 30.1us (14.7 ns/tok) | kivi_pack 106335.6us (51921.7 ns/tok)\r\n  v: kvpick_v2 15.1us (7.4 ns/tok) | kvserve_token 18.2us (8.9 ns/tok) | kivi_pack 6261.7us (3057.5 ns/tok)\r\n"]
+[79.730828, "o", "T=8192:\r\n  k: kvpick_v2 48.5us (5.9 ns/tok) | kvserve_channel 122.8us (15.0 ns/tok) | kivi_pack 421280.7us (51425.9 ns/tok)\r\n  v: kvpick_v2 43.4us (5.3 ns/tok) | kvserve_token 59.3us (7.2 ns/tok) | kivi_pack 6385.6us (779.5 ns/tok)\r\n"]
+[79.737814, "o", "saved results/baselines_a40.json\r\n"]
+[82.231434, "o", "\r\n\u001b[1mFull numbers: results/baselines_a40.json. Methodology and granularity caveats: DECISIONS.md D36.\u001b[0m\r\n"]

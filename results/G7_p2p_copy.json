@@ -1,0 +1,40 @@
+{
+ "check_id": "G7.1",
+ "status": "INFO",
+ "started_at": "2026-10-16T21:01:04+00:00",
+ "ended_at": "2026-10-16T21:01:09+00:00",
+ "commands": [
+  "p2p_copy.py"
+ ],
+ "versions": {
+  "python": "3.12.3",
+  "platform": "Linux-6.8.0-65-generic-x86_64-with-glibc2.39",
+  "torch": "2.8.0+cu128",
+  "transformers": "5.20.1",
+  "datasets": "5.1.0",
+  "numpy": "2.1.2",
+  "cuda": "12.8",
+  "gpu": "NVIDIA A40"
+ },
+ "measurements": {
+  "peer_access": true,
+  "gpu0": "NVIDIA A40",
+  "gpu1": "NVIDIA A40",
+  "rows": [
+   {
+    "MB": 100,
+    "median_ms": 98.4780502319336,
+    "GBps": 1.0647814386357306,
+    "gbps": 8.518251509085845
+   },
+   {
+    "MB": 1000,
+    "median_ms": 147.801025390625,
+    "GBps": 7.094510996988732,
+    "gbps": 56.75608797590986
+   }
+  ]
+ },
+ "notes": [],
+ "workarounds": []
+}

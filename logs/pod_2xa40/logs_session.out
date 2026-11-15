@@ -1,0 +1,38 @@
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+NVIDIA A40, 46068 MiB, 570.211.01
+NVIDIA A40, 46068 MiB, 570.211.01
+== [20:58:12 +27s] build
+   -> exit 0 after 42s
+[4/4] c++ kvq_ref.o kvq_bind.o kvq_kernels.cuda.o -shared -L/usr/local/lib/python3.12/dist-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda -ltorch -ltorch_python -L/usr/local/cuda/lib64 -lcudart -o kvq_cuda.so
+cuda True
+== [20:58:54 +69s] gpu_tests
+   -> exit 0 after 4s
+..........................................................               [100%]
+58 passed in 3.01s
+== [20:58:58 +73s] sanitizer
+   -> exit 0 after 12s
+sanitizer workload done
+========= ERROR SUMMARY: 0 errors
+== [20:59:10 +85s] manifests
+   -> exit 0 after 29s
+}
+saved /root/kvpick/feasibility/results/C1_model_data.json
+== [20:59:39 +114s] kernels_a40
+   -> exit 0 after 59s
+  dequant  B0_eager 37431us 8% | B1_compile 2824us 100% | v0 3094us 92% | v1 2939us 97% | v2 2939us 96%
+saved results/kernels_a40.json
+== [21:00:38 +173s] quality_a40
+   -> exit 1 after 25s
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: kernel != reference
+== [21:01:03 +198s] p2p_copy
+   -> exit 0 after 7s
+{'MB': 1000, 'median_ms': 147.801025390625, 'GBps': 7.094510996988732, 'gbps': 56.75608797590986}
+saved /root/kvpick/feasibility/results/G7_p2p_copy.json
+== [21:01:10 +205s] transfer
+   -> exit 0 after 433s
+crossover n=2048: real recompute 247 ms (model 219); kv4 send wins from 4.0 Gbps measured vs 3.5 Gbps predicted
+saved /root/kvpick/results/transfer_validate_a40.json
+<stdin>:1: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+[{"name": "build", "exit": 0, "seconds": 42}, {"name": "gpu_tests", "exit": 0, "seconds": 4}, {"name": "sanitizer", "exit": 0, "seconds": 12}, {"name": "manifests", "exit": 0, "seconds": 29}, {"name": "kernels_a40", "exit": 0, "seconds": 59}, {"name": "quality_a40", "exit": 1, "seconds": 25}, {"name": "p2p_copy", "exit": 0, "seconds": 7}, {"name": "transfer", "exit": 0, "seconds": 433}]
+ALL DONE in 638s

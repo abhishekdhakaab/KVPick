@@ -1,0 +1,5 @@
+T=2048 int4_row_g32: eager 8531us 4% | default 637us 56% | dynamic 1205us 30% | max_autotune_nocg 637us 56%
+T=2048 int4_chan_g32: eager 7622us 5% | default 993us 36% | dynamic 1674us 21% | max_autotune_nocg 667us 53%
+T=8192 int4_row_g32: eager 33977us 4% | default 2517us 56% | dynamic 4818us 29% | max_autotune_nocg 2518us 56%
+T=8192 int4_chan_g32: eager 30324us 5% | default 4036us 35% | dynamic 6802us 21% | max_autotune_nocg 2583us 55%
+saved /workspace/kvpick/feasibility/results/G4b_compile_modes.json

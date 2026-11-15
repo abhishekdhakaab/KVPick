@@ -1,0 +1,23 @@
+   10 MB @     1 Gbps: single    1.00 (+0.00%)  pipelined    1.00 (+0.00%)  raw copy 0.9 ms
+   10 MB @     5 Gbps: single    5.00 (+0.00%)  pipelined    2.50 (-50.07%)  raw copy 0.9 ms
+   10 MB @    10 Gbps: single   10.00 (+0.00%)  pipelined    2.55 (-74.47%)  raw copy 0.9 ms
+   10 MB @    25 Gbps: single   25.00 (+0.00%)  pipelined    2.57 (-89.70%)  raw copy 0.9 ms
+   10 MB @   100 Gbps: single  100.00 (+0.00%)  pipelined    2.44 (-97.56%)  raw copy 0.9 ms
+  100 MB @     1 Gbps: single    1.00 (+0.00%)  pipelined    1.00 (+0.00%)  raw copy 8.6 ms
+  100 MB @     5 Gbps: single    5.00 (+0.00%)  pipelined    2.63 (-47.44%)  raw copy 8.6 ms
+  100 MB @    10 Gbps: single   10.00 (+0.00%)  pipelined    2.63 (-73.70%)  raw copy 8.6 ms
+  100 MB @    25 Gbps: single   25.00 (-0.00%)  pipelined    2.65 (-89.39%)  raw copy 8.6 ms
+  100 MB @   100 Gbps: single  100.00 (+0.00%)  pipelined    2.63 (-97.37%)  raw copy 8.6 ms
+ 1000 MB @     1 Gbps: single    1.00 (+0.00%)  pipelined    1.00 (+0.00%)  raw copy 87.0 ms
+ 1000 MB @     5 Gbps: single    5.00 (+0.00%)  pipelined    2.58 (-48.46%)  raw copy 87.0 ms
+ 1000 MB @    10 Gbps: single   10.00 (+0.00%)  pipelined    2.68 (-73.25%)  raw copy 87.0 ms
+ 1000 MB @    25 Gbps: single   25.00 (+0.00%)  pipelined    2.66 (-89.35%)  raw copy 87.0 ms
+ 1000 MB @   100 Gbps: single   94.85 (-5.15%)  pipelined    2.69 (-97.31%)  raw copy 87.0 ms
+{
+ "two_gpu_copy": false,
+ "copy_path": "d2h2d pinned",
+ "worst_abs_err_pct": 97.5640294282902,
+ "R7_pass": false,
+ "rtt_ms": 0.5
+}
+saved /workspace/kvpick/feasibility/results/G6_link.json

@@ -1,0 +1,728 @@
+{
+ "check_id": "G4",
+ "status": "FAIL",
+ "started_at": "2026-10-16T16:42:09+00:00",
+ "ended_at": "2026-10-16T16:43:32+00:00",
+ "commands": [
+  "bench_quant.py --compile"
+ ],
+ "versions": {
+  "python": "3.12.3",
+  "platform": "Linux-6.8.0-65-generic-x86_64-with-glibc2.39",
+  "torch": "2.8.0+cu128",
+  "transformers": "5.20.1",
+  "datasets": "5.1.0",
+  "numpy": "2.1.2",
+  "cuda": "12.8",
+  "gpu": "NVIDIA A40"
+ },
+ "measurements": {
+  "by_T": {
+   "T512": {
+    "raw_bytes_one_of_KV": 37748736,
+    "raw_MB_full_cache_K_and_V": 75.497472,
+    "copy_ceiling": {
+     "median_us": 138.7199983000755,
+     "p95_us": 139.93600010871887,
+     "GBps": 544.2436052852727,
+     "n": 100
+    },
+    "formats": {
+     "int8_row": {
+      "k": {
+       "spec": "row_full_asym_8b",
+       "wire_bytes": 19464192,
+       "compression_ratio": 1.9393939393939394,
+       "eager_quant": {
+        "median_us": 1745.0560331344604,
+        "p95_us": 1747.4559545516968,
+        "GBps": 32.78572545159736,
+        "n": 100,
+        "pct_of_copy_ceiling": 6.024090156174141
+       },
+       "eager_dequant": {
+        "median_us": 932.703971862793,
+        "p95_us": 935.4559779167175,
+        "GBps": 61.34092887557298,
+        "n": 100,
+        "pct_of_copy_ceiling": 11.27085890948049
+       },
+       "compile_s": 5.52045464515686,
+       "compiled_quant": {
+        "median_us": 104.88000139594078,
+        "p95_us": 106.27199709415436,
+        "GBps": 545.5084595585669,
+        "n": 100,
+        "pct_of_copy_ceiling": 100.23240590445361
+       },
+       "compiled_dequant": {
+        "median_us": 106.36799782514572,
+        "p95_us": 107.71200060844421,
+        "GBps": 537.8772673154019,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.83024110746625
+       }
+      },
+      "v": {
+       "spec": "row_full_asym_8b",
+       "wire_bytes": 19464192,
+       "compression_ratio": 1.9393939393939394,
+       "eager_quant": {
+        "median_us": 1744.8800206184387,
+        "p95_us": 1747.9039430618286,
+        "GBps": 32.789032669261694,
+        "n": 100,
+        "pct_of_copy_ceiling": 6.024697828479744
+       },
+       "eager_dequant": {
+        "median_us": 932.1120083332062,
+        "p95_us": 935.2319836616516,
+        "GBps": 61.379885130229795,
+        "n": 100,
+        "pct_of_copy_ceiling": 11.27801678038214
+       },
+       "compile_s": 0.003353118896484375,
+       "compiled_quant": {
+        "median_us": 105.10400310158731,
+        "p95_us": 108.92800241708755,
+        "GBps": 544.345850887348,
+        "n": 100,
+        "pct_of_copy_ceiling": 100.01878673466851
+       },
+       "compiled_dequant": {
+        "median_us": 106.51199892163277,
+        "p95_us": 107.32799768447876,
+        "GBps": 537.1500730363249,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.69662552208958
+       }
+      },
+      "best_compress_us_K_plus_V": 209.98400449752808,
+      "best_decompress_us_K_plus_V": 212.8799967467785,
+      "best_pct_of_ceiling": 100.23240590445361
+     },
+     "int4_row_g32": {
+      "k": {
+       "spec": "row_g32_asym_4b",
+       "wire_bytes": 11796480,
+       "compression_ratio": 3.2,
+       "eager_quant": {
+        "median_us": 2147.439956665039,
+        "p95_us": 2149.7600078582764,
+        "GBps": 23.071758465807545,
+        "n": 100,
+        "pct_of_copy_ceiling": 4.239233725808164
+       },
+       "eager_dequant": {
+        "median_us": 1204.4159770011902,
+        "p95_us": 1207.8720331192017,
+        "GBps": 41.13629920732199,
+        "n": 100,
+        "pct_of_copy_ceiling": 7.558435011057197
+       },
+       "compile_s": 2.0893399715423584,
+       "compiled_quant": {
+        "median_us": 167.9999977350235,
+        "p95_us": 168.57600212097168,
+        "GBps": 294.91200397600454,
+        "n": 100,
+        "pct_of_copy_ceiling": 54.18750006652304
+       },
+       "compiled_dequant": {
+        "median_us": 92.99200028181076,
+        "p95_us": 93.56799721717834,
+        "GBps": 532.7900878554502,
+        "n": 100,
+        "pct_of_copy_ceiling": 97.89551639769495
+       }
+      },
+      "v": {
+       "spec": "row_g32_asym_4b",
+       "wire_bytes": 11796480,
+       "compression_ratio": 3.2,
+       "eager_quant": {
+        "median_us": 2148.6079692840576,
+        "p95_us": 2153.0239582061768,
+        "GBps": 23.05921634299302,
+        "n": 100,
+        "pct_of_copy_ceiling": 4.236929220492397
+       },
+       "eager_dequant": {
+        "median_us": 1204.800009727478,
+        "p95_us": 1207.6480388641357,
+        "GBps": 41.12318691897004,
+        "n": 100,
+        "pct_of_copy_ceiling": 7.556025742813232
+       },
+       "compile_s": 0.003243684768676758,
+       "compiled_quant": {
+        "median_us": 167.90400445461273,
+        "p95_us": 168.5120016336441,
+        "GBps": 295.08060966701305,
+        "n": 100,
+        "pct_of_copy_ceiling": 54.218479886840846
+       },
+       "compiled_dequant": {
+        "median_us": 92.86399930715561,
+        "p95_us": 93.50399672985077,
+        "GBps": 533.5244698661422,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.03045266585873
+       }
+      },
+      "best_compress_us_K_plus_V": 335.90400218963623,
+      "best_decompress_us_K_plus_V": 185.85599958896637,
+      "best_pct_of_ceiling": 98.03045266585873
+     },
+     "int4_kivi": {
+      "k": {
+       "spec": "chan_g32_asym_4b",
+       "wire_bytes": 11796480,
+       "compression_ratio": 3.2,
+       "eager_quant": {
+        "median_us": 1924.3040084838867,
+        "p95_us": 1927.1039962768555,
+        "GBps": 25.74708350736924,
+        "n": 100,
+        "pct_of_copy_ceiling": 4.730801291431537
+       },
+       "eager_dequant": {
+        "median_us": 1204.14400100708,
+        "p95_us": 1207.0399522781372,
+        "GBps": 41.14559052618549,
+        "n": 100,
+        "pct_of_copy_ceiling": 7.560142209593527
+       },
+       "compile_s": 2.0927419662475586,
+       "compiled_quant": {
+        "median_us": 254.49600815773007,
+        "p95_us": 257.02399015426636,
+        "GBps": 194.679737252669,
+        "n": 100,
+        "pct_of_copy_ceiling": 35.77069815099159
+       },
+       "compiled_dequant": {
+        "median_us": 92.46399998664856,
+        "p95_us": 96.3200032711029,
+        "GBps": 535.8324970491665,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.45453246406132
+       }
+      },
+      "v": {
+       "spec": "row_g32_asym_4b",
+       "wire_bytes": 11796480,
+       "compression_ratio": 3.2,
+       "eager_quant": {
+        "median_us": 2148.7679481506348,
+        "p95_us": 2151.4880657196045,
+        "GBps": 23.05749955114592,
+        "n": 100,
+        "pct_of_copy_ceiling": 4.236613775013492
+       },
+       "eager_dequant": {
+        "median_us": 1204.912006855011,
+        "p95_us": 1207.9360485076904,
+        "GBps": 41.119364499752926,
+        "n": 100,
+        "pct_of_copy_ceiling": 7.555323406730642
+       },
+       "compile_s": 0.0031783580780029297,
+       "compiled_quant": {
+        "median_us": 167.92000085115433,
+        "p95_us": 168.73599588871002,
+        "GBps": 295.0524996954787,
+        "n": 100,
+        "pct_of_copy_ceiling": 54.2133149255512
+       },
+       "compiled_dequant": {
+        "median_us": 92.92799979448318,
+        "p95_us": 93.63199770450592,
+        "GBps": 533.1570259725028,
+        "n": 100,
+        "pct_of_copy_ceiling": 97.96293806576584
+       }
+      },
+      "best_compress_us_K_plus_V": 422.41600900888443,
+      "best_decompress_us_K_plus_V": 185.39199978113174,
+      "best_pct_of_ceiling": 98.45453246406132
+     }
+    }
+   },
+   "T2048": {
+    "raw_bytes_one_of_KV": 150994944,
+    "raw_MB_full_cache_K_and_V": 301.989888,
+    "copy_ceiling": {
+     "median_us": 540.992021560669,
+     "p95_us": 543.5839891433716,
+     "GBps": 558.2150493251473,
+     "n": 100
+    },
+    "formats": {
+     "int8_row": {
+      "k": {
+       "spec": "row_full_asym_8b",
+       "wire_bytes": 77856768,
+       "compression_ratio": 1.9393939393939394,
+       "eager_quant": {
+        "median_us": 6813.695907592773,
+        "p95_us": 6823.359966278076,
+        "GBps": 33.58701578463186,
+        "n": 100,
+        "pct_of_copy_ceiling": 6.016859600119488
+       },
+       "eager_dequant": {
+        "median_us": 3666.111946105957,
+        "p95_us": 3672.9280948638916,
+        "GBps": 62.423547170478514,
+        "n": 100,
+        "pct_of_copy_ceiling": 11.182705884756297
+       },
+       "compile_s": 2.1226084232330322,
+       "compiled_quant": {
+        "median_us": 402.4159908294678,
+        "p95_us": 405.88799118995667,
+        "GBps": 568.6943789889818,
+        "n": 100,
+        "pct_of_copy_ceiling": 101.87729257326608
+       },
+       "compiled_dequant": {
+        "median_us": 415.3920114040375,
+        "p95_us": 417.2160029411316,
+        "GBps": 550.9294972391846,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.6948485006324
+       }
+      },
+      "v": {
+       "spec": "row_full_asym_8b",
+       "wire_bytes": 77856768,
+       "compression_ratio": 1.9393939393939394,
+       "eager_quant": {
+        "median_us": 6812.9119873046875,
+        "p95_us": 6819.968223571777,
+        "GBps": 33.59088043797524,
+        "n": 100,
+        "pct_of_copy_ceiling": 6.017551923507768
+       },
+       "eager_dequant": {
+        "median_us": 3664.5439863204956,
+        "p95_us": 3671.7119216918945,
+        "GBps": 62.45025652694812,
+        "n": 100,
+        "pct_of_copy_ceiling": 11.187490663758922
+       },
+       "compile_s": 0.003335237503051758,
+       "compiled_quant": {
+        "median_us": 402.3839980363846,
+        "p95_us": 405.69600462913513,
+        "GBps": 568.7395948069154,
+        "n": 100,
+        "pct_of_copy_ceiling": 101.88539264473283
+       },
+       "compiled_dequant": {
+        "median_us": 415.6480133533478,
+        "p95_us": 419.0399944782257,
+        "GBps": 550.5901740120918,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.6340613134179
+       }
+      },
+      "best_compress_us_K_plus_V": 804.7999888658524,
+      "best_decompress_us_K_plus_V": 831.0400247573853,
+      "best_pct_of_ceiling": 101.88539264473283
+     },
+     "int4_row_g32": {
+      "k": {
+       "spec": "row_g32_asym_4b",
+       "wire_bytes": 47185920,
+       "compression_ratio": 3.2,
+       "eager_quant": {
+        "median_us": 8532.432079315186,
+        "p95_us": 8542.336463928223,
+        "GBps": 23.226773112022947,
+        "n": 100,
+        "pct_of_copy_ceiling": 4.16090055975791
+       },
+       "eager_dequant": {
+        "median_us": 4720.384120941162,
+        "p95_us": 4729.6319007873535,
+        "GBps": 41.98405445878973,
+        "n": 100,
+        "pct_of_copy_ceiling": 7.521125507014947
+       },
+       "compile_s": 2.033010482788086,
+       "compiled_quant": {
+        "median_us": 637.3920142650604,
+        "p95_us": 637.9839777946472,
+        "GBps": 310.924610859003,
+        "n": 100,
+        "pct_of_copy_ceiling": 55.69979011402407
+       },
+       "compiled_dequant": {
+        "median_us": 360.22400856018066,
+        "p95_us": 361.37598752975464,
+        "GBps": 550.1600650998558,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.55701055802248
+       }
+      },
+      "v": {
+       "spec": "row_g32_asym_4b",
+       "wire_bytes": 47185920,
+       "compression_ratio": 3.2,
+       "eager_quant": {
+        "median_us": 8533.904075622559,
+        "p95_us": 8544.28768157959,
+        "GBps": 23.222766771671555,
+        "n": 100,
+        "pct_of_copy_ceiling": 4.160182854214815
+       },
+       "eager_dequant": {
+        "median_us": 4720.336198806763,
+        "p95_us": 4726.975917816162,
+        "GBps": 41.984480692306924,
+        "n": 100,
+        "pct_of_copy_ceiling": 7.521201863522661
+       },
+       "compile_s": 0.00393223762512207,
+       "compiled_quant": {
+        "median_us": 637.4879777431488,
+        "p95_us": 638.4959816932678,
+        "GBps": 310.87780620052627,
+        "n": 100,
+        "pct_of_copy_ceiling": 55.69140541380265
+       },
+       "compiled_dequant": {
+        "median_us": 360.49599945545197,
+        "p95_us": 361.6960048675537,
+        "GBps": 549.7449744223585,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.48265020568172
+       }
+      },
+      "best_compress_us_K_plus_V": 1274.8799920082092,
+      "best_decompress_us_K_plus_V": 720.7200080156326,
+      "best_pct_of_ceiling": 98.55701055802248
+     },
+     "int4_kivi": {
+      "k": {
+       "spec": "chan_g32_asym_4b",
+       "wire_bytes": 47185920,
+       "compression_ratio": 3.2,
+       "eager_quant": {
+        "median_us": 7622.384071350097,
+        "p95_us": 7631.775856018066,
+        "GBps": 25.99985282096887,
+        "n": 100,
+        "pct_of_copy_ceiling": 4.657676795421644
+       },
+       "eager_dequant": {
+        "median_us": 4715.984106063843,
+        "p95_us": 4725.279808044434,
+        "GBps": 42.02322559679066,
+        "n": 100,
+        "pct_of_copy_ceiling": 7.5281427198343245
+       },
+       "compile_s": 2.4095048904418945,
+       "compiled_quant": {
+        "median_us": 990.5920028686523,
+        "p95_us": 991.807997226715,
+        "GBps": 200.06305666317581,
+        "n": 100,
+        "pct_of_copy_ceiling": 35.83978198098413
+       },
+       "compiled_dequant": {
+        "median_us": 358.62399637699133,
+        "p95_us": 359.935998916626,
+        "GBps": 552.6146214478886,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.99672574502794
+       }
+      },
+      "v": {
+       "spec": "row_g32_asym_4b",
+       "wire_bytes": 47185920,
+       "compression_ratio": 3.2,
+       "eager_quant": {
+        "median_us": 8531.872272491455,
+        "p95_us": 8542.240142822266,
+        "GBps": 23.22829710413934,
+        "n": 100,
+        "pct_of_copy_ceiling": 4.161173571407853
+       },
+       "eager_dequant": {
+        "median_us": 4720.271825790404,
+        "p95_us": 4728.767871856689,
+        "GBps": 41.98505325841374,
+        "n": 100,
+        "pct_of_copy_ceiling": 7.521304434405964
+       },
+       "compile_s": 0.0035140514373779297,
+       "compiled_quant": {
+        "median_us": 637.360006570816,
+        "p95_us": 637.8880143165588,
+        "GBps": 310.94022523670924,
+        "n": 100,
+        "pct_of_copy_ceiling": 55.70258731157815
+       },
+       "compiled_dequant": {
+        "median_us": 360.52799224853516,
+        "p95_us": 361.7919981479645,
+        "GBps": 549.6961907561985,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.47391098121635
+       }
+      },
+      "best_compress_us_K_plus_V": 1627.9520094394684,
+      "best_decompress_us_K_plus_V": 719.1519886255264,
+      "best_pct_of_ceiling": 98.99672574502794
+     }
+    }
+   },
+   "T8192": {
+    "raw_bytes_one_of_KV": 603979776,
+    "raw_MB_full_cache_K_and_V": 1207.959552,
+    "copy_ceiling": {
+     "median_us": 2148.240089416504,
+     "p95_us": 2153.3119678497314,
+     "GBps": 562.3019316840423,
+     "n": 100
+    },
+    "formats": {
+     "int8_row": {
+      "k": {
+       "spec": "row_full_asym_8b",
+       "wire_bytes": 311427072,
+       "compression_ratio": 1.9393939393939394,
+       "eager_quant": {
+        "median_us": 27195.42407989502,
+        "p95_us": 27212.95928955078,
+        "GBps": 33.66032628543344,
+        "n": 100,
+        "pct_of_copy_ceiling": 5.986165863706688
+       },
+       "eager_dequant": {
+        "median_us": 14579.168319702148,
+        "p95_us": 14593.503952026367,
+        "GBps": 62.78868779935327,
+        "n": 100,
+        "pct_of_copy_ceiling": 11.166365303300124
+       },
+       "compile_s": 2.4907243251800537,
+       "compiled_quant": {
+        "median_us": 1582.3360085487366,
+        "p95_us": 1600.6720066070557,
+        "GBps": 578.5160945933218,
+        "n": 100,
+        "pct_of_copy_ceiling": 102.88353320443335
+       },
+       "compiled_dequant": {
+        "median_us": 1657.743990421295,
+        "p95_us": 1663.3919477462769,
+        "GBps": 552.2003718845398,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.20353457274292
+       }
+      },
+      "v": {
+       "spec": "row_full_asym_8b",
+       "wire_bytes": 311427072,
+       "compression_ratio": 1.9393939393939394,
+       "eager_quant": {
+        "median_us": 27193.744659423828,
+        "p95_us": 27214.36882019043,
+        "GBps": 33.66240506648176,
+        "n": 100,
+        "pct_of_copy_ceiling": 5.986535554958165
+       },
+       "eager_dequant": {
+        "median_us": 14578.096389770508,
+        "p95_us": 14590.368270874023,
+        "GBps": 62.79330466235246,
+        "n": 100,
+        "pct_of_copy_ceiling": 11.16718636805894
+       },
+       "compile_s": 0.00674748420715332,
+       "compiled_quant": {
+        "median_us": 1581.88796043396,
+        "p95_us": 1599.0400314331055,
+        "GBps": 578.6799513594352,
+        "n": 100,
+        "pct_of_copy_ceiling": 102.9126735571301
+       },
+       "compiled_dequant": {
+        "median_us": 1658.5279703140259,
+        "p95_us": 1663.2319688796997,
+        "GBps": 551.9393488592639,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.15711413372821
+       }
+      },
+      "best_compress_us_K_plus_V": 3164.2239689826965,
+      "best_decompress_us_K_plus_V": 3316.271960735321,
+      "best_pct_of_ceiling": 102.9126735571301
+     },
+     "int4_row_g32": {
+      "k": {
+       "spec": "row_g32_asym_4b",
+       "wire_bytes": 188743680,
+       "compression_ratio": 3.2,
+       "eager_quant": {
+        "median_us": 33968.11294555664,
+        "p95_us": 33991.68014526367,
+        "GBps": 23.337282741333322,
+        "n": 100,
+        "pct_of_copy_ceiling": 4.1503116788947025
+       },
+       "eager_dequant": {
+        "median_us": 18726.91249847412,
+        "p95_us": 18751.808166503906,
+        "GBps": 42.330707534655886,
+        "n": 100,
+        "pct_of_copy_ceiling": 7.528109926259604
+       },
+       "compile_s": 2.042066812515259,
+       "compiled_quant": {
+        "median_us": 2517.071962356568,
+        "p95_us": 2519.5839405059814,
+        "GBps": 314.93873351869746,
+        "n": 100,
+        "pct_of_copy_ceiling": 56.008830091599556
+       },
+       "compiled_dequant": {
+        "median_us": 1429.919958114624,
+        "p95_us": 1432.8639507293701,
+        "GBps": 554.3830978100484,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.59171142267327
+       }
+      },
+      "v": {
+       "spec": "row_g32_asym_4b",
+       "wire_bytes": 188743680,
+       "compression_ratio": 3.2,
+       "eager_quant": {
+        "median_us": 33969.4881439209,
+        "p95_us": 33992.35153198242,
+        "GBps": 23.3363379701635,
+        "n": 100,
+        "pct_of_copy_ceiling": 4.150143660412712
+       },
+       "eager_dequant": {
+        "median_us": 18727.07176208496,
+        "p95_us": 18745.887756347656,
+        "GBps": 42.33034753489634,
+        "n": 100,
+        "pct_of_copy_ceiling": 7.528045903758655
+       },
+       "compile_s": 0.006742715835571289,
+       "compiled_quant": {
+        "median_us": 2517.8079605102544,
+        "p95_us": 2518.59188079834,
+        "GBps": 314.84667156241267,
+        "n": 100,
+        "pct_of_copy_ceiling": 55.992457756543
+       },
+       "compiled_dequant": {
+        "median_us": 1429.6640157699585,
+        "p95_us": 1434.2399835586548,
+        "GBps": 554.4823449816436,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.60936157928894
+       }
+      },
+      "best_compress_us_K_plus_V": 5034.879922866822,
+      "best_decompress_us_K_plus_V": 2859.5839738845825,
+      "best_pct_of_ceiling": 98.60936157928894
+     },
+     "int4_kivi": {
+      "k": {
+       "spec": "chan_g32_asym_4b",
+       "wire_bytes": 188743680,
+       "compression_ratio": 3.2,
+       "eager_quant": {
+        "median_us": 30322.00050354004,
+        "p95_us": 30338.52767944336,
+        "GBps": 26.14350777770916,
+        "n": 100,
+        "pct_of_copy_ceiling": 4.649371859600726
+       },
+       "eager_dequant": {
+        "median_us": 18716.24088287353,
+        "p95_us": 18740.928649902344,
+        "GBps": 42.35484363344504,
+        "n": 100,
+        "pct_of_copy_ceiling": 7.532402299703329
+       },
+       "compile_s": 0.05927538871765137,
+       "compiled_quant": {
+        "median_us": 30322.60799407959,
+        "p95_us": 30344.959259033203,
+        "GBps": 26.14298401228473,
+        "n": 100,
+        "pct_of_copy_ceiling": 4.6492787129485595
+       },
+       "compiled_dequant": {
+        "median_us": 18714.51187133789,
+        "p95_us": 18733.66355895996,
+        "GBps": 42.35875674716856,
+        "n": 100,
+        "pct_of_copy_ceiling": 7.533098209410023
+       }
+      },
+      "v": {
+       "spec": "row_g32_asym_4b",
+       "wire_bytes": 188743680,
+       "compression_ratio": 3.2,
+       "eager_quant": {
+        "median_us": 33972.62573242188,
+        "p95_us": 33992.44689941406,
+        "GBps": 23.33418271062463,
+        "n": 100,
+        "pct_of_copy_ceiling": 4.149760368195946
+       },
+       "eager_dequant": {
+        "median_us": 18729.616165161133,
+        "p95_us": 18746.84715270996,
+        "GBps": 42.32459699171738,
+        "n": 100,
+        "pct_of_copy_ceiling": 7.527023224864109
+       },
+       "compile_s": 0.0064373016357421875,
+       "compiled_quant": {
+        "median_us": 2516.432046890259,
+        "p95_us": 2517.3439979553223,
+        "GBps": 315.01882078621077,
+        "n": 100,
+        "pct_of_copy_ceiling": 56.02307284322473
+       },
+       "compiled_dequant": {
+        "median_us": 1429.3440580368042,
+        "p95_us": 1432.8960180282593,
+        "GBps": 554.606465492151,
+        "n": 100,
+        "pct_of_copy_ceiling": 98.63143522042613
+       }
+      },
+      "best_compress_us_K_plus_V": 32838.4325504303,
+      "best_decompress_us_K_plus_V": 20143.855929374695,
+      "best_pct_of_ceiling": 98.63143522042613
+     }
+    }
+   }
+  },
+  "R5": {
+   "best_pct_of_ceiling_at_Tmax": {
+    "int8_row": 102.9126735571301,
+    "int4_row_g32": 98.60936157928894,
+    "int4_kivi": 98.63143522042613
+   },
+   "threshold_pct": 50,
+   "R5_pass_headroom_exists": false,
+   "note": "pass means PyTorch/compile stay below 50% of the copy ceiling, i.e. a custom kernel has room"
+  }
+ },
+ "notes": [],
+ "workarounds": []
+}

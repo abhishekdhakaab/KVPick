@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+feasibility/external/
+feasibility/data_local/
+feasibility/.vllm/
+*.pt
+!results/feasibility/G1_channel_tensors.pt
+data/
+
+results/*smoke*.json
+logs/*.log
+scripts/_debug_mismatch.py

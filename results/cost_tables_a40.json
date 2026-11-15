@@ -1,0 +1,215 @@
+{
+ "gpu": "cuda / NVIDIA A40",
+ "model": "Qwen/Qwen3-4B-Instruct-2507",
+ "sources": {
+  "prefill": "feasibility G5 (n sweep, m=0, 5 reps) + E5 (n x m grid, 3 reps), Qwen3-4B bf16 HF eager on A40",
+  "decode": "feasibility E5 decode step at batch 1/8/16, ctx 2048, HF eager on A40 (no CUDA graphs; conservative)",
+  "kernel_int4_kivi": "our fused v2 kernel, NVIDIA A40 (results/kernels_a40.json)",
+  "kernel_int8_row": "torch.compile best-of (feasibility G4, A40); no custom kernel by design",
+  "quality": "quality_a40.json on Qwen3-4B (n=50 ppl windows, 100 GSM8K, 50 Qasper; kernel in loop: True), classes per configs/quality_budgets.yaml (point estimates)"
+ },
+ "prefill": {
+  "model": "ms = c0 + c1*n + c2*n^2 + c3*n*m  (relative least squares)",
+  "coef": [
+   24.994383275457803,
+   0.08003572928943847,
+   7.201397351363444e-06,
+   2.2813981057432005e-05
+  ],
+  "fit": {
+   "max_rel_err": 0.13672992892011035,
+   "mean_rel_err": 0.07968843102529476,
+   "n_points": 14,
+   "per_point_rel_err": [
+    0.057,
+    0.123,
+    0.1,
+    0.051,
+    0.076,
+    0.054,
+    0.132,
+    0.096,
+    0.058,
+    0.016,
+    0.118,
+    0.137,
+    0.01,
+    0.087
+   ]
+  },
+  "points": [
+   {
+    "n": 128,
+    "m": 0,
+    "ms": 37.498483434319496
+   },
+   {
+    "n": 512,
+    "m": 0,
+    "ms": 60.40768884122372
+   },
+   {
+    "n": 2048,
+    "m": 0,
+    "ms": 243.41844394803047
+   },
+   {
+    "n": 4096,
+    "m": 0,
+    "ms": 499.08107332885265
+   },
+   {
+    "n": 8192,
+    "m": 0,
+    "ms": 1081.8467624485493
+   },
+   {
+    "n": 128,
+    "m": 0,
+    "ms": 37.37495839595795
+   },
+   {
+    "n": 512,
+    "m": 0,
+    "ms": 59.95609611272812
+   },
+   {
+    "n": 2048,
+    "m": 0,
+    "ms": 242.3419989645481
+   },
+   {
+    "n": 128,
+    "m": 2048,
+    "ms": 39.067285135388374
+   },
+   {
+    "n": 512,
+    "m": 2048,
+    "ms": 90.31311050057411
+   },
+   {
+    "n": 2048,
+    "m": 2048,
+    "ms": 357.112193480134
+   },
+   {
+    "n": 128,
+    "m": 8192,
+    "ms": 68.66812519729137
+   },
+   {
+    "n": 512,
+    "m": 8192,
+    "ms": 161.92032024264336
+   },
+   {
+    "n": 2048,
+    "m": 8192,
+    "ms": 553.6354761570692
+   }
+  ]
+ },
+ "decode": {
+  "model": "ms_per_step = d0 + d1*batch (ctx 2048)",
+  "coef": [
+   28.20625441071726,
+   1.2464689024718554
+  ],
+  "points": {
+   "1": 30.748534947633743,
+   "8": 35.74835881590843,
+   "16": 49.283592030406
+  }
+ },
+ "kernel_ms": {
+  "int4_kivi": {
+   "512": {
+    "compress": 0.1730560064315796,
+    "decompress": 0.19009599834680557
+   },
+   "2048": {
+    "compress": 0.6747359931468964,
+    "decompress": 0.7400160133838654
+   },
+   "8192": {
+    "compress": 2.7250399589538574,
+    "decompress": 2.9391200542449947
+   }
+  },
+  "int8_row": {
+   "512": {
+    "compress": 0.20998400449752808,
+    "decompress": 0.2128799967467785,
+    "placeholder": "torch.compile (feasibility G4/G4b); replaced by our kernel after the A40 results session"
+   },
+   "2048": {
+    "compress": 0.8047999888658524,
+    "decompress": 0.8310400247573853,
+    "placeholder": "torch.compile (feasibility G4/G4b); replaced by our kernel after the A40 results session"
+   },
+   "8192": {
+    "compress": 3.1642239689826965,
+    "decompress": 3.316271960735321,
+    "placeholder": "torch.compile (feasibility G4/G4b); replaced by our kernel after the A40 results session"
+   }
+  },
+  "raw": {
+   "512": {
+    "compress": 0.0,
+    "decompress": 0.0
+   },
+   "2048": {
+    "compress": 0.0,
+    "decompress": 0.0
+   },
+   "8192": {
+    "compress": 0.0,
+    "decompress": 0.0
+   }
+  }
+ },
+ "bytes_per_token": {
+  "raw": 147456,
+  "int8_row": 76032,
+  "int4_kivi": 46080
+ },
+ "quality": {
+  "raw": {
+   "class": "strict",
+   "losses": {}
+  },
+  "int8_row": {
+   "class": "strict",
+   "losses": {
+    "ppl_rel_pct": -0.01085317839499833,
+    "gsm8k_points": -1.0000000000000009,
+    "qasper_points": 0.29281045751633483
+   }
+  },
+  "int4_row": {
+   "class": "none",
+   "losses": {
+    "ppl_rel_pct": 58.51832125763379,
+    "gsm8k_points": 25.0,
+    "qasper_points": 15.049055733133903
+   }
+  },
+  "int4_row_g32": {
+   "class": "normal",
+   "losses": {
+    "ppl_rel_pct": 1.1435767567098853,
+    "gsm8k_points": 1.0000000000000009,
+    "qasper_points": 2.041839893313763
+   }
+  },
+  "int4_kivi": {
+   "class": "lenient",
+   "losses": {
+    "ppl_rel_pct": 0.07590860825310575,
+    "gsm8k_points": 3.0000000000000027,
+    "qasper_points": 2.313429663429656
+   }
+  }
+ }
+}

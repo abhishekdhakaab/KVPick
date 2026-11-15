@@ -1,0 +1,42 @@
+W1016 16:43:19.165000 2982 torch/_dynamo/convert_frame.py:1016] [0/8] torch._dynamo hit config.recompile_limit (8)
+W1016 16:43:19.165000 2982 torch/_dynamo/convert_frame.py:1016] [0/8]    function: '<lambda>' (/workspace/kvpick/feasibility/scripts/bench_quant.py:84)
+W1016 16:43:19.165000 2982 torch/_dynamo/convert_frame.py:1016] [0/8]    last reason: 0/7: spec.axis == 'row'                                     
+W1016 16:43:19.165000 2982 torch/_dynamo/convert_frame.py:1016] [0/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1016 16:43:19.165000 2982 torch/_dynamo/convert_frame.py:1016] [0/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1016 16:43:19.172000 2982 torch/_dynamo/convert_frame.py:1016] [1/8] torch._dynamo hit config.recompile_limit (8)
+W1016 16:43:19.172000 2982 torch/_dynamo/convert_frame.py:1016] [1/8]    function: '<lambda>' (/workspace/kvpick/feasibility/scripts/bench_quant.py:86)
+W1016 16:43:19.172000 2982 torch/_dynamo/convert_frame.py:1016] [1/8]    last reason: 1/7: tensor 'psz[1]' size mismatch at index 1. expected 8192, actual 256
+W1016 16:43:19.172000 2982 torch/_dynamo/convert_frame.py:1016] [1/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1016 16:43:19.172000 2982 torch/_dynamo/convert_frame.py:1016] [1/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+T=512: copy ceiling 544.2 GB/s (139 us)
+  int8_row       k row_full_asym_8b       ratio 1.94 | eager q 1745us 6% dq 933us 11% | compiled q 105us 100% dq 106us 99%
+  int8_row       v row_full_asym_8b       ratio 1.94 | eager q 1745us 6% dq 932us 11% | compiled q 105us 100% dq 107us 99%
+  int4_row_g32   k row_g32_asym_4b        ratio 3.20 | eager q 2147us 4% dq 1204us 8% | compiled q 168us 54% dq 93us 98%
+  int4_row_g32   v row_g32_asym_4b        ratio 3.20 | eager q 2149us 4% dq 1205us 8% | compiled q 168us 54% dq 93us 98%
+  int4_kivi      k chan_g32_asym_4b       ratio 3.20 | eager q 1924us 5% dq 1204us 8% | compiled q 254us 36% dq 92us 98%
+  int4_kivi      v row_g32_asym_4b        ratio 3.20 | eager q 2149us 4% dq 1205us 8% | compiled q 168us 54% dq 93us 98%
+T=2048: copy ceiling 558.2 GB/s (541 us)
+  int8_row       k row_full_asym_8b       ratio 1.94 | eager q 6814us 6% dq 3666us 11% | compiled q 402us 102% dq 415us 99%
+  int8_row       v row_full_asym_8b       ratio 1.94 | eager q 6813us 6% dq 3665us 11% | compiled q 402us 102% dq 416us 99%
+  int4_row_g32   k row_g32_asym_4b        ratio 3.20 | eager q 8532us 4% dq 4720us 8% | compiled q 637us 56% dq 360us 99%
+  int4_row_g32   v row_g32_asym_4b        ratio 3.20 | eager q 8534us 4% dq 4720us 8% | compiled q 637us 56% dq 360us 98%
+  int4_kivi      k chan_g32_asym_4b       ratio 3.20 | eager q 7622us 5% dq 4716us 8% | compiled q 991us 36% dq 359us 99%
+  int4_kivi      v row_g32_asym_4b        ratio 3.20 | eager q 8532us 4% dq 4720us 8% | compiled q 637us 56% dq 361us 98%
+T=8192: copy ceiling 562.3 GB/s (2148 us)
+  int8_row       k row_full_asym_8b       ratio 1.94 | eager q 27195us 6% dq 14579us 11% | compiled q 1582us 103% dq 1658us 98%
+  int8_row       v row_full_asym_8b       ratio 1.94 | eager q 27194us 6% dq 14578us 11% | compiled q 1582us 103% dq 1659us 98%
+  int4_row_g32   k row_g32_asym_4b        ratio 3.20 | eager q 33968us 4% dq 18727us 8% | compiled q 2517us 56% dq 1430us 99%
+  int4_row_g32   v row_g32_asym_4b        ratio 3.20 | eager q 33969us 4% dq 18727us 8% | compiled q 2518us 56% dq 1430us 99%
+  int4_kivi      k chan_g32_asym_4b       ratio 3.20 | eager q 30322us 5% dq 18716us 8% | compiled q 30323us 5% dq 18715us 8%
+  int4_kivi      v row_g32_asym_4b        ratio 3.20 | eager q 33973us 4% dq 18730us 8% | compiled q 2516us 56% dq 1429us 99%
+{
+ "best_pct_of_ceiling_at_Tmax": {
+  "int8_row": 102.9126735571301,
+  "int4_row_g32": 98.60936157928894,
+  "int4_kivi": 98.63143522042613
+ },
+ "threshold_pct": 50,
+ "R5_pass_headroom_exists": false,
+ "note": "pass means PyTorch/compile stay below 50% of the copy ceiling, i.e. a custom kernel has room"
+}
+saved /workspace/kvpick/feasibility/results/G4_headroom.json

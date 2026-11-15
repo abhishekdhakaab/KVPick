@@ -1,0 +1,813 @@
+{
+ "gpu": "cuda / NVIDIA A40",
+ "gbps_grid": [
+  1.0,
+  1.0592537251772889,
+  1.1220184543019633,
+  1.1885022274370185,
+  1.2589254117941673,
+  1.333521432163324,
+  1.4125375446227544,
+  1.4962356560944334,
+  1.5848931924611136,
+  1.6788040181225603,
+  1.7782794100389228,
+  1.8836490894898006,
+  1.9952623149688797,
+  2.113489039836647,
+  2.23872113856834,
+  2.371373705661655,
+  2.51188643150958,
+  2.6607250597988097,
+  2.8183829312644537,
+  2.98538261891796,
+  3.1622776601683795,
+  3.3496543915782766,
+  3.548133892335755,
+  3.758374042884442,
+  3.981071705534973,
+  4.216965034285822,
+  4.466835921509632,
+  4.731512589614805,
+  5.011872336272724,
+  5.308844442309884,
+  5.623413251903491,
+  5.956621435290105,
+  6.309573444801933,
+  6.683439175686147,
+  7.07945784384138,
+  7.498942093324558,
+  7.943282347242816,
+  8.413951416451951,
+  8.912509381337456,
+  9.440608762859236,
+  10.0,
+  10.592537251772892,
+  11.220184543019636,
+  11.885022274370183,
+  12.589254117941675,
+  13.33521432163324,
+  14.125375446227547,
+  14.962356560944336,
+  15.848931924611142,
+  16.788040181225607,
+  17.78279410038923,
+  18.83649089489801,
+  19.952623149688797,
+  21.134890398366476,
+  22.3872113856834,
+  23.71373705661655,
+  25.11886431509581,
+  26.6072505979881,
+  28.18382931264455,
+  29.853826189179603,
+  31.622776601683793,
+  33.49654391578277,
+  35.48133892335755,
+  37.58374042884443,
+  39.810717055349734,
+  42.169650342858226,
+  44.668359215096324,
+  47.315125896148054,
+  50.11872336272725,
+  53.08844442309885,
+  56.23413251903491,
+  59.56621435290106,
+  63.09573444801933,
+  66.83439175686149,
+  70.79457843841381,
+  74.98942093324558,
+  79.43282347242817,
+  84.13951416451951,
+  89.12509381337459,
+  94.40608762859236,
+  100.0
+ ],
+ "crossovers": [
+  {
+   "budget": "strict",
+   "decode_batch": 0,
+   "m_cached": 0,
+   "n_new": 128,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     2.37,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "strict",
+   "decode_batch": 0,
+   "m_cached": 0,
+   "n_new": 512,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     4.73,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "strict",
+   "decode_batch": 0,
+   "m_cached": 0,
+   "n_new": 2048,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     5.96,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "strict",
+   "decode_batch": 0,
+   "m_cached": 0,
+   "n_new": 8192,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     4.47,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "strict",
+   "decode_batch": 0,
+   "m_cached": 2048,
+   "n_new": 128,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     2.0,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "strict",
+   "decode_batch": 0,
+   "m_cached": 2048,
+   "n_new": 512,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     3.55,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "strict",
+   "decode_batch": 0,
+   "m_cached": 2048,
+   "n_new": 2048,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     4.22,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "strict",
+   "decode_batch": 0,
+   "m_cached": 2048,
+   "n_new": 8192,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     3.35,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "strict",
+   "decode_batch": 0,
+   "m_cached": 8192,
+   "n_new": 128,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     1.41,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "strict",
+   "decode_batch": 0,
+   "m_cached": 8192,
+   "n_new": 512,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     2.0,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "strict",
+   "decode_batch": 0,
+   "m_cached": 8192,
+   "n_new": 2048,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     2.11,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "strict",
+   "decode_batch": 0,
+   "m_cached": 8192,
+   "n_new": 8192,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     1.88,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "normal",
+   "decode_batch": 0,
+   "m_cached": 0,
+   "n_new": 128,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     2.37,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "normal",
+   "decode_batch": 0,
+   "m_cached": 0,
+   "n_new": 512,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     4.73,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "normal",
+   "decode_batch": 0,
+   "m_cached": 0,
+   "n_new": 2048,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     5.96,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "normal",
+   "decode_batch": 0,
+   "m_cached": 0,
+   "n_new": 8192,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     4.47,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "normal",
+   "decode_batch": 0,
+   "m_cached": 2048,
+   "n_new": 128,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     2.0,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "normal",
+   "decode_batch": 0,
+   "m_cached": 2048,
+   "n_new": 512,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     3.55,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "normal",
+   "decode_batch": 0,
+   "m_cached": 2048,
+   "n_new": 2048,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     4.22,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "normal",
+   "decode_batch": 0,
+   "m_cached": 2048,
+   "n_new": 8192,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     3.35,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "normal",
+   "decode_batch": 0,
+   "m_cached": 8192,
+   "n_new": 128,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     1.41,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "normal",
+   "decode_batch": 0,
+   "m_cached": 8192,
+   "n_new": 512,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     2.0,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "normal",
+   "decode_batch": 0,
+   "m_cached": 8192,
+   "n_new": 2048,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     2.11,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "normal",
+   "decode_batch": 0,
+   "m_cached": 8192,
+   "n_new": 8192,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     1.88,
+     "int8_row"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 0,
+   "m_cached": 0,
+   "n_new": 128,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     1.41,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 0,
+   "m_cached": 0,
+   "n_new": 512,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     2.99,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 0,
+   "m_cached": 0,
+   "n_new": 2048,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     3.55,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 0,
+   "m_cached": 0,
+   "n_new": 8192,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     2.66,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 0,
+   "m_cached": 2048,
+   "n_new": 128,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     1.19,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 0,
+   "m_cached": 2048,
+   "n_new": 512,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     2.11,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 0,
+   "m_cached": 2048,
+   "n_new": 2048,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     2.51,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 0,
+   "m_cached": 2048,
+   "n_new": 8192,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     2.0,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 0,
+   "m_cached": 8192,
+   "n_new": 128,
+   "action_from_gbps": [
+    [
+     1.0,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 0,
+   "m_cached": 8192,
+   "n_new": 512,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     1.19,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 0,
+   "m_cached": 8192,
+   "n_new": 2048,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     1.33,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 0,
+   "m_cached": 8192,
+   "n_new": 8192,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     1.19,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 8,
+   "m_cached": 0,
+   "n_new": 128,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     1.41,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 8,
+   "m_cached": 0,
+   "n_new": 512,
+   "action_from_gbps": [
+    [
+     1.0,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 8,
+   "m_cached": 0,
+   "n_new": 2048,
+   "action_from_gbps": [
+    [
+     1.0,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 8,
+   "m_cached": 0,
+   "n_new": 8192,
+   "action_from_gbps": [
+    [
+     1.0,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 8,
+   "m_cached": 2048,
+   "n_new": 128,
+   "action_from_gbps": [
+    [
+     1.0,
+     "recompute"
+    ],
+    [
+     1.19,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 8,
+   "m_cached": 2048,
+   "n_new": 512,
+   "action_from_gbps": [
+    [
+     1.0,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 8,
+   "m_cached": 2048,
+   "n_new": 2048,
+   "action_from_gbps": [
+    [
+     1.0,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 8,
+   "m_cached": 2048,
+   "n_new": 8192,
+   "action_from_gbps": [
+    [
+     1.0,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 8,
+   "m_cached": 8192,
+   "n_new": 128,
+   "action_from_gbps": [
+    [
+     1.0,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 8,
+   "m_cached": 8192,
+   "n_new": 512,
+   "action_from_gbps": [
+    [
+     1.0,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 8,
+   "m_cached": 8192,
+   "n_new": 2048,
+   "action_from_gbps": [
+    [
+     1.0,
+     "int4_kivi"
+    ]
+   ]
+  },
+  {
+   "budget": "lenient",
+   "decode_batch": 8,
+   "m_cached": 8192,
+   "n_new": 8192,
+   "action_from_gbps": [
+    [
+     1.0,
+     "int4_kivi"
+    ]
+   ]
+  }
+ ],
+ "note": "cost-model evaluation; prefill fit max rel err 13.7%"
+}

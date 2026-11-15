@@ -1,0 +1,10 @@
+T=512: copy ceiling 545 GB/s (139 us); ratio 3.20; v2 bit-exact K=True V=True
+  quant    B0_eager 4086us 4% | B1_compile 335us 54% | v0 376us 48% | v1 177us 103% | v2 173us 105%
+  dequant  B0_eager 2404us 8% | B1_compile 182us 100% | v0 198us 92% | v1 190us 96% | v2 190us 96%
+T=2048: copy ceiling 558 GB/s (541 us); ratio 3.20; v2 bit-exact K=True V=True
+  quant    B0_eager 16292us 4% | B1_compile 1297us 55% | v0 1439us 49% | v1 665us 107% | v2 675us 105%
+  dequant  B0_eager 9437us 8% | B1_compile 711us 100% | v0 767us 92% | v1 740us 96% | v2 740us 96%
+T=8192: copy ceiling 559 GB/s (2161 us); ratio 3.20; v2 bit-exact K=True V=True
+  quant    B0_eager 64821us 4% | B1_compile 5104us 56% | v0 5753us 49% | v1 2630us 108% | v2 2725us 104%
+  dequant  B0_eager 37431us 8% | B1_compile 2824us 100% | v0 3094us 92% | v1 2939us 97% | v2 2939us 96%
+saved results/kernels_a40.json

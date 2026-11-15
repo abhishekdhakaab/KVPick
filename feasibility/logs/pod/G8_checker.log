@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/kvpick/feasibility/scripts/checker_proto.py", line 173, in <module>
+    main()
+  File "/workspace/kvpick/feasibility/scripts/checker_proto.py", line 157, in main
+    t0 = time.time(); res = run_checks(name, spec, fn, a.device); res["runtime_s"] = round(time.time() - t0, 2)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/kvpick/feasibility/scripts/checker_proto.py", line 58, in run_checks
+    x = torch.randn(2048, 8, 128, generator=gen, device=device)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected a 'cuda' device type for generator but found 'cpu'

@@ -1,0 +1,47 @@
+{
+ "started_at": "2026-10-16T20:57:45Z",
+ "steps": [
+  {
+   "name": "build",
+   "exit": 0,
+   "seconds": 42
+  },
+  {
+   "name": "gpu_tests",
+   "exit": 0,
+   "seconds": 4
+  },
+  {
+   "name": "sanitizer",
+   "exit": 0,
+   "seconds": 12
+  },
+  {
+   "name": "manifests",
+   "exit": 0,
+   "seconds": 29
+  },
+  {
+   "name": "kernels_a40",
+   "exit": 0,
+   "seconds": 59
+  },
+  {
+   "name": "quality_a40",
+   "exit": 1,
+   "seconds": 25
+  },
+  {
+   "name": "p2p_copy",
+   "exit": 0,
+   "seconds": 7
+  },
+  {
+   "name": "transfer",
+   "exit": 0,
+   "seconds": 433
+  }
+ ],
+ "ended_at": "2026-10-16T21:08:23.592505Z",
+ "wall_s": 638
+}

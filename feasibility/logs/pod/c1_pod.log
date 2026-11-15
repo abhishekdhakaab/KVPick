@@ -1,0 +1,58 @@
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/constants.py:302: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 4358/4358 [00:00<00:00, 146878.83 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]Generating train split:   3%|▎         | 1000/36718 [00:00<00:03, 9311.92 examples/s]Generating train split: 100%|██████████| 36718/36718 [00:00<00:00, 168786.40 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 3760/3760 [00:00<00:00, 133305.58 examples/s]
+Generating train split:   0%|          | 0/7473 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 7473/7473 [00:00<00:00, 85959.79 examples/s]
+Generating test split:   0%|          | 0/1319 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1319/1319 [00:00<00:00, 89498.93 examples/s]
+{
+ "model": {
+  "hf_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "license": "apache-2.0",
+  "gated": false,
+  "total_bytes": 8060917568,
+  "architecture": "Qwen3ForCausalLM",
+  "num_hidden_layers": 36,
+  "num_attention_heads": 32,
+  "num_key_value_heads": 8,
+  "head_dim": 128,
+  "dtype": "bfloat16",
+  "max_position_embeddings": 262144,
+  "kv_bytes_per_token_per_layer": 4096,
+  "kv_bytes_per_token": 147456,
+  "arithmetic": "2 (K,V) x 8 kv_heads x 128 head_dim x 2 B (bf16) = 4096 B/token/layer; x 36 layers = 147456 B/token",
+  "raw_MB_at_T": {
+   "512": 75.5,
+   "2048": 302.0,
+   "8192": 1208.0
+  }
+ },
+ "data": {
+  "wikitext2": {
+   "total_tokens": 298939,
+   "windows_2048": 145,
+   "test": 50,
+   "calib": 20
+  },
+  "gsm8k": {
+   "n_total": 1319,
+   "selected": 100
+  },
+  "longbench_qasper": {
+   "n_total": 200,
+   "eligible": 181,
+   "selected": 50,
+   "ctx_tokens_min_max": [
+    1909,
+    6712
+   ]
+  },
+  "longbench_hotpotqa_8192": {
+   "n_total": 200,
+   "eligible_ge_8192": 173,
+   "selected": 5
+  }
+ }
+}
+saved /workspace/kvpick/feasibility/results/C1_model_data.json

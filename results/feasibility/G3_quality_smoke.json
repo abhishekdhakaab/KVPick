@@ -1,0 +1,146 @@
+{
+ "check_id": "G3",
+ "status": "INFO",
+ "started_at": "2026-10-16T15:46:38+00:00",
+ "ended_at": "2026-10-16T15:48:15+00:00",
+ "commands": [
+  "quality_roundtrip.py --smoke --model Qwen/Qwen3-0.6B --device cpu --formats raw,int8_row,int4_kivi"
+ ],
+ "versions": {
+  "python": "3.12.13",
+  "platform": "macOS-14.8.4-arm64-arm-64bit",
+  "torch": "2.14.1",
+  "transformers": "5.20.1",
+  "datasets": "5.1.0",
+  "numpy": "2.5.4",
+  "cuda": null,
+  "gpu": null
+ },
+ "measurements": {
+  "model": "Qwen/Qwen3-0.6B",
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "formats": [
+   "raw",
+   "int8_row",
+   "int4_kivi"
+  ],
+  "tasks": {
+   "ppl": {
+    "n": 2,
+    "seconds": 14.685184955596924,
+    "per_format": {
+     "raw": {
+      "ppl": 13.329692596728908
+     },
+     "int8_row": {
+      "ppl": 13.376486259237023,
+      "rel_change": 0.0035104832439720735,
+      "rel_change_ci95": {
+       "point": 0.0035104832439720735,
+       "ci95": [
+        0.0030034494407142898,
+        0.004017773360682764
+       ],
+       "n": 2
+      }
+     },
+     "int4_kivi": {
+      "ppl": 13.337933433751815,
+      "rel_change": 0.000618231588096041,
+      "rel_change_ci95": {
+       "point": 0.000618231588096041,
+       "ci95": [
+        -0.004621403663361834,
+        0.005885448081173195
+       ],
+       "n": 2
+      }
+     }
+    }
+   },
+   "gsm8k": {
+    "n": 3,
+    "per_format": {
+     "raw": {
+      "accuracy": 0.0,
+      "sample_output": "e need to calculate the total cost of the purchase plans and then determine the profit based on the difference between the total cost and the price of the purchase.\n\n- The cost of the jewelry is $5,00"
+     },
+     "int8_row": {
+      "accuracy": 0.0,
+      "sample_output": " profit, we need to calculate the total cost of the purchase plans and then determine the profit based on the difference between the total cost and the price of the purchase.\n\n- Jewelry cost: $5,000\n-",
+      "delta_ci95": {
+       "point": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "n": 3
+      }
+     },
+     "int4_kivi": {
+      "accuracy": 0.0,
+      "sample_output": "t, we need to calculate the total cost of the purchase plans and then determine the profit based on the difference between the total cost and the value of the purchase.\n\n- Jewelry: $5,000\n- Electronic",
+      "delta_ci95": {
+       "point": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "n": 3
+      }
+     }
+    },
+    "shots": 4,
+    "prompt_tokens_mean": 662.6666666666666,
+    "seconds": 49.81210279464722
+   },
+   "qasper": {
+    "n": 1,
+    "per_format": {
+     "raw": {
+      "f1": 0.0,
+      "sample_output": "unanswerable."
+     },
+     "int8_row": {
+      "f1": 0.0,
+      "sample_output": "unanswerable.",
+      "delta_ci95": {
+       "point": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "n": 1
+      }
+     },
+     "int4_kivi": {
+      "f1": 0.0,
+      "sample_output": "unanswerable",
+      "delta_ci95": {
+       "point": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "n": 1
+      }
+     }
+    },
+    "seconds": 19.973583221435547
+   }
+  },
+  "raw_injection_max_abs_logit_diff": 3.0517578125e-05,
+  "R4": {
+   "best_8bit_ppl_rel_change": 0.0035104832439720735,
+   "best_4bit_ppl_rel_change": 0.000618231588096041,
+   "thresholds": {
+    "8bit": 0.02,
+    "4bit": 0.05
+   },
+   "R4_pass": true
+  }
+ },
+ "notes": [],
+ "workarounds": []
+}

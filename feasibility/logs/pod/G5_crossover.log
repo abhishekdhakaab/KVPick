@@ -1,0 +1,68 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 6245.42it/s]
+{
+ "fit": {
+  "linear": {
+   "coef": [
+    -0.006858848307240237,
+    0.00013064547900221537
+   ],
+   "r2": 0.9969722602550215,
+   "adj_r2": 0.995963013673362
+  },
+  "quadratic": {
+   "coef": [
+    0.015596379048897229,
+    0.00010497461585284423,
+    3.0802858882945203e-09
+   ],
+   "r2": 0.999772723096974,
+   "adj_r2": 0.9995454461939479
+  },
+  "chosen": "quadratic",
+  "coef": [
+   0.015596379048897229,
+   0.00010497461585284423,
+   3.0802858882945203e-09
+  ],
+  "tokens_per_s_at_2048": 8410.537808406658
+ },
+ "R8": {
+  "best_action_changes_for_some_n": true,
+  "per_n": {
+   "512": [
+    [
+     1,
+     "recompute"
+    ],
+    [
+     3,
+     "int4_row_g32"
+    ]
+   ],
+   "2048": [
+    [
+     1,
+     "recompute"
+    ],
+    [
+     4,
+     "int4_row_g32"
+    ]
+   ],
+   "8192": [
+    [
+     1,
+     "recompute"
+    ],
+    [
+     3,
+     "int4_row_g32"
+    ]
+   ]
+  }
+ }
+}
+n=512: recompute 70.2 ms, raw 75 MB; send==recompute at Gbps: raw 8.6, int8_row 4.5, int4_row_g32 2.7, int4_kivi 2.7
+n=2048: recompute 243.5 ms, raw 302 MB; send==recompute at Gbps: raw 9.9, int8_row 5.2, int4_row_g32 3.1, int4_kivi 3.1
+n=8192: recompute 1082.3 ms, raw 1208 MB; send==recompute at Gbps: raw 8.9, int8_row 4.6, int4_row_g32 2.8, int4_kivi 2.9
+saved /workspace/kvpick/feasibility/results/G5_crossover.json

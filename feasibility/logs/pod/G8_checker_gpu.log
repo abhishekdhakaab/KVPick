@@ -1,0 +1,63 @@
+good_row_8b                  expected PASS   got PASS   OK  failed=[] (0.41s)
+good_row_g32_4b              expected PASS   got PASS   OK  failed=[] (0.02s)
+good_chan_g32_4b             expected PASS   got PASS   OK  failed=[] (0.03s)
+m1_skip_groups               expected REJECT got REJECT OK  failed=['match_normal_T97', 'match_normal_T512', 'match_outlier_0.1pct_x50', 'match_edge_rows', 'perturbation', 'speed'] (0.03s)
+m2_cached_output             expected REJECT got REJECT OK  failed=['match_outlier_0.1pct_x50', 'perturbation'] (0.02s)
+m3_first_row_scale           expected REJECT got REJECT OK  failed=['match_normal_T97', 'match_normal_T512', 'match_outlier_0.1pct_x50', 'match_edge_rows'] (0.02s)
+m4_clipped_amax              expected REJECT got REJECT OK  failed=['memory', 'match_normal_T97', 'match_normal_T512', 'match_outlier_0.1pct_x50', 'match_edge_rows', 'perturbation', 'speed'] (0.12s)
+m5_hidden_buffer             expected REJECT got REJECT OK  failed=['memory', 'speed'] (0.04s)
+m6_truncate                  expected REJECT got REJECT OK  failed=['match_normal_T97', 'match_normal_T512', 'match_outlier_0.1pct_x50', 'match_edge_rows'] (0.02s)
+{
+ "mutants_rejected": 6,
+ "mutants_total": 6,
+ "false_rejects": 0,
+ "good_total": 3,
+ "catch_table": {
+  "m1_skip_groups": [
+   "match_normal_T97",
+   "match_normal_T512",
+   "match_outlier_0.1pct_x50",
+   "match_edge_rows",
+   "perturbation",
+   "speed"
+  ],
+  "m2_cached_output": [
+   "match_outlier_0.1pct_x50",
+   "perturbation"
+  ],
+  "m3_first_row_scale": [
+   "match_normal_T97",
+   "match_normal_T512",
+   "match_outlier_0.1pct_x50",
+   "match_edge_rows"
+  ],
+  "m4_clipped_amax": [
+   "memory",
+   "match_normal_T97",
+   "match_normal_T512",
+   "match_outlier_0.1pct_x50",
+   "match_edge_rows",
+   "perturbation",
+   "speed"
+  ],
+  "m5_hidden_buffer": [
+   "memory",
+   "speed"
+  ],
+  "m6_truncate": [
+   "match_normal_T97",
+   "match_normal_T512",
+   "match_outlier_0.1pct_x50",
+   "match_edge_rows"
+  ]
+ },
+ "R10_pass": true,
+ "thresholds": {
+  "mem_slack_bytes_cpu": 33554432,
+  "mem_slack_bytes_gpu": 1048576,
+  "min_speedup_gpu": 1.0,
+  "n_timing": 20
+ },
+ "device": "cuda"
+}
+saved /workspace/kvpick/feasibility/results/G8_checker.json

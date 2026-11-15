@@ -1,0 +1,689 @@
+{
+ "check_id": "G8",
+ "status": "PASS",
+ "started_at": "2026-10-16T17:03:31+00:00",
+ "ended_at": "2026-10-16T17:03:34+00:00",
+ "commands": [
+  "checker_proto.py --device cuda"
+ ],
+ "versions": {
+  "python": "3.12.3",
+  "platform": "Linux-6.8.0-65-generic-x86_64-with-glibc2.39",
+  "torch": "2.8.0+cu128",
+  "transformers": "5.20.1",
+  "datasets": "5.1.0",
+  "numpy": "2.1.2",
+  "cuda": "12.8",
+  "gpu": "NVIDIA A40"
+ },
+ "measurements": {
+  "summary": {
+   "mutants_rejected": 6,
+   "mutants_total": 6,
+   "false_rejects": 0,
+   "good_total": 3,
+   "catch_table": {
+    "m1_skip_groups": [
+     "match_normal_T97",
+     "match_normal_T512",
+     "match_outlier_0.1pct_x50",
+     "match_edge_rows",
+     "perturbation",
+     "speed"
+    ],
+    "m2_cached_output": [
+     "match_outlier_0.1pct_x50",
+     "perturbation"
+    ],
+    "m3_first_row_scale": [
+     "match_normal_T97",
+     "match_normal_T512",
+     "match_outlier_0.1pct_x50",
+     "match_edge_rows"
+    ],
+    "m4_clipped_amax": [
+     "memory",
+     "match_normal_T97",
+     "match_normal_T512",
+     "match_outlier_0.1pct_x50",
+     "match_edge_rows",
+     "perturbation",
+     "speed"
+    ],
+    "m5_hidden_buffer": [
+     "memory",
+     "speed"
+    ],
+    "m6_truncate": [
+     "match_normal_T97",
+     "match_normal_T512",
+     "match_outlier_0.1pct_x50",
+     "match_edge_rows"
+    ]
+   },
+   "R10_pass": true,
+   "thresholds": {
+    "mem_slack_bytes_cpu": 33554432,
+    "mem_slack_bytes_gpu": 1048576,
+    "min_speedup_gpu": 1.0,
+    "n_timing": 20
+   },
+   "device": "cuda"
+  },
+  "candidates": [
+   {
+    "candidate": "good_row_8b",
+    "spec": "row_full_asym_8b",
+    "checks": {
+     "memory": {
+      "pass": true,
+      "peak_delta_MB": 16.25,
+      "allowed_MB": 59.0625
+     },
+     "match_normal_T97": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_normal_T512": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_outlier_0.1pct_x50": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_edge_rows": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "speed": {
+      "pass": true,
+      "median_ref_ms": 0.3928299993276596,
+      "median_cand_ms": 0.2695806324481964,
+      "speedup": 1.4571892489463139,
+      "note": "informational on CPU"
+     },
+     "sentinel_determinism": {
+      "pass": true,
+      "codes_differ_frac": 0.0
+     },
+     "input_unchanged": {
+      "pass": true
+     },
+     "perturbation": {
+      "pass": true,
+      "changed_outside_group": false,
+      "changed_inside_group": true,
+      "scale_changed_outside": false
+     }
+    },
+    "verdict": "PASS",
+    "reasons": [],
+    "failed_checks": [],
+    "runtime_s": 0.41,
+    "expected": "PASS",
+    "as_expected": true
+   },
+   {
+    "candidate": "good_row_g32_4b",
+    "spec": "row_g32_asym_4b",
+    "checks": {
+     "memory": {
+      "pass": true,
+      "peak_delta_MB": 17.0,
+      "allowed_MB": 59.25
+     },
+     "match_normal_T97": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_normal_T512": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_outlier_0.1pct_x50": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_edge_rows": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "speed": {
+      "pass": true,
+      "median_ref_ms": 0.38292258977890015,
+      "median_cand_ms": 0.2710241824388504,
+      "speedup": 1.4128724098828218,
+      "note": "informational on CPU"
+     },
+     "sentinel_determinism": {
+      "pass": true,
+      "codes_differ_frac": 0.0
+     },
+     "input_unchanged": {
+      "pass": true
+     },
+     "perturbation": {
+      "pass": true,
+      "changed_outside_group": false,
+      "changed_inside_group": true,
+      "scale_changed_outside": false
+     }
+    },
+    "verdict": "PASS",
+    "reasons": [],
+    "failed_checks": [],
+    "runtime_s": 0.02,
+    "expected": "PASS",
+    "as_expected": true
+   },
+   {
+    "candidate": "good_chan_g32_4b",
+    "spec": "chan_g32_asym_4b",
+    "checks": {
+     "memory": {
+      "pass": true,
+      "peak_delta_MB": 17.0,
+      "allowed_MB": 59.25
+     },
+     "match_normal_T97": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_normal_T512": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_outlier_0.1pct_x50": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_edge_rows": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "speed": {
+      "pass": true,
+      "median_ref_ms": 0.38744695484638214,
+      "median_cand_ms": 0.2766009420156479,
+      "speedup": 1.40074343934976,
+      "note": "informational on CPU"
+     },
+     "sentinel_determinism": {
+      "pass": true,
+      "codes_differ_frac": 0.0
+     },
+     "input_unchanged": {
+      "pass": true
+     },
+     "perturbation": {
+      "pass": true,
+      "changed_outside_group": false,
+      "changed_inside_group": true,
+      "scale_changed_outside": false
+     }
+    },
+    "verdict": "PASS",
+    "reasons": [],
+    "failed_checks": [],
+    "runtime_s": 0.03,
+    "expected": "PASS",
+    "as_expected": true
+   },
+   {
+    "candidate": "m1_skip_groups",
+    "spec": "row_g32_asym_4b",
+    "checks": {
+     "memory": {
+      "pass": true,
+      "peak_delta_MB": 18.25,
+      "allowed_MB": 59.25
+     },
+     "match_normal_T97": {
+      "pass": false,
+      "codes_mismatch_frac": 0.4795123040676117,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_normal_T512": {
+      "pass": false,
+      "codes_mismatch_frac": 0.47998046875,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_outlier_0.1pct_x50": {
+      "pass": false,
+      "codes_mismatch_frac": 0.4779644012451172,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_edge_rows": {
+      "pass": false,
+      "codes_mismatch_frac": 0.288360595703125,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "speed": {
+      "pass": false,
+      "median_ref_ms": 0.38453564047813416,
+      "median_cand_ms": 0.47885067760944366,
+      "speedup": 0.80303873098362,
+      "note": "informational on CPU"
+     },
+     "sentinel_determinism": {
+      "pass": true,
+      "codes_differ_frac": 0.0
+     },
+     "input_unchanged": {
+      "pass": true
+     },
+     "perturbation": {
+      "pass": false,
+      "changed_outside_group": false,
+      "changed_inside_group": false,
+      "scale_changed_outside": false
+     }
+    },
+    "verdict": "REJECT",
+    "reasons": [
+     "match_normal_T97: codes mismatch 0.4795, scale True, zero True",
+     "match_normal_T512: codes mismatch 0.4800, scale True, zero True",
+     "match_outlier_0.1pct_x50: codes mismatch 0.4780, scale True, zero True",
+     "match_edge_rows: codes mismatch 0.2884, scale True, zero True",
+     "speed: 0.80x < 1.0x",
+     "perturbation: outside=False inside=False scale_outside=False"
+    ],
+    "failed_checks": [
+     "match_normal_T97",
+     "match_normal_T512",
+     "match_outlier_0.1pct_x50",
+     "match_edge_rows",
+     "perturbation",
+     "speed"
+    ],
+    "runtime_s": 0.03,
+    "expected": "REJECT",
+    "as_expected": true
+   },
+   {
+    "candidate": "m2_cached_output",
+    "spec": "row_g32_asym_4b",
+    "checks": {
+     "memory": {
+      "pass": true,
+      "peak_delta_MB": 17.0,
+      "allowed_MB": 59.25
+     },
+     "match_normal_T97": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_normal_T512": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_outlier_0.1pct_x50": {
+      "pass": false,
+      "codes_mismatch_frac": 0.927154541015625,
+      "scale_match": false,
+      "zero_match": false
+     },
+     "match_edge_rows": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "speed": {
+      "pass": true,
+      "median_ref_ms": 0.3826618194580078,
+      "median_cand_ms": 0.027839094400405884,
+      "speedup": 13.74548374146929,
+      "note": "informational on CPU"
+     },
+     "sentinel_determinism": {
+      "pass": true,
+      "codes_differ_frac": 0.0
+     },
+     "input_unchanged": {
+      "pass": true
+     },
+     "perturbation": {
+      "pass": false,
+      "changed_outside_group": false,
+      "changed_inside_group": false,
+      "scale_changed_outside": false
+     }
+    },
+    "verdict": "REJECT",
+    "reasons": [
+     "match_outlier_0.1pct_x50: codes mismatch 0.9272, scale False, zero False",
+     "perturbation: outside=False inside=False scale_outside=False"
+    ],
+    "failed_checks": [
+     "match_outlier_0.1pct_x50",
+     "perturbation"
+    ],
+    "runtime_s": 0.02,
+    "expected": "REJECT",
+    "as_expected": true
+   },
+   {
+    "candidate": "m3_first_row_scale",
+    "spec": "row_g32_asym_4b",
+    "checks": {
+     "memory": {
+      "pass": true,
+      "peak_delta_MB": 16.001953125,
+      "allowed_MB": 59.25
+     },
+     "match_normal_T97": {
+      "pass": false,
+      "codes_mismatch_frac": 0.7647390365600586,
+      "scale_match": false,
+      "zero_match": false
+     },
+     "match_normal_T512": {
+      "pass": false,
+      "codes_mismatch_frac": 0.8114471435546875,
+      "scale_match": false,
+      "zero_match": false
+     },
+     "match_outlier_0.1pct_x50": {
+      "pass": false,
+      "codes_mismatch_frac": 0.8081207275390625,
+      "scale_match": false,
+      "zero_match": false
+     },
+     "match_edge_rows": {
+      "pass": false,
+      "codes_mismatch_frac": 0.760699450969696,
+      "scale_match": false,
+      "zero_match": false
+     },
+     "speed": {
+      "pass": true,
+      "median_ref_ms": 0.3833044320344925,
+      "median_cand_ms": 0.2986714243888855,
+      "speedup": 1.283364931274478,
+      "note": "informational on CPU"
+     },
+     "sentinel_determinism": {
+      "pass": true,
+      "codes_differ_frac": 0.0
+     },
+     "input_unchanged": {
+      "pass": true
+     },
+     "perturbation": {
+      "pass": true,
+      "changed_outside_group": false,
+      "changed_inside_group": true,
+      "scale_changed_outside": false
+     }
+    },
+    "verdict": "REJECT",
+    "reasons": [
+     "match_normal_T97: codes mismatch 0.7647, scale False, zero False",
+     "match_normal_T512: codes mismatch 0.8114, scale False, zero False",
+     "match_outlier_0.1pct_x50: codes mismatch 0.8081, scale False, zero False",
+     "match_edge_rows: codes mismatch 0.7607, scale False, zero False"
+    ],
+    "failed_checks": [
+     "match_normal_T97",
+     "match_normal_T512",
+     "match_outlier_0.1pct_x50",
+     "match_edge_rows"
+    ],
+    "runtime_s": 0.02,
+    "expected": "REJECT",
+    "as_expected": true
+   },
+   {
+    "candidate": "m4_clipped_amax",
+    "spec": "row_g32_asym_4b",
+    "checks": {
+     "memory": {
+      "pass": false,
+      "peak_delta_MB": 64.67626953125,
+      "allowed_MB": 59.25
+     },
+     "match_normal_T97": {
+      "pass": false,
+      "codes_mismatch_frac": 0.01727609522640705,
+      "scale_match": false,
+      "zero_match": false
+     },
+     "match_normal_T512": {
+      "pass": false,
+      "codes_mismatch_frac": 0.016937255859375,
+      "scale_match": false,
+      "zero_match": false
+     },
+     "match_outlier_0.1pct_x50": {
+      "pass": false,
+      "codes_mismatch_frac": 0.03593254089355469,
+      "scale_match": false,
+      "zero_match": false
+     },
+     "match_edge_rows": {
+      "pass": false,
+      "codes_mismatch_frac": 0.01875000074505806,
+      "scale_match": false,
+      "zero_match": false
+     },
+     "speed": {
+      "pass": false,
+      "median_ref_ms": 0.37028081715106964,
+      "median_cand_ms": 1.4422126114368439,
+      "speedup": 0.2567449585551517,
+      "note": "informational on CPU"
+     },
+     "sentinel_determinism": {
+      "pass": true,
+      "codes_differ_frac": 0.0
+     },
+     "input_unchanged": {
+      "pass": true
+     },
+     "perturbation": {
+      "pass": false,
+      "changed_outside_group": true,
+      "changed_inside_group": true,
+      "scale_changed_outside": true
+     }
+    },
+    "verdict": "REJECT",
+    "reasons": [
+     "memory: peak delta 65 MB > allowed 59 MB",
+     "match_normal_T97: codes mismatch 0.0173, scale False, zero False",
+     "match_normal_T512: codes mismatch 0.0169, scale False, zero False",
+     "match_outlier_0.1pct_x50: codes mismatch 0.0359, scale False, zero False",
+     "match_edge_rows: codes mismatch 0.0188, scale False, zero False",
+     "speed: 0.26x < 1.0x",
+     "perturbation: outside=True inside=True scale_outside=True"
+    ],
+    "failed_checks": [
+     "memory",
+     "match_normal_T97",
+     "match_normal_T512",
+     "match_outlier_0.1pct_x50",
+     "match_edge_rows",
+     "perturbation",
+     "speed"
+    ],
+    "runtime_s": 0.12,
+    "expected": "REJECT",
+    "as_expected": true
+   },
+   {
+    "candidate": "m5_hidden_buffer",
+    "spec": "row_g32_asym_4b",
+    "checks": {
+     "memory": {
+      "pass": false,
+      "peak_delta_MB": 273.0,
+      "allowed_MB": 59.25
+     },
+     "match_normal_T97": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_normal_T512": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_outlier_0.1pct_x50": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_edge_rows": {
+      "pass": true,
+      "codes_mismatch_frac": 0.0,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "speed": {
+      "pass": false,
+      "median_ref_ms": 0.3735926002264023,
+      "median_cand_ms": 0.9217727929353714,
+      "speedup": 0.4052979249221517,
+      "note": "informational on CPU"
+     },
+     "sentinel_determinism": {
+      "pass": true,
+      "codes_differ_frac": 0.0
+     },
+     "input_unchanged": {
+      "pass": true
+     },
+     "perturbation": {
+      "pass": true,
+      "changed_outside_group": false,
+      "changed_inside_group": true,
+      "scale_changed_outside": false
+     }
+    },
+    "verdict": "REJECT",
+    "reasons": [
+     "memory: peak delta 273 MB > allowed 59 MB",
+     "speed: 0.41x < 1.0x"
+    ],
+    "failed_checks": [
+     "memory",
+     "speed"
+    ],
+    "runtime_s": 0.04,
+    "expected": "REJECT",
+    "as_expected": true
+   },
+   {
+    "candidate": "m6_truncate",
+    "spec": "row_g32_asym_4b",
+    "checks": {
+     "memory": {
+      "pass": true,
+      "peak_delta_MB": 17.0,
+      "allowed_MB": 59.25
+     },
+     "match_normal_T97": {
+      "pass": false,
+      "codes_mismatch_frac": 0.4828648269176483,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_normal_T512": {
+      "pass": false,
+      "codes_mismatch_frac": 0.4845085144042969,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_outlier_0.1pct_x50": {
+      "pass": false,
+      "codes_mismatch_frac": 0.4848899841308594,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "match_edge_rows": {
+      "pass": false,
+      "codes_mismatch_frac": 0.29346925020217896,
+      "scale_match": true,
+      "zero_match": true
+     },
+     "speed": {
+      "pass": true,
+      "median_ref_ms": 0.3711879253387451,
+      "median_cand_ms": 0.263972207903862,
+      "speedup": 1.406162899822889,
+      "note": "informational on CPU"
+     },
+     "sentinel_determinism": {
+      "pass": true,
+      "codes_differ_frac": 0.0
+     },
+     "input_unchanged": {
+      "pass": true
+     },
+     "perturbation": {
+      "pass": true,
+      "changed_outside_group": false,
+      "changed_inside_group": true,
+      "scale_changed_outside": false
+     }
+    },
+    "verdict": "REJECT",
+    "reasons": [
+     "match_normal_T97: codes mismatch 0.4829, scale True, zero True",
+     "match_normal_T512: codes mismatch 0.4845, scale True, zero True",
+     "match_outlier_0.1pct_x50: codes mismatch 0.4849, scale True, zero True",
+     "match_edge_rows: codes mismatch 0.2935, scale True, zero True"
+    ],
+    "failed_checks": [
+     "match_normal_T97",
+     "match_normal_T512",
+     "match_outlier_0.1pct_x50",
+     "match_edge_rows"
+    ],
+    "runtime_s": 0.02,
+    "expected": "REJECT",
+    "as_expected": true
+   }
+  ]
+ },
+ "notes": [],
+ "workarounds": []
+}

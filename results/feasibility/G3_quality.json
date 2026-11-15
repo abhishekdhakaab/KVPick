@@ -1,0 +1,225 @@
+{
+ "check_id": "G3",
+ "status": "PASS",
+ "started_at": "2026-10-16T16:43:57+00:00",
+ "ended_at": "2026-10-16T17:01:31+00:00",
+ "commands": [
+  "quality_roundtrip.py"
+ ],
+ "versions": {
+  "python": "3.12.3",
+  "platform": "Linux-6.8.0-65-generic-x86_64-with-glibc2.39",
+  "torch": "2.8.0+cu128",
+  "transformers": "5.20.1",
+  "datasets": "5.1.0",
+  "numpy": "2.1.2",
+  "cuda": "12.8",
+  "gpu": "NVIDIA A40"
+ },
+ "measurements": {
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "device": "cuda",
+  "dtype": "torch.bfloat16",
+  "formats": [
+   "raw",
+   "int8_row",
+   "int4_row",
+   "int4_row_g32",
+   "int4_kivi"
+  ],
+  "tasks": {
+   "ppl": {
+    "n": 50,
+    "seconds": 43.952425718307495,
+    "per_format": {
+     "raw": {
+      "ppl": 8.942648619119849
+     },
+     "int8_row": {
+      "ppl": 8.94022294548186,
+      "rel_change": -0.00027124778589660004,
+      "rel_change_ci95": {
+       "point": -0.00027124778589660004,
+       "ci95": [
+        -0.001089189831758719,
+        0.0005347463430937942
+       ],
+       "n": 50
+      }
+     },
+     "int4_row": {
+      "ppl": 14.185228012235777,
+      "rel_change": 0.5862445922237198,
+      "rel_change_ci95": {
+       "point": 0.5862445922237198,
+       "ci95": [
+        0.5334433686334777,
+        0.6451721926679101
+       ],
+       "n": 50
+      }
+     },
+     "int4_row_g32": {
+      "ppl": 9.044641599766125,
+      "rel_change": 0.011405231826755458,
+      "rel_change_ci95": {
+       "point": 0.011405231826755458,
+       "ci95": [
+        0.008085350060290791,
+        0.015193140086633533
+       ],
+       "n": 50
+      }
+     },
+     "int4_kivi": {
+      "ppl": 8.947047740775485,
+      "rel_change": 0.0004919260325437769,
+      "rel_change_ci95": {
+       "point": 0.0004919260325437769,
+       "ci95": [
+        -0.0007040664393446527,
+        0.0017752536961297618
+       ],
+       "n": 50
+      }
+     }
+    }
+   },
+   "gsm8k": {
+    "n": 100,
+    "per_format": {
+     "raw": {
+      "accuracy": 0.89,
+      "sample_output": "rofit = 1.2% of $8,000  \n= (1.2 / 100) \u00d7 8000  \n= 0.012 \u00d7 8000  \n= $96\n\nComparing the two profits:\n- Jewelry: $125\n- Gadgets: $96\n\nTo maximize profit, the merchant should choose the jewelry.\n\n#### 125",
+      "frac_without_final_marker": 0.09
+     },
+     "int8_row": {
+      "accuracy": 0.9,
+      "sample_output": "rofit = 1.2% of $8,000  \n= (1.2 / 100) \u00d7 8000  \n= 0.012 \u00d7 8000  \n= $96\n\nComparing the two profits:\n- Jewelry: $125\n- Gadgets: $96\n\nTo maximize profit, the merchant should choose the jewelry.\n\n#### 125",
+      "frac_without_final_marker": 0.09,
+      "delta_ci95": {
+       "point": 0.010000000000000009,
+       "ci95": [
+        -0.020000000000000018,
+        0.040000000000000036
+       ],
+       "n": 100
+      }
+     },
+     "int4_row": {
+      "accuracy": 0.62,
+      "sample_output": ".012 * * 8000 = $96.\n\nSo, the profit from jewelry is $125, and from electronic gadgets is $96.\n\nTherefore, the merchant should maximize profit by choosing the jewelry.\n\nThe profit is $ $125.\n\n#### 125",
+      "frac_without_final_marker": 0.26,
+      "delta_ci95": {
+       "point": -0.27,
+       "ci95": [
+        -0.37,
+        -0.17999999999999994
+       ],
+       "n": 100
+      }
+     },
+     "int4_row_g32": {
+      "accuracy": 0.88,
+      "sample_output": "ts**\nProfit = 1.2% of $8,000  \n= (1.2 / 100) \u00d7 8000  \n= 0.012 \u00d7 8000  \n= $96\n\nThe merchant wants to **maximize profit**, so he should choose the jewelry option, which gives a profit of $125.\n\n#### 125",
+      "frac_without_final_marker": 0.09,
+      "delta_ci95": {
+       "point": -0.010000000000000009,
+       "ci95": [
+        -0.06000000000000005,
+        0.040000000000000036
+       ],
+       "n": 100
+      }
+     },
+     "int4_kivi": {
+      "accuracy": 0.87,
+      "sample_output": "**Option 2: Electronic gadgets**\nProfit = 1.2% of $8,000  \n= (1.2 / 100) \u00d7 8000  \n= 0.012 \u00d7 8000  \n= $96\n\nThe merchant wants to maximize profit.  \n$125 > $96\n\nSo, the maximum profit is $125.\n\n#### 125",
+      "frac_without_final_marker": 0.09,
+      "delta_ci95": {
+       "point": -0.020000000000000018,
+       "ci95": [
+        -0.050000000000000044,
+        0.0
+       ],
+       "n": 100
+      }
+     }
+    },
+    "shots": 4,
+    "prompt_tokens_mean": 657.04,
+    "seconds": 610.632434129715
+   },
+   "qasper": {
+    "n": 50,
+    "per_format": {
+     "raw": {
+      "f1": 0.39513069687160834,
+      "sample_output": "Context tweets and character-level representations."
+     },
+     "int8_row": {
+      "f1": 0.39263069687160834,
+      "sample_output": "Context tweets and character-level representations are proposed as additional features.",
+      "delta_ci95": {
+       "point": -0.0025000000000000022,
+       "ci95": [
+        -0.008000000000000007,
+        0.0005000000000000004
+       ],
+       "n": 50
+      }
+     },
+     "int4_row": {
+      "f1": 0.2498020667400021,
+      "sample_output": "ContextContextContext tweets and context tweets are proposeded as additional context tweets. and con",
+      "delta_ci95": {
+       "point": -0.14532863013160624,
+       "ci95": [
+        -0.24055340032987751,
+        -0.052653949391099596
+       ],
+       "n": 50
+      }
+     },
+     "int4_row_g32": {
+      "f1": 0.36651165079565007,
+      "sample_output": "Context tweets and character-level representations are proposed as additional features.",
+      "delta_ci95": {
+       "point": -0.028619046075958166,
+       "ci95": [
+        -0.06845391136338996,
+        0.006527531780629703
+       ],
+       "n": 50
+      }
+     },
+     "int4_kivi": {
+      "f1": 0.3765610413976017,
+      "sample_output": "Context tweets and character-level representations.",
+      "delta_ci95": {
+       "point": -0.01856965547400652,
+       "ci95": [
+        -0.04711174357807907,
+        -0.001604069015162404
+       ],
+       "n": 50
+      }
+     }
+    },
+    "seconds": 388.6327931880951
+   }
+  },
+  "raw_injection_max_abs_logit_diff": 0.09375,
+  "R4": {
+   "best_8bit_ppl_rel_change": -0.00027124778589660004,
+   "best_4bit_ppl_rel_change": 0.0004919260325437769,
+   "thresholds": {
+    "8bit": 0.02,
+    "4bit": 0.05
+   },
+   "R4_pass": true
+  }
+ },
+ "notes": [],
+ "workarounds": []
+}
