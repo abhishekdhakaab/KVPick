@@ -1,0 +1,27 @@
+== [01:28:06] niah_8k
+   exit 0
+{"task": "niah", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "fp8", "kv4"], "samples_total_in_sink": 67, "limit": null, "seconds": 143.51039814949036, "seconds_per_sample": 2.1419462410371697}
+== [01:30:42] niah_32k
+   exit 0
+{"task": "niah", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "fp8", "kv4"], "samples_total_in_sink": 112, "limit": null, "seconds": 893.7225277423859, "seconds_per_sample": 7.9796654262713025}
+== [01:45:47] niah_128k
+   exit 0
+{"task": "niah", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "fp8", "kv4"], "samples_total_in_sink": 165, "limit": null, "seconds": 8292.24880027771, "seconds_per_sample": 50.256053335016425}
+== [04:04:13] pg19_8k
+   exit 0
+{"task": "pg19_8192", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "kv4"], "samples_total_in_sink": 100, "limit": null, "seconds": 234.02309489250183, "seconds_per_sample": 2.340230948925018}
+== [04:08:19] pg19_32k
+   exit 0
+{"task": "pg19_32768", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "kv4"], "samples_total_in_sink": 100, "limit": null, "seconds": 1132.0371432304382, "seconds_per_sample": 11.320371432304382}
+== [04:27:25] gsm8k_llama
+   exit 0
+{"task": "gsm8k", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "fp8", "kv4", "int4_g32"], "samples_total_in_sink": 1319, "limit": null, "seconds": 4624.210960388184, "seconds_per_sample": 3.505846065495211}
+== [05:44:40] wiki_llama
+   exit 0
+{"task": "wikitext", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "fp8", "kv4", "int4_g32"], "samples_total_in_sink": 141, "limit": null, "seconds": 144.5916142463684, "seconds_per_sample": 1.0254724414636058}
+== [05:47:15] gsm8k_qwen
+   exit 0
+{"task": "gsm8k", "model": "qwen3-4b", "formats": ["raw", "int8_row", "kv4", "int4_g32"], "samples_total_in_sink": 1319, "limit": null, "seconds": 3306.2408723831177, "seconds_per_sample": 2.5066268933912945}
+== [06:42:31] wiki_qwen
+   exit 0
+{"task": "wikitext", "model": "qwen3-4b", "formats": ["raw", "int8_row", "kv4", "int4_g32"], "samples_total_in_sink": 145, "limit": null, "seconds": 107.79321932792664, "seconds_per_sample": 0.7434015126063906}

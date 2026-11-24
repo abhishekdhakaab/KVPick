@@ -1,0 +1,12 @@
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 7238.76it/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (288937 > 131072). Running this sequence through the model will result in indexing errors
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+W1124 01:23:39.579000 6621 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+W1124 01:23:39.579000 6621 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'] to specific architectures.
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+wikitext windows 0..3 of 8
+wikitext windows 4..7 of 8
+{"task": "wikitext", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "kv4", "int4_g32"], "samples_total_in_sink": 8, "limit": 8, "seconds": 9.02808141708374, "seconds_per_sample": 1.1285101771354675}

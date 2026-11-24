@@ -1,0 +1,12 @@
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 5714.39it/s]
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+/workspace/kvpick/kvpick/study/tasks.py:174: FutureWarning: `past_key_values` is deprecated and will be removed in version 6.0.0 for `LlamaForCausalLM.generate`. Use `cache` instead.
+  gen = model.generate(input_ids=ids, attention_mask=mask, past_key_values=c, max_new_tokens=max_new, do_sample=False, pad_token_id=tok.pad_token_id)
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+W1124 01:15:52.865000 5838 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+W1124 01:15:52.865000 5838 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'] to specific architectures.
+/workspace/kvpick/kvpick/study/tasks.py:174: FutureWarning: `past_key_values` is deprecated and will be removed in version 6.0.0 for `LlamaForCausalLM.generate`. Use `cache` instead.
+  gen = model.generate(input_ids=ids, attention_mask=mask, past_key_values=c, max_new_tokens=max_new, do_sample=False, pad_token_id=tok.pad_token_id)
+gsm8k 0..15 of 32
+gsm8k 16..31 of 32
+{"task": "gsm8k", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "kv4", "int4_g32"], "samples_total_in_sink": 32, "limit": 32, "seconds": 96.44487881660461, "seconds_per_sample": 3.013902463018894}

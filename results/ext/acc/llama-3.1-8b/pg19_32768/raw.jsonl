@@ -1,0 +1,100 @@
+{"task": "pg19", "id": "32768_0", "ctx": 32768, "fmt": "raw", "nll": 1.97288179397583, "t_prefill_s": 15.22989535331726}
+{"task": "pg19", "id": "32768_1", "ctx": 32768, "fmt": "raw", "nll": 2.955718755722046, "t_prefill_s": 13.343555927276611}
+{"task": "pg19", "id": "32768_2", "ctx": 32768, "fmt": "raw", "nll": 2.5965211391448975, "t_prefill_s": 13.299633502960205}
+{"task": "pg19", "id": "32768_3", "ctx": 32768, "fmt": "raw", "nll": 2.8016583919525146, "t_prefill_s": 13.308779954910278}
+{"task": "pg19", "id": "32768_4", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_5", "ctx": 32768, "fmt": "raw", "nll": 2.205411434173584, "t_prefill_s": 13.33414626121521}
+{"task": "pg19", "id": "32768_6", "ctx": 32768, "fmt": "raw", "nll": 2.290010690689087, "t_prefill_s": 13.340233564376831}
+{"task": "pg19", "id": "32768_7", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_8", "ctx": 32768, "fmt": "raw", "nll": 2.884249210357666, "t_prefill_s": 13.297571182250977}
+{"task": "pg19", "id": "32768_9", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_10", "ctx": 32768, "fmt": "raw", "nll": 2.270385265350342, "t_prefill_s": 13.313984870910645}
+{"task": "pg19", "id": "32768_11", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_12", "ctx": 32768, "fmt": "raw", "nll": 2.368255138397217, "t_prefill_s": 13.34267520904541}
+{"task": "pg19", "id": "32768_13", "ctx": 32768, "fmt": "raw", "nll": 2.6332149505615234, "t_prefill_s": 13.344969272613525}
+{"task": "pg19", "id": "32768_14", "ctx": 32768, "fmt": "raw", "nll": 2.469370126724243, "t_prefill_s": 15.659421920776367}
+{"task": "pg19", "id": "32768_15", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_16", "ctx": 32768, "fmt": "raw", "nll": 2.1896286010742188, "t_prefill_s": 13.371309280395508}
+{"task": "pg19", "id": "32768_17", "ctx": 32768, "fmt": "raw", "nll": 2.5506808757781982, "t_prefill_s": 13.432790279388428}
+{"task": "pg19", "id": "32768_18", "ctx": 32768, "fmt": "raw", "nll": 2.0597167015075684, "t_prefill_s": 13.427868843078613}
+{"task": "pg19", "id": "32768_19", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_20", "ctx": 32768, "fmt": "raw", "nll": 1.7510368824005127, "t_prefill_s": 13.423841953277588}
+{"task": "pg19", "id": "32768_21", "ctx": 32768, "fmt": "raw", "nll": 2.343111276626587, "t_prefill_s": 13.473782300949097}
+{"task": "pg19", "id": "32768_22", "ctx": 32768, "fmt": "raw", "nll": 2.150019884109497, "t_prefill_s": 13.46361517906189}
+{"task": "pg19", "id": "32768_23", "ctx": 32768, "fmt": "raw", "nll": 2.856855869293213, "t_prefill_s": 13.42598581314087}
+{"task": "pg19", "id": "32768_24", "ctx": 32768, "fmt": "raw", "nll": 2.0027735233306885, "t_prefill_s": 13.43798017501831}
+{"task": "pg19", "id": "32768_25", "ctx": 32768, "fmt": "raw", "nll": 2.7241997718811035, "t_prefill_s": 13.445404529571533}
+{"task": "pg19", "id": "32768_26", "ctx": 32768, "fmt": "raw", "nll": 2.1477293968200684, "t_prefill_s": 13.433571100234985}
+{"task": "pg19", "id": "32768_27", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_28", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_29", "ctx": 32768, "fmt": "raw", "nll": 2.2907516956329346, "t_prefill_s": 13.430296421051025}
+{"task": "pg19", "id": "32768_30", "ctx": 32768, "fmt": "raw", "nll": 2.435075044631958, "t_prefill_s": 13.427799940109253}
+{"task": "pg19", "id": "32768_31", "ctx": 32768, "fmt": "raw", "nll": 2.050096035003662, "t_prefill_s": 13.436392784118652}
+{"task": "pg19", "id": "32768_32", "ctx": 32768, "fmt": "raw", "nll": 2.351372241973877, "t_prefill_s": 13.43309998512268}
+{"task": "pg19", "id": "32768_33", "ctx": 32768, "fmt": "raw", "nll": 2.4354777336120605, "t_prefill_s": 13.4237539768219}
+{"task": "pg19", "id": "32768_34", "ctx": 32768, "fmt": "raw", "nll": 2.113821268081665, "t_prefill_s": 13.440906763076782}
+{"task": "pg19", "id": "32768_35", "ctx": 32768, "fmt": "raw", "nll": 1.9537659883499146, "t_prefill_s": 13.441759824752808}
+{"task": "pg19", "id": "32768_36", "ctx": 32768, "fmt": "raw", "nll": 2.1572494506835938, "t_prefill_s": 13.493657350540161}
+{"task": "pg19", "id": "32768_37", "ctx": 32768, "fmt": "raw", "nll": 1.9303183555603027, "t_prefill_s": 13.434139251708984}
+{"task": "pg19", "id": "32768_38", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_39", "ctx": 32768, "fmt": "raw", "nll": 2.0333409309387207, "t_prefill_s": 13.452879190444946}
+{"task": "pg19", "id": "32768_40", "ctx": 32768, "fmt": "raw", "nll": 2.55584454536438, "t_prefill_s": 13.44474172592163}
+{"task": "pg19", "id": "32768_41", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_42", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_43", "ctx": 32768, "fmt": "raw", "nll": 2.488126277923584, "t_prefill_s": 13.460680723190308}
+{"task": "pg19", "id": "32768_44", "ctx": 32768, "fmt": "raw", "nll": 2.5108261108398438, "t_prefill_s": 13.459321975708008}
+{"task": "pg19", "id": "32768_45", "ctx": 32768, "fmt": "raw", "nll": 2.337320327758789, "t_prefill_s": 13.499545097351074}
+{"task": "pg19", "id": "32768_46", "ctx": 32768, "fmt": "raw", "nll": 2.1644482612609863, "t_prefill_s": 13.464484691619873}
+{"task": "pg19", "id": "32768_47", "ctx": 32768, "fmt": "raw", "nll": 2.3539059162139893, "t_prefill_s": 13.46565580368042}
+{"task": "pg19", "id": "32768_48", "ctx": 32768, "fmt": "raw", "nll": 2.4324049949645996, "t_prefill_s": 13.463071584701538}
+{"task": "pg19", "id": "32768_49", "ctx": 32768, "fmt": "raw", "nll": 2.20320987701416, "t_prefill_s": 13.459382772445679}
+{"task": "pg19", "id": "32768_50", "ctx": 32768, "fmt": "raw", "nll": 2.241593360900879, "t_prefill_s": 13.45639181137085}
+{"task": "pg19", "id": "32768_51", "ctx": 32768, "fmt": "raw", "nll": 2.136211395263672, "t_prefill_s": 13.447304964065552}
+{"task": "pg19", "id": "32768_52", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_53", "ctx": 32768, "fmt": "raw", "nll": 1.9822689294815063, "t_prefill_s": 13.45140814781189}
+{"task": "pg19", "id": "32768_54", "ctx": 32768, "fmt": "raw", "nll": 2.1067802906036377, "t_prefill_s": 13.436927318572998}
+{"task": "pg19", "id": "32768_55", "ctx": 32768, "fmt": "raw", "nll": 2.572315216064453, "t_prefill_s": 13.465819597244263}
+{"task": "pg19", "id": "32768_56", "ctx": 32768, "fmt": "raw", "nll": 2.1434102058410645, "t_prefill_s": 13.45599627494812}
+{"task": "pg19", "id": "32768_57", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_58", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_59", "ctx": 32768, "fmt": "raw", "nll": 2.030790090560913, "t_prefill_s": 13.467549324035645}
+{"task": "pg19", "id": "32768_60", "ctx": 32768, "fmt": "raw", "nll": 2.4256815910339355, "t_prefill_s": 13.445520639419556}
+{"task": "pg19", "id": "32768_61", "ctx": 32768, "fmt": "raw", "nll": 1.7338814735412598, "t_prefill_s": 13.495651721954346}
+{"task": "pg19", "id": "32768_62", "ctx": 32768, "fmt": "raw", "nll": 2.193295478820801, "t_prefill_s": 13.469882249832153}
+{"task": "pg19", "id": "32768_63", "ctx": 32768, "fmt": "raw", "nll": 2.542470693588257, "t_prefill_s": 13.44760251045227}
+{"task": "pg19", "id": "32768_64", "ctx": 32768, "fmt": "raw", "nll": 1.7722387313842773, "t_prefill_s": 13.45695972442627}
+{"task": "pg19", "id": "32768_65", "ctx": 32768, "fmt": "raw", "nll": 2.107696533203125, "t_prefill_s": 13.451080083847046}
+{"task": "pg19", "id": "32768_66", "ctx": 32768, "fmt": "raw", "nll": 2.203338146209717, "t_prefill_s": 13.42393970489502}
+{"task": "pg19", "id": "32768_67", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_68", "ctx": 32768, "fmt": "raw", "nll": 2.921830892562866, "t_prefill_s": 13.438480377197266}
+{"task": "pg19", "id": "32768_69", "ctx": 32768, "fmt": "raw", "nll": 2.0862302780151367, "t_prefill_s": 13.485475540161133}
+{"task": "pg19", "id": "32768_70", "ctx": 32768, "fmt": "raw", "nll": 1.8013856410980225, "t_prefill_s": 13.446660280227661}
+{"task": "pg19", "id": "32768_71", "ctx": 32768, "fmt": "raw", "nll": 1.7860467433929443, "t_prefill_s": 13.449127674102783}
+{"task": "pg19", "id": "32768_72", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_73", "ctx": 32768, "fmt": "raw", "nll": 2.1752748489379883, "t_prefill_s": 13.449562549591064}
+{"task": "pg19", "id": "32768_74", "ctx": 32768, "fmt": "raw", "nll": 2.8538599014282227, "t_prefill_s": 13.494441986083984}
+{"task": "pg19", "id": "32768_75", "ctx": 32768, "fmt": "raw", "nll": 2.078965902328491, "t_prefill_s": 13.447710275650024}
+{"task": "pg19", "id": "32768_76", "ctx": 32768, "fmt": "raw", "nll": 2.6345267295837402, "t_prefill_s": 13.436542272567749}
+{"task": "pg19", "id": "32768_77", "ctx": 32768, "fmt": "raw", "nll": 2.0692214965820312, "t_prefill_s": 13.455887079238892}
+{"task": "pg19", "id": "32768_78", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_79", "ctx": 32768, "fmt": "raw", "nll": 2.41304612159729, "t_prefill_s": 13.4587562084198}
+{"task": "pg19", "id": "32768_80", "ctx": 32768, "fmt": "raw", "nll": 1.482968807220459, "t_prefill_s": 13.472737550735474}
+{"task": "pg19", "id": "32768_81", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_82", "ctx": 32768, "fmt": "raw", "nll": 1.932875394821167, "t_prefill_s": 13.454303503036499}
+{"task": "pg19", "id": "32768_83", "ctx": 32768, "fmt": "raw", "nll": 2.0495193004608154, "t_prefill_s": 13.492693424224854}
+{"task": "pg19", "id": "32768_84", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_85", "ctx": 32768, "fmt": "raw", "nll": 2.6306464672088623, "t_prefill_s": 13.450482606887817}
+{"task": "pg19", "id": "32768_86", "ctx": 32768, "fmt": "raw", "nll": 1.9842109680175781, "t_prefill_s": 13.466642618179321}
+{"task": "pg19", "id": "32768_87", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_88", "ctx": 32768, "fmt": "raw", "nll": 2.1249184608459473, "t_prefill_s": 13.465957880020142}
+{"task": "pg19", "id": "32768_89", "ctx": 32768, "fmt": "raw", "nll": 2.0807082653045654, "t_prefill_s": 13.487433433532715}
+{"task": "pg19", "id": "32768_90", "ctx": 32768, "fmt": "raw", "nll": 2.440396308898926, "t_prefill_s": 13.420949459075928}
+{"task": "pg19", "id": "32768_91", "ctx": 32768, "fmt": "raw", "nll": 2.6475677490234375, "t_prefill_s": 13.444555759429932}
+{"task": "pg19", "id": "32768_92", "ctx": 32768, "fmt": "raw", "nll": 2.7644665241241455, "t_prefill_s": 13.479033708572388}
+{"task": "pg19", "id": "32768_93", "ctx": 32768, "fmt": "raw", "nll": 2.3937370777130127, "t_prefill_s": 13.422245979309082}
+{"task": "pg19", "id": "32768_94", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_95", "ctx": 32768, "fmt": "raw", "nll": 2.3212475776672363, "t_prefill_s": 13.439878225326538}
+{"task": "pg19", "id": "32768_96", "ctx": 32768, "fmt": "raw", "nll": 2.0423691272735596, "t_prefill_s": 13.41901183128357}
+{"task": "pg19", "id": "32768_97", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_98", "ctx": 32768, "fmt": "raw", "skipped": "book shorter than prefix+512"}
+{"task": "pg19", "id": "32768_99", "ctx": 32768, "fmt": "raw", "nll": 2.206307888031006, "t_prefill_s": 14.033950090408325}

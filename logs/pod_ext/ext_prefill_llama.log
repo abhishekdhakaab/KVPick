@@ -1,0 +1,28 @@
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 3262.45it/s]
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+rep 0: 138.9s for 131072 tokens
+rep 1: 139.6s for 131072 tokens
+rep 2: 139.7s for 131072 tokens
+rep 3: 139.5s for 131072 tokens
+{'n': 4096, 'm': 0, 'ms': 719.3223050562665, 'source': 'trace'}
+{'n': 4096, 'm': 4096, 'ms': 1110.7201169943437, 'source': 'trace'}
+{'n': 8192, 'm': 0, 'ms': 1830.0424220506102, 'source': 'trace'}
+{'n': 8192, 'm': 4096, 'ms': 2444.9744429439306, 'source': 'trace'}
+{'n': 8192, 'm': 8192, 'ms': 2899.9243958387524, 'source': 'trace'}
+{'n': 16384, 'm': 0, 'ms': 4729.966817889363, 'source': 'trace'}
+{'n': 16384, 'm': 8192, 'ms': 6708.166780881584, 'source': 'trace'}
+{'n': 16384, 'm': 16384, 'ms': 8514.698008075356, 'source': 'trace'}
+{'n': 32768, 'm': 0, 'ms': 13244.664825964719, 'source': 'trace'}
+{'n': 32768, 'm': 16384, 'ms': 20633.496804046445, 'source': 'trace'}
+{'n': 32768, 'm': 32768, 'ms': 27775.298990076408, 'source': 'trace'}
+{'n': 65536, 'm': 0, 'ms': 41019.96381604113, 'source': 'trace'}
+{'n': 65536, 'm': 32768, 'ms': 69858.2847120706, 'source': 'trace'}
+{'n': 65536, 'm': 65536, 'ms': 98593.53446378373, 'source': 'trace'}
+{'n': 131072, 'm': 0, 'ms': 139613.49827982485, 'source': 'trace'}
+{'n': 256, 'm': 0, 'ms': 64.8336709709838, 'source': 'direct'}
+{'n': 512, 'm': 0, 'ms': 98.68037793785334, 'source': 'direct'}
+{'n': 1024, 'm': 0, 'ms': 183.34000301547348, 'source': 'direct'}
+{'n': 2048, 'm': 0, 'ms': 351.4607719844207, 'source': 'direct'}
+saved /workspace/kvpick/results/ext/prefill_llama-3.1-8b_a40.json throttled: False

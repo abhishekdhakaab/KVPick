@@ -1,0 +1,9 @@
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 5634.59it/s]
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 4358/4358 [00:00<00:00, 272175.72 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 36718/36718 [00:00<00:00, 656321.32 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 3760/3760 [00:00<00:00, 444880.90 examples/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (288937 > 131072). Running this sequence through the model will result in indexing errors
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+{"model": "llama-3.1-8b", "n_prompts": 7, "layers": 32, "layers_with_ratio_ge_5": 0, "median_ratio": 2.934265613555908, "max_ratio": 6.400000095367432, "reference_qwen3_4b": "results/feasibility/G1_kv_stats.json"}

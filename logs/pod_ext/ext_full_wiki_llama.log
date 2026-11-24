@@ -1,0 +1,46 @@
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 7376.84it/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (288937 > 131072). Running this sequence through the model will result in indexing errors
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+W1124 05:44:58.013000 9842 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+W1124 05:44:58.013000 9842 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'] to specific architectures.
+wikitext windows 0..3 of 141
+wikitext windows 4..7 of 141
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+wikitext windows 8..11 of 141
+wikitext windows 12..15 of 141
+wikitext windows 16..19 of 141
+wikitext windows 20..23 of 141
+wikitext windows 24..27 of 141
+wikitext windows 28..31 of 141
+wikitext windows 32..35 of 141
+wikitext windows 36..39 of 141
+wikitext windows 40..43 of 141
+wikitext windows 44..47 of 141
+wikitext windows 48..51 of 141
+wikitext windows 52..55 of 141
+wikitext windows 56..59 of 141
+wikitext windows 60..63 of 141
+wikitext windows 64..67 of 141
+wikitext windows 68..71 of 141
+wikitext windows 72..75 of 141
+wikitext windows 76..79 of 141
+wikitext windows 80..83 of 141
+wikitext windows 84..87 of 141
+wikitext windows 88..91 of 141
+wikitext windows 92..95 of 141
+wikitext windows 96..99 of 141
+wikitext windows 100..103 of 141
+wikitext windows 104..107 of 141
+wikitext windows 108..111 of 141
+wikitext windows 112..115 of 141
+wikitext windows 116..119 of 141
+wikitext windows 120..123 of 141
+wikitext windows 124..127 of 141
+wikitext windows 128..131 of 141
+wikitext windows 132..135 of 141
+wikitext windows 136..139 of 141
+wikitext windows 140..140 of 141
+{"task": "wikitext", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "fp8", "kv4", "int4_g32"], "samples_total_in_sink": 141, "limit": null, "seconds": 144.5916142463684, "seconds_per_sample": 1.0254724414636058}

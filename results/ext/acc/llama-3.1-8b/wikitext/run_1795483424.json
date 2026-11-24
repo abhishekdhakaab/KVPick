@@ -1,0 +1,86 @@
+{
+ "info": {
+  "command": "scripts/ext_accuracy.py --task wikitext --formats raw,int8_row,kv4,int4_g32 --limit 8",
+  "seed": 0,
+  "commit": "c30e13bb9402eef0990c3bff559b95dc89acf7fa",
+  "dirty": false,
+  "python": "3.12.3",
+  "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.39",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA A40",
+  "gpu_start": {
+   "t": "2026-11-24T01:23:27",
+   "gpus": [
+    {
+     "name": "NVIDIA A40",
+     "driver_version": "595.112.07",
+     "clocks.sm": "330",
+     "clocks.max.sm": "1740",
+     "clocks.mem": "7251",
+     "temperature.gpu": "55",
+     "power.draw": "104.57",
+     "clocks_throttle_reasons.active": "0x0000000000000001",
+     "memory.used": "3",
+     "memory.total": "46068"
+    }
+   ]
+  },
+  "t_start": 1795483407.499079,
+  "transformers": "5.24.0",
+  "datasets": "5.2.0",
+  "numpy": "2.5.2",
+  "accelerate": "1.16.0",
+  "task": "wikitext",
+  "model": "llama-3.1-8b",
+  "formats": [
+   "raw",
+   "int8_row",
+   "kv4",
+   "int4_g32"
+  ],
+  "limit": 8,
+  "config_check": {
+   "layers": 32,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "q_heads": 32,
+   "native_ctx_hf": 131072,
+   "raw_bytes_per_token": 131072
+  },
+  "task_seconds": 9.02808141708374,
+  "gpu_end": {
+   "t": "2026-11-24T01:23:44",
+   "gpus": [
+    {
+     "name": "NVIDIA A40",
+     "driver_version": "595.112.07",
+     "clocks.sm": "1725",
+     "clocks.max.sm": "1740",
+     "clocks.mem": "7251",
+     "temperature.gpu": "58",
+     "power.draw": "270.35",
+     "clocks_throttle_reasons.active": "0x0000000000000004",
+     "memory.used": "23059",
+     "memory.total": "46068"
+    }
+   ]
+  },
+  "seconds": 17.053572416305542,
+  "throttled": false
+ },
+ "pilot": {
+  "task": "wikitext",
+  "model": "llama-3.1-8b",
+  "formats": [
+   "raw",
+   "int8_row",
+   "kv4",
+   "int4_g32"
+  ],
+  "samples_total_in_sink": 8,
+  "limit": 8,
+  "seconds": 9.02808141708374,
+  "seconds_per_sample": 1.1285101771354675
+ }
+}

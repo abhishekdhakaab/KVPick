@@ -1,0 +1,76 @@
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 2970.45it/s]
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+W1124 04:08:49.487000 9247 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+W1124 04:08:49.487000 9247 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'] to specific architectures.
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+pg19 prefix=32768 book=14 prefill 15.7s
+pg19 prefix=32768 book=16 prefill 13.4s
+pg19 prefix=32768 book=17 prefill 13.4s
+pg19 prefix=32768 book=18 prefill 13.4s
+pg19 prefix=32768 book=20 prefill 13.4s
+pg19 prefix=32768 book=21 prefill 13.5s
+pg19 prefix=32768 book=22 prefill 13.5s
+pg19 prefix=32768 book=23 prefill 13.4s
+pg19 prefix=32768 book=24 prefill 13.4s
+pg19 prefix=32768 book=25 prefill 13.4s
+pg19 prefix=32768 book=26 prefill 13.4s
+pg19 prefix=32768 book=29 prefill 13.4s
+pg19 prefix=32768 book=30 prefill 13.4s
+pg19 prefix=32768 book=31 prefill 13.4s
+pg19 prefix=32768 book=32 prefill 13.4s
+pg19 prefix=32768 book=33 prefill 13.4s
+pg19 prefix=32768 book=34 prefill 13.4s
+pg19 prefix=32768 book=35 prefill 13.4s
+pg19 prefix=32768 book=36 prefill 13.5s
+pg19 prefix=32768 book=37 prefill 13.4s
+pg19 prefix=32768 book=39 prefill 13.5s
+pg19 prefix=32768 book=40 prefill 13.4s
+pg19 prefix=32768 book=43 prefill 13.5s
+pg19 prefix=32768 book=44 prefill 13.5s
+pg19 prefix=32768 book=45 prefill 13.5s
+pg19 prefix=32768 book=46 prefill 13.5s
+pg19 prefix=32768 book=47 prefill 13.5s
+pg19 prefix=32768 book=48 prefill 13.5s
+pg19 prefix=32768 book=49 prefill 13.5s
+pg19 prefix=32768 book=50 prefill 13.5s
+pg19 prefix=32768 book=51 prefill 13.4s
+pg19 prefix=32768 book=53 prefill 13.5s
+pg19 prefix=32768 book=54 prefill 13.4s
+pg19 prefix=32768 book=55 prefill 13.5s
+pg19 prefix=32768 book=56 prefill 13.5s
+pg19 prefix=32768 book=59 prefill 13.5s
+pg19 prefix=32768 book=60 prefill 13.4s
+pg19 prefix=32768 book=61 prefill 13.5s
+pg19 prefix=32768 book=62 prefill 13.5s
+pg19 prefix=32768 book=63 prefill 13.4s
+pg19 prefix=32768 book=64 prefill 13.5s
+pg19 prefix=32768 book=65 prefill 13.5s
+pg19 prefix=32768 book=66 prefill 13.4s
+pg19 prefix=32768 book=68 prefill 13.4s
+pg19 prefix=32768 book=69 prefill 13.5s
+pg19 prefix=32768 book=70 prefill 13.4s
+pg19 prefix=32768 book=71 prefill 13.4s
+pg19 prefix=32768 book=73 prefill 13.4s
+pg19 prefix=32768 book=74 prefill 13.5s
+pg19 prefix=32768 book=75 prefill 13.4s
+pg19 prefix=32768 book=76 prefill 13.4s
+pg19 prefix=32768 book=77 prefill 13.5s
+pg19 prefix=32768 book=79 prefill 13.5s
+pg19 prefix=32768 book=80 prefill 13.5s
+pg19 prefix=32768 book=82 prefill 13.5s
+pg19 prefix=32768 book=83 prefill 13.5s
+pg19 prefix=32768 book=85 prefill 13.5s
+pg19 prefix=32768 book=86 prefill 13.5s
+pg19 prefix=32768 book=88 prefill 13.5s
+pg19 prefix=32768 book=89 prefill 13.5s
+pg19 prefix=32768 book=90 prefill 13.4s
+pg19 prefix=32768 book=91 prefill 13.4s
+pg19 prefix=32768 book=92 prefill 13.5s
+pg19 prefix=32768 book=93 prefill 13.4s
+pg19 prefix=32768 book=95 prefill 13.4s
+pg19 prefix=32768 book=96 prefill 13.4s
+pg19 prefix=32768 book=99 prefill 14.0s
+{"task": "pg19_32768", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "kv4"], "samples_total_in_sink": 100, "limit": null, "seconds": 1132.0371432304382, "seconds_per_sample": 11.320371432304382}

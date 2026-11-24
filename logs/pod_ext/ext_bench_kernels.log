@@ -1,0 +1,24 @@
+W1124 01:23:48.586000 6787 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+W1124 01:23:48.586000 6787 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'] to specific architectures.
+[     5s] L36 T1024 Lc=36: copy 547 GB/s; kv4 c108%/d97%, int8_row c102%/d104%, fp8 c8%/d16%
+[     9s] L36 T4096 Lc=36: copy 561 GB/s; kv4 c107%/d96%, int8_row c99%/d104%, fp8 c8%/d16%
+[    18s] L36 T16384 Lc=36: copy 563 GB/s; kv4 c105%/d96%, int8_row c92%/d103%, fp8 c8%/d16%
+[    30s] L36 T65536 Lc=12: copy 562 GB/s; kv4 c105%/d96%, int8_row c90%/d104%, fp8 c8%/d16%
+[    41s] L36 T131072 Lc=6: copy 521 GB/s; kv4 c114%/d104%, int8_row c97%/d112%, fp8 c9%/d17%
+[    53s] L36 T262144 Lc=3: copy 520 GB/s; kv4 c114%/d104%, int8_row c99%/d112%, fp8 c9%/d17%
+[    63s] L36 T524288 Lc=1: copy 520 GB/s; kv4 c104%/d104%, int8_row c107%/d112%, fp8 c9%/d17%
+[    66s] L32 T1024 Lc=32: copy 554 GB/s; kv4 c107%/d96%, int8_row c101%/d103%, fp8 c8%/d16%
+[    69s] L32 T4096 Lc=32: copy 560 GB/s; kv4 c107%/d96%, int8_row c100%/d104%, fp8 c8%/d16%
+[    77s] L32 T16384 Lc=32: copy 561 GB/s; kv4 c106%/d96%, int8_row c92%/d104%, fp8 c8%/d16%
+[    88s] L32 T65536 Lc=12: copy 563 GB/s; kv4 c105%/d96%, int8_row c90%/d103%, fp8 c8%/d16%
+[    99s] L32 T131072 Lc=6: copy 521 GB/s; kv4 c114%/d104%, int8_row c97%/d112%, fp8 c9%/d17%
+[   110s] L32 T262144 Lc=3: copy 520 GB/s; kv4 c114%/d104%, int8_row c98%/d112%, fp8 c9%/d17%
+[   118s] L32 T524288 Lc=1: copy 521 GB/s; kv4 c104%/d104%, int8_row c106%/d112%, fp8 c9%/d17%
+[   121s] L80 T1024 Lc=80: copy 559 GB/s; kv4 c107%/d96%, int8_row c101%/d103%, fp8 c8%/d16%
+[   126s] L80 T4096 Lc=80: copy 562 GB/s; kv4 c107%/d96%, int8_row c93%/d104%, fp8 c8%/d16%
+[   138s] L80 T16384 Lc=52: copy 562 GB/s; kv4 c105%/d96%, int8_row c90%/d103%, fp8 c8%/d16%
+[   149s] L80 T65536 Lc=11: copy 521 GB/s; kv4 c113%/d104%, int8_row c97%/d112%, fp8 c9%/d17%
+[   160s] L80 T131072 Lc=6: copy 520 GB/s; kv4 c114%/d104%, int8_row c98%/d112%, fp8 c9%/d17%
+[   171s] L80 T262144 Lc=3: copy 520 GB/s; kv4 c114%/d104%, int8_row c98%/d112%, fp8 c9%/d17%
+[   179s] L80 T524288 Lc=1: copy 520 GB/s; kv4 c114%/d104%, int8_row c106%/d112%, fp8 c9%/d17%
+saved /workspace/kvpick/results/ext/kernels_a40.json throttled: False

@@ -1,0 +1,29 @@
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 8020.86it/s]
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+W1124 01:11:08.885000 5417 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+W1124 01:11:08.885000 5417 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'] to specific architectures.
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+pg19 prefix=8192 book=0 prefill 1.3s
+pg19 prefix=8192 book=1 prefill 1.1s
+pg19 prefix=8192 book=2 prefill 1.1s
+pg19 prefix=8192 book=3 prefill 1.1s
+pg19 prefix=8192 book=5 prefill 1.1s
+pg19 prefix=8192 book=6 prefill 1.1s
+pg19 prefix=8192 book=7 prefill 1.1s
+pg19 prefix=8192 book=8 prefill 1.1s
+pg19 prefix=8192 book=9 prefill 1.1s
+pg19 prefix=8192 book=10 prefill 1.1s
+pg19 prefix=8192 book=11 prefill 1.1s
+pg19 prefix=8192 book=12 prefill 1.1s
+pg19 prefix=8192 book=13 prefill 1.1s
+pg19 prefix=8192 book=14 prefill 1.1s
+pg19 prefix=8192 book=15 prefill 1.1s
+pg19 prefix=8192 book=16 prefill 1.1s
+pg19 prefix=8192 book=17 prefill 1.1s
+pg19 prefix=8192 book=18 prefill 1.1s
+pg19 prefix=8192 book=19 prefill 1.1s
+pg19 prefix=8192 book=20 prefill 1.1s
+{"task": "pg19_8192", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "kv4"], "samples_total_in_sink": 21, "limit": 20, "seconds": 63.8853497505188, "seconds_per_sample": 3.19426748752594}

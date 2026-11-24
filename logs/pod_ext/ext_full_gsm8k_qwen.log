@@ -1,0 +1,92 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 5328.21it/s]
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+/workspace/kvpick/kvpick/study/tasks.py:178: FutureWarning: `past_key_values` is deprecated and will be removed in version 6.0.0 for `Qwen3ForCausalLM.generate`. Use `cache` instead.
+  gen = model.generate(input_ids=ids, attention_mask=mask, past_key_values=c, max_new_tokens=max_new, do_sample=False, pad_token_id=tok.pad_token_id)
+W1124 05:47:46.452000 9998 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+W1124 05:47:46.452000 9998 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'] to specific architectures.
+/workspace/kvpick/kvpick/study/tasks.py:178: FutureWarning: `past_key_values` is deprecated and will be removed in version 6.0.0 for `Qwen3ForCausalLM.generate`. Use `cache` instead.
+  gen = model.generate(input_ids=ids, attention_mask=mask, past_key_values=c, max_new_tokens=max_new, do_sample=False, pad_token_id=tok.pad_token_id)
+gsm8k 0..15 of 1319
+gsm8k 16..31 of 1319
+gsm8k 32..47 of 1319
+gsm8k 48..63 of 1319
+gsm8k 64..79 of 1319
+gsm8k 80..95 of 1319
+gsm8k 96..111 of 1319
+gsm8k 112..127 of 1319
+gsm8k 128..143 of 1319
+gsm8k 144..159 of 1319
+gsm8k 160..175 of 1319
+gsm8k 176..191 of 1319
+gsm8k 192..207 of 1319
+gsm8k 208..223 of 1319
+gsm8k 224..239 of 1319
+gsm8k 240..255 of 1319
+gsm8k 256..271 of 1319
+gsm8k 272..287 of 1319
+gsm8k 288..303 of 1319
+gsm8k 304..319 of 1319
+gsm8k 320..335 of 1319
+gsm8k 336..351 of 1319
+gsm8k 352..367 of 1319
+gsm8k 368..383 of 1319
+gsm8k 384..399 of 1319
+gsm8k 400..415 of 1319
+gsm8k 416..431 of 1319
+gsm8k 432..447 of 1319
+gsm8k 448..463 of 1319
+gsm8k 464..479 of 1319
+gsm8k 480..495 of 1319
+gsm8k 496..511 of 1319
+gsm8k 512..527 of 1319
+gsm8k 528..543 of 1319
+gsm8k 544..559 of 1319
+gsm8k 560..575 of 1319
+gsm8k 576..591 of 1319
+gsm8k 592..607 of 1319
+gsm8k 608..623 of 1319
+gsm8k 624..639 of 1319
+gsm8k 640..655 of 1319
+gsm8k 656..671 of 1319
+gsm8k 672..687 of 1319
+gsm8k 688..703 of 1319
+gsm8k 704..719 of 1319
+gsm8k 720..735 of 1319
+gsm8k 736..751 of 1319
+gsm8k 752..767 of 1319
+gsm8k 768..783 of 1319
+gsm8k 784..799 of 1319
+gsm8k 800..815 of 1319
+gsm8k 816..831 of 1319
+gsm8k 832..847 of 1319
+gsm8k 848..863 of 1319
+gsm8k 864..879 of 1319
+gsm8k 880..895 of 1319
+gsm8k 896..911 of 1319
+gsm8k 912..927 of 1319
+gsm8k 928..943 of 1319
+gsm8k 944..959 of 1319
+gsm8k 960..975 of 1319
+gsm8k 976..991 of 1319
+gsm8k 992..1007 of 1319
+gsm8k 1008..1023 of 1319
+gsm8k 1024..1039 of 1319
+gsm8k 1040..1055 of 1319
+gsm8k 1056..1071 of 1319
+gsm8k 1072..1087 of 1319
+gsm8k 1088..1103 of 1319
+gsm8k 1104..1119 of 1319
+gsm8k 1120..1135 of 1319
+gsm8k 1136..1151 of 1319
+gsm8k 1152..1167 of 1319
+gsm8k 1168..1183 of 1319
+gsm8k 1184..1199 of 1319
+gsm8k 1200..1215 of 1319
+gsm8k 1216..1231 of 1319
+gsm8k 1232..1247 of 1319
+gsm8k 1248..1263 of 1319
+gsm8k 1264..1279 of 1319
+gsm8k 1280..1295 of 1319
+gsm8k 1296..1311 of 1319
+gsm8k 1312..1318 of 1319
+{"task": "gsm8k", "model": "qwen3-4b", "formats": ["raw", "int8_row", "kv4", "int4_g32"], "samples_total_in_sink": 1319, "limit": null, "seconds": 3306.2408723831177, "seconds_per_sample": 2.5066268933912945}

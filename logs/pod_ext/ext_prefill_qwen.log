@@ -1,0 +1,22 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 6856.28it/s]
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `Qwen3ForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+rep 0: 12.5s for 32768 tokens
+rep 1: 12.3s for 32768 tokens
+rep 2: 12.2s for 32768 tokens
+rep 3: 12.3s for 32768 tokens
+{'n': 4096, 'm': 0, 'ms': 488.5832209838554, 'source': 'trace'}
+{'n': 4096, 'm': 4096, 'ms': 924.6229579439387, 'source': 'trace'}
+{'n': 8192, 'm': 0, 'ms': 1413.206178927794, 'source': 'trace'}
+{'n': 8192, 'm': 4096, 'ms': 2101.098541985266, 'source': 'trace'}
+{'n': 8192, 'm': 8192, 'ms': 2611.597985960543, 'source': 'trace'}
+{'n': 16384, 'm': 0, 'ms': 4024.8041648883373, 'source': 'trace'}
+{'n': 16384, 'm': 8192, 'ms': 6221.131815807894, 'source': 'trace'}
+{'n': 16384, 'm': 16384, 'ms': 8214.032683870755, 'source': 'trace'}
+{'n': 32768, 'm': 0, 'ms': 12238.836848759092, 'source': 'trace'}
+{'n': 256, 'm': 0, 'ms': 43.72304305434227, 'source': 'direct'}
+{'n': 512, 'm': 0, 'ms': 60.23952201940119, 'source': 'direct'}
+{'n': 1024, 'm': 0, 'ms': 119.57365192938596, 'source': 'direct'}
+{'n': 2048, 'm': 0, 'ms': 236.40452499967068, 'source': 'direct'}
+saved /workspace/kvpick/results/ext/prefill_qwen3-4b_a40.json throttled: False

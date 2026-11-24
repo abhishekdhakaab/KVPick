@@ -19,5 +19,5 @@ results/ext/*cpusmoke*
 results/ext/*_tiny*
 results/ext/acc_tiny/
 .commit
-kvpick_extension_agent_prompt*
 logs/pod_ext_session1/
+results/ext/sweep_a40_partial.json

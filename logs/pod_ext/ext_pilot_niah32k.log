@@ -1,0 +1,20 @@
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 7250.85it/s]
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+W1124 01:05:51.185000 5038 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+W1124 01:05:51.185000 5038 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'] to specific architectures.
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+niah N=32768 depth=0 trial=0 prefill 15.3s
+niah N=32768 depth=0 trial=1 prefill 13.3s
+niah N=32768 depth=0 trial=2 prefill 13.4s
+niah N=32768 depth=0 trial=3 prefill 13.4s
+niah N=32768 depth=0 trial=4 prefill 13.4s
+niah N=32768 depth=10 trial=0 prefill 13.4s
+niah N=32768 depth=10 trial=1 prefill 13.4s
+niah N=32768 depth=10 trial=2 prefill 13.4s
+niah N=32768 depth=10 trial=3 prefill 13.4s
+niah N=32768 depth=10 trial=4 prefill 13.4s
+{"task": "niah", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "kv4"], "samples_total_in_sink": 30, "limit": 10, "seconds": 160.28098797798157, "seconds_per_sample": 16.028098797798158}

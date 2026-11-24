@@ -1,0 +1,65 @@
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 6628.45it/s]
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+W1124 01:53:20.357000 8329 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+W1124 01:53:20.357000 8329 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'] to specific architectures.
+niah N=131072 depth=0 trial=0 prefill 148.0s
+niah N=131072 depth=0 trial=1 prefill 141.1s
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+niah N=131072 depth=0 trial=2 prefill 141.4s
+niah N=131072 depth=0 trial=3 prefill 141.3s
+niah N=131072 depth=0 trial=4 prefill 141.4s
+niah N=131072 depth=10 trial=0 prefill 141.3s
+niah N=131072 depth=10 trial=1 prefill 140.8s
+niah N=131072 depth=10 trial=2 prefill 140.7s
+niah N=131072 depth=10 trial=3 prefill 140.4s
+niah N=131072 depth=10 trial=4 prefill 140.4s
+niah N=131072 depth=20 trial=0 prefill 141.3s
+niah N=131072 depth=20 trial=1 prefill 140.8s
+niah N=131072 depth=20 trial=2 prefill 140.6s
+niah N=131072 depth=20 trial=3 prefill 140.6s
+niah N=131072 depth=20 trial=4 prefill 140.5s
+niah N=131072 depth=30 trial=0 prefill 141.2s
+niah N=131072 depth=30 trial=1 prefill 141.3s
+niah N=131072 depth=30 trial=2 prefill 141.2s
+niah N=131072 depth=30 trial=3 prefill 141.3s
+niah N=131072 depth=30 trial=4 prefill 141.4s
+niah N=131072 depth=40 trial=0 prefill 141.4s
+niah N=131072 depth=40 trial=1 prefill 141.1s
+niah N=131072 depth=40 trial=2 prefill 140.6s
+niah N=131072 depth=40 trial=3 prefill 140.8s
+niah N=131072 depth=40 trial=4 prefill 140.3s
+niah N=131072 depth=50 trial=0 prefill 141.2s
+niah N=131072 depth=50 trial=1 prefill 140.5s
+niah N=131072 depth=50 trial=2 prefill 140.6s
+niah N=131072 depth=50 trial=3 prefill 140.2s
+niah N=131072 depth=50 trial=4 prefill 140.7s
+niah N=131072 depth=60 trial=0 prefill 140.8s
+niah N=131072 depth=60 trial=1 prefill 140.6s
+niah N=131072 depth=60 trial=2 prefill 140.6s
+niah N=131072 depth=60 trial=3 prefill 140.1s
+niah N=131072 depth=60 trial=4 prefill 141.1s
+niah N=131072 depth=70 trial=0 prefill 141.3s
+niah N=131072 depth=70 trial=1 prefill 141.2s
+niah N=131072 depth=70 trial=2 prefill 141.2s
+niah N=131072 depth=70 trial=3 prefill 141.1s
+niah N=131072 depth=70 trial=4 prefill 141.1s
+niah N=131072 depth=80 trial=0 prefill 141.0s
+niah N=131072 depth=80 trial=1 prefill 141.4s
+niah N=131072 depth=80 trial=2 prefill 141.4s
+niah N=131072 depth=80 trial=3 prefill 141.2s
+niah N=131072 depth=80 trial=4 prefill 141.1s
+niah N=131072 depth=90 trial=0 prefill 141.2s
+niah N=131072 depth=90 trial=1 prefill 141.3s
+niah N=131072 depth=90 trial=2 prefill 141.2s
+niah N=131072 depth=90 trial=3 prefill 141.3s
+niah N=131072 depth=90 trial=4 prefill 141.4s
+niah N=131072 depth=100 trial=0 prefill 141.3s
+niah N=131072 depth=100 trial=1 prefill 141.3s
+niah N=131072 depth=100 trial=2 prefill 141.2s
+niah N=131072 depth=100 trial=3 prefill 141.3s
+niah N=131072 depth=100 trial=4 prefill 141.4s
+{"task": "niah", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "fp8", "kv4"], "samples_total_in_sink": 165, "limit": null, "seconds": 8292.24880027771, "seconds_per_sample": 50.256053335016425}

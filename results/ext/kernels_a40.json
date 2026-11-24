@@ -1,0 +1,2107 @@
+{
+ "info": {
+  "command": "scripts/ext_bench_kernels.py",
+  "seed": 0,
+  "commit": "c30e13bb9402eef0990c3bff559b95dc89acf7fa",
+  "dirty": false,
+  "python": "3.12.3",
+  "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.39",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA A40",
+  "gpu_start": {
+   "t": "2026-11-24T01:23:48",
+   "gpus": [
+    {
+     "name": "NVIDIA A40",
+     "driver_version": "595.112.07",
+     "clocks.sm": "1080",
+     "clocks.max.sm": "1740",
+     "clocks.mem": "7251",
+     "temperature.gpu": "53",
+     "power.draw": "122.90",
+     "clocks_throttle_reasons.active": "0x0000000000000001",
+     "memory.used": "3",
+     "memory.total": "46068"
+    }
+   ]
+  },
+  "t_start": 1795483428.6760774,
+  "transformers": "5.24.0",
+  "datasets": "5.2.0",
+  "numpy": "2.5.2",
+  "accelerate": "1.16.0",
+  "layers": "36,32,80",
+  "T": "1024,4096,16384,65536,131072,262144,524288,1048576",
+  "kv4_bitexact_K_small": true,
+  "gpu_end": {
+   "t": "2026-11-24T01:26:52",
+   "gpus": [
+    {
+     "name": "NVIDIA A40",
+     "driver_version": "595.112.07",
+     "clocks.sm": "1740",
+     "clocks.max.sm": "1740",
+     "clocks.mem": "7251",
+     "temperature.gpu": "59",
+     "power.draw": "130.00",
+     "clocks_throttle_reasons.active": "0x0000000000000000",
+     "memory.used": "4673",
+     "memory.total": "46068"
+    }
+   ]
+  },
+  "seconds": 183.6356885433197,
+  "throttled": false
+ },
+ "label": "measured",
+ "gpu": "NVIDIA A40",
+ "cases": {
+  "L36_T1024": {
+   "L_requested": 36,
+   "layers_measured": 36,
+   "chunked": false,
+   "T": 1024,
+   "raw_bytes_KV_measured": 150994944,
+   "raw_bytes_KV_full": 150994944,
+   "copy_ceiling": {
+    "median_us": 275.8080065250397,
+    "p5_us": 271.93599939346313,
+    "p95_us": 277.50399708747864,
+    "GBps_moved": 547.4639619872372,
+    "GBps_input": 273.7319809936186,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 336.1760079860687,
+     "p5_us": 333.8879942893982,
+     "p95_us": 338.6879861354828,
+     "GBps_moved": 589.5151923162009,
+     "GBps_input": 449.15443224091496,
+     "n": 20,
+     "pct_of_copy_ceiling": 107.68109560606001,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 409.87199544906616,
+     "p5_us": 407.45601058006287,
+     "p95_us": 414.7840142250061,
+     "GBps_moved": 558.3492274198052,
+     "GBps_input": 368.39536654502604,
+     "n": 20,
+     "pct_of_copy_ceiling": 101.98830721077157,
+     "chosen": "compile",
+     "eager_median_us": 6874.736070632935,
+     "compile_median_us": 409.87199544906616,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 4958.976030349731,
+     "p5_us": 4954.048156738281,
+     "p95_us": 4964.767932891846,
+     "GBps_moved": 45.67328065589109,
+     "GBps_input": 30.448815052923553,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.342700858354554,
+     "chosen": "eager",
+     "eager_median_us": 4958.976030349731,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 374.4319975376129,
+     "p5_us": 372.9279935359955,
+     "p95_us": 381.72799348831177,
+     "GBps_moved": 529.2839963018708,
+     "GBps_input": 403.26399718237775,
+     "n": 20,
+     "pct_of_copy_ceiling": 96.67923974038858,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 401.90400183200836,
+     "p5_us": 399.9359905719757,
+     "p95_us": 403.9680063724518,
+     "GBps_moved": 569.4188436960566,
+     "GBps_input": 375.6990308922435,
+     "n": 20,
+     "pct_of_copy_ceiling": 104.01028802500998,
+     "chosen": "compile",
+     "eager_median_us": 3685.61601638794,
+     "compile_median_us": 401.90400183200836,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 2562.7840757369995,
+     "p5_us": 2554.4960498809814,
+     "p95_us": 2568.959951400757,
+     "GBps_moved": 88.37759924618922,
+     "GBps_input": 58.918324578935604,
+     "n": 20,
+     "pct_of_copy_ceiling": 16.14308984382967,
+     "chosen": "eager",
+     "eager_median_us": 2562.7840757369995,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 47185920,
+   "int8_wire_bytes": 77856768,
+   "fp8_wire_bytes": 75497760
+  },
+  "L36_T4096": {
+   "L_requested": 36,
+   "layers_measured": 36,
+   "chunked": false,
+   "T": 4096,
+   "raw_bytes_KV_measured": 603979776,
+   "raw_bytes_KV_full": 603979776,
+   "copy_ceiling": {
+    "median_us": 1077.1040320396423,
+    "p5_us": 1073.6960172653198,
+    "p95_us": 1079.0400505065918,
+    "GBps_moved": 560.7441417300076,
+    "GBps_input": 280.3720708650038,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 1317.0719742774963,
+     "p5_us": 1316.3520097732544,
+     "p95_us": 1324.5439529418945,
+     "GBps_moved": 601.8831707620708,
+     "GBps_input": 458.57765391395867,
+     "n": 20,
+     "pct_of_copy_ceiling": 107.33650625490996,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 1641.103982925415,
+     "p5_us": 1610.9440326690674,
+     "p95_us": 1667.904019355774,
+     "GBps_moved": 557.7994188815538,
+     "GBps_input": 368.0326062723654,
+     "n": 20,
+     "pct_of_copy_ceiling": 99.47485446047305,
+     "chosen": "compile",
+     "eager_median_us": 27221.311569213867,
+     "compile_median_us": 1641.103982925415,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 19623.19946289062,
+     "p5_us": 19608.320236206055,
+     "p95_us": 19631.488800048828,
+     "GBps_moved": 46.16830979643647,
+     "GBps_input": 30.77886341328714,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.23340029090594,
+     "chosen": "eager",
+     "eager_median_us": 19623.19946289062,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 1472.927987575531,
+     "p5_us": 1471.519947052002,
+     "p95_us": 1473.8880395889282,
+     "GBps_moved": 538.1956637980915,
+     "GBps_input": 410.0538390842602,
+     "n": 20,
+     "pct_of_copy_ceiling": 95.97882951351937,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 1575.6319761276245,
+     "p5_us": 1570.9120035171509,
+     "p95_us": 1586.4959955215454,
+     "GBps_moved": 580.9775771685996,
+     "GBps_input": 383.3254117401069,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.6083186488882,
+     "chosen": "compile",
+     "eager_median_us": 14613.487720489502,
+     "compile_median_us": 1575.6319761276245,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 10222.848415374756,
+     "p5_us": 10206.239700317383,
+     "p95_us": 10229.85553741455,
+     "GBps_moved": 88.62206649151301,
+     "GBps_input": 59.0813588795505,
+     "n": 20,
+     "pct_of_copy_ceiling": 15.804367784939535,
+     "chosen": "eager",
+     "eager_median_us": 10222.848415374756,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 188743680,
+   "int8_wire_bytes": 311427072,
+   "fp8_wire_bytes": 301990176
+  },
+  "L36_T16384": {
+   "L_requested": 36,
+   "layers_measured": 36,
+   "chunked": false,
+   "T": 16384,
+   "raw_bytes_KV_measured": 2415919104,
+   "raw_bytes_KV_full": 2415919104,
+   "copy_ceiling": {
+    "median_us": 4293.744087219238,
+    "p5_us": 4286.111831665039,
+    "p95_us": 4300.447940826416,
+    "GBps_moved": 562.6602459124722,
+    "GBps_input": 281.3301229562361,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 5345.695972442628,
+     "p5_us": 5249.887943267822,
+     "p95_us": 5361.311912536621,
+     "GBps_moved": 593.1676324927832,
+     "GBps_input": 451.93724380402534,
+     "n": 20,
+     "pct_of_copy_ceiling": 105.42199076653031,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 7087.376117706299,
+     "p5_us": 6782.271862030029,
+     "p95_us": 7089.536190032959,
+     "GBps_moved": 516.6407611488551,
+     "GBps_input": 340.87637848996627,
+     "n": 20,
+     "pct_of_copy_ceiling": 91.82108828588258,
+     "chosen": "compile",
+     "eager_median_us": 108941.26510620117,
+     "compile_median_us": 7087.376117706299,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 78327.69775390625,
+     "p5_us": 78281.37969970703,
+     "p95_us": 78360.03112792969,
+     "GBps_moved": 46.26561290471831,
+     "GBps_input": 30.843739485238693,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.222655366328372,
+     "chosen": "eager",
+     "eager_median_us": 78327.69775390625,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 5870.687961578368,
+     "p5_us": 5868.288040161133,
+     "p95_us": 5873.663902282715,
+     "GBps_moved": 540.1230391995638,
+     "GBps_input": 411.52231558062,
+     "n": 20,
+     "pct_of_copy_ceiling": 95.99452655903217,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 6289.920091629028,
+     "p5_us": 6287.456035614014,
+     "p95_us": 6293.951988220215,
+     "GBps_moved": 582.142116061712,
+     "GBps_input": 384.09376729844917,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.46245719166562,
+     "chosen": "compile",
+     "eager_median_us": 58269.93751525879,
+     "compile_median_us": 6289.920091629028,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 40786.399841308594,
+     "p5_us": 40765.2473449707,
+     "p95_us": 40808.09783935547,
+     "GBps_moved": 88.85017942499853,
+     "GBps_input": 59.2334482425475,
+     "n": 20,
+     "pct_of_copy_ceiling": 15.7910888623221,
+     "chosen": "eager",
+     "eager_median_us": 40786.399841308594,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 754974720,
+   "int8_wire_bytes": 1245708288,
+   "fp8_wire_bytes": 1207959840
+  },
+  "L36_T65536": {
+   "L_requested": 36,
+   "layers_measured": 12,
+   "chunked": true,
+   "T": 65536,
+   "raw_bytes_KV_measured": 3221225472,
+   "raw_bytes_KV_full": 9663676416,
+   "copy_ceiling": {
+    "median_us": 5730.511903762817,
+    "p5_us": 5726.719856262207,
+    "p95_us": 5739.67981338501,
+    "GBps_moved": 562.1182760103599,
+    "GBps_input": 281.05913800517993,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 7138.943910598754,
+     "p5_us": 7070.911884307861,
+     "p95_us": 7146.848201751709,
+     "GBps_moved": 592.2246322349104,
+     "GBps_input": 451.2187674170745,
+     "n": 20,
+     "pct_of_copy_ceiling": 105.35587571324503,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 9618.351936340332,
+     "p5_us": 9208.512306213379,
+     "p95_us": 9620.863914489746,
+     "GBps_moved": 507.5890223515368,
+     "GBps_input": 334.9040972216325,
+     "n": 20,
+     "pct_of_copy_ceiling": 90.29932738607167,
+     "chosen": "compile",
+     "eager_median_us": 145188.9877319336,
+     "compile_median_us": 9618.351936340332,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 104469.80667114258,
+     "p5_us": 104447.71575927734,
+     "p95_us": 104493.78967285156,
+     "GBps_moved": 46.25105049930839,
+     "GBps_input": 30.8340330535884,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.227992661540146,
+     "chosen": "eager",
+     "eager_median_us": 104469.80667114258,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 7824.000120162964,
+     "p5_us": 7822.559833526612,
+     "p95_us": 7826.879978179932,
+     "GBps_moved": 540.3704456885845,
+     "GBps_input": 411.7108157627311,
+     "n": 20,
+     "pct_of_copy_ceiling": 96.13109353495304,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 8387.536048889162,
+     "p5_us": 8383.968353271484,
+     "p95_us": 8396.160125732422,
+     "GBps_moved": 582.0743812655912,
+     "GBps_input": 384.0490762989468,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.55016125731937,
+     "chosen": "compile",
+     "eager_median_us": 77608.30307006836,
+     "compile_median_us": 8387.536048889162,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 54382.09533691406,
+     "p5_us": 54350.55923461914,
+     "p95_us": 54406.43310546875,
+     "GBps_moved": 88.84980017899738,
+     "GBps_input": 59.23319894247366,
+     "n": 20,
+     "pct_of_copy_ceiling": 15.806246473537517,
+     "chosen": "eager",
+     "eager_median_us": 54382.09533691406,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 1006632960,
+   "int8_wire_bytes": 1660944384,
+   "fp8_wire_bytes": 1610612832
+  },
+  "L36_T131072": {
+   "L_requested": 36,
+   "layers_measured": 6,
+   "chunked": true,
+   "T": 131072,
+   "raw_bytes_KV_measured": 3221225472,
+   "raw_bytes_KV_full": 19327352832,
+   "copy_ceiling": {
+    "median_us": 6182.751893997192,
+    "p5_us": 6163.871765136719,
+    "p95_us": 6187.903881072998,
+    "GBps_moved": 521.001898058933,
+    "GBps_input": 260.5009490294665,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 7135.727882385253,
+     "p5_us": 7083.424091339111,
+     "p95_us": 7147.808074951172,
+     "GBps_moved": 592.4915441964356,
+     "GBps_input": 451.42212891157,
+     "n": 20,
+     "pct_of_copy_ceiling": 113.72157115047901,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 9619.56787109375,
+     "p5_us": 9285.056114196777,
+     "p95_us": 9621.024131774902,
+     "GBps_moved": 507.5248619712576,
+     "GBps_input": 334.8617645995927,
+     "n": 20,
+     "pct_of_copy_ceiling": 97.4132462592006,
+     "chosen": "compile",
+     "eager_median_us": 145167.4270629883,
+     "compile_median_us": 9619.56787109375,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 104504.60815429688,
+     "p5_us": 104476.34887695312,
+     "p95_us": 104518.40209960938,
+     "GBps_moved": 46.23564779905192,
+     "GBps_input": 30.823764893161353,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.874372237665435,
+     "chosen": "eager",
+     "eager_median_us": 104504.60815429688,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 7826.208114624023,
+     "p5_us": 7821.5999603271475,
+     "p95_us": 7827.136039733887,
+     "GBps_moved": 540.2179919161413,
+     "GBps_input": 411.5946605075363,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.68829632460086,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 8398.959636688232,
+     "p5_us": 8396.063804626465,
+     "p95_us": 8407.423973083496,
+     "GBps_moved": 581.2826906172719,
+     "GBps_input": 383.5267237062412,
+     "n": 20,
+     "pct_of_copy_ceiling": 111.57016755273322,
+     "chosen": "compile",
+     "eager_median_us": 77606.01425170898,
+     "compile_median_us": 8398.959636688232,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 54402.08053588867,
+     "p5_us": 54382.3356628418,
+     "p95_us": 54421.95129394531,
+     "GBps_moved": 88.81715935133161,
+     "GBps_input": 59.21143897934161,
+     "n": 20,
+     "pct_of_copy_ceiling": 17.04737730941723,
+     "chosen": "eager",
+     "eager_median_us": 54402.08053588867,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 1006632960,
+   "int8_wire_bytes": 1660944384,
+   "fp8_wire_bytes": 1610612784
+  },
+  "L36_T262144": {
+   "L_requested": 36,
+   "layers_measured": 3,
+   "chunked": true,
+   "T": 262144,
+   "raw_bytes_KV_measured": 3221225472,
+   "raw_bytes_KV_full": 38654705664,
+   "copy_ceiling": {
+    "median_us": 6195.568084716796,
+    "p5_us": 6174.431800842285,
+    "p95_us": 6202.688217163086,
+    "GBps_moved": 519.9241502883499,
+    "GBps_input": 259.96207514417495,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 7132.176160812378,
+     "p5_us": 6998.367786407471,
+     "p95_us": 7788.959980010986,
+     "GBps_moved": 592.7865964991018,
+     "GBps_input": 451.6469306659823,
+     "n": 20,
+     "pct_of_copy_ceiling": 114.01405304414932,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 9532.768249511719,
+     "p5_us": 9146.143913269043,
+     "p95_us": 9540.160179138184,
+     "GBps_moved": 512.1460763771396,
+     "GBps_input": 337.9108132797622,
+     "n": 20,
+     "pct_of_copy_ceiling": 98.50399834150875,
+     "chosen": "compile",
+     "eager_median_us": 145194.73266601562,
+     "compile_median_us": 9532.768249511719,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 104451.23291015626,
+     "p5_us": 104426.71966552734,
+     "p95_us": 104516.15905761719,
+     "GBps_moved": 46.259274279281186,
+     "GBps_input": 30.839516033005925,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.897312089393386,
+     "chosen": "eager",
+     "eager_median_us": 104451.23291015626,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 7823.983907699585,
+     "p5_us": 7821.695804595947,
+     "p95_us": 7827.936172485352,
+     "GBps_moved": 540.3715654168669,
+     "GBps_input": 411.71166888904145,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.93276886968549,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 8398.992061614992,
+     "p5_us": 8396.608352661133,
+     "p95_us": 8401.408195495605,
+     "GBps_moved": 581.2804465326803,
+     "GBps_input": 383.5252430731087,
+     "n": 20,
+     "pct_of_copy_ceiling": 111.80100909148041,
+     "chosen": "compile",
+     "eager_median_us": 77626.17492675781,
+     "compile_median_us": 8398.992061614992,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 54396.833419799805,
+     "p5_us": 54373.24905395508,
+     "p95_us": 54441.79153442383,
+     "GBps_moved": 88.8257262092993,
+     "GBps_input": 59.21715051206478,
+     "n": 20,
+     "pct_of_copy_ceiling": 17.08436243248877,
+     "chosen": "eager",
+     "eager_median_us": 54396.833419799805,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 1006632960,
+   "int8_wire_bytes": 1660944384,
+   "fp8_wire_bytes": 1610612760
+  },
+  "L36_T524288": {
+   "L_requested": 36,
+   "layers_measured": 1,
+   "chunked": true,
+   "T": 524288,
+   "raw_bytes_KV_measured": 2147483648,
+   "raw_bytes_KV_full": 77309411328,
+   "copy_ceiling": {
+    "median_us": 4128.5598278045645,
+    "p5_us": 4113.247871398926,
+    "p95_us": 4137.856006622314,
+    "GBps_moved": 520.1532102156705,
+    "GBps_input": 260.07660510783523,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 5201.423883438111,
+     "p5_us": 4729.343891143799,
+     "p95_us": 5213.535785675049,
+     "GBps_moved": 541.8847513994457,
+     "GBps_input": 412.8645724948157,
+     "n": 20,
+     "pct_of_copy_ceiling": 104.17791157623822,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 5868.192195892334,
+     "p5_us": 5774.496078491211,
+     "p95_us": 6100.639820098877,
+     "GBps_moved": 554.6478021422522,
+     "GBps_input": 365.9531890423108,
+     "n": 20,
+     "pct_of_copy_ceiling": 106.63162146250703,
+     "chosen": "compile",
+     "eager_median_us": 96801.87225341797,
+     "compile_median_us": 5868.192195892334,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 69618.0648803711,
+     "p5_us": 69605.27801513672,
+     "p95_us": 69644.19555664062,
+     "GBps_moved": 46.26996578453058,
+     "GBps_input": 30.846643779745246,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.895449432167442,
+     "chosen": "eager",
+     "eager_median_us": 69618.0648803711,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 5218.463897705078,
+     "p5_us": 5215.680122375488,
+     "p95_us": 5221.280097961426,
+     "GBps_moved": 540.1153180803881,
+     "GBps_input": 411.51643282315285,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.8377361655503,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 5594.111919403077,
+     "p5_us": 5579.552173614502,
+     "p95_us": 5677.279949188232,
+     "GBps_moved": 581.8224502643315,
+     "GBps_input": 383.88285378265164,
+     "n": 20,
+     "pct_of_copy_ceiling": 111.85597605426507,
+     "chosen": "compile",
+     "eager_median_us": 51742.79975891113,
+     "compile_median_us": 5594.111919403077,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 36238.41667175293,
+     "p5_us": 36209.022521972656,
+     "p95_us": 36258.43048095703,
+     "GBps_moved": 88.88979640522972,
+     "GBps_input": 59.259864122979685,
+     "n": 20,
+     "pct_of_copy_ceiling": 17.089156552234574,
+     "chosen": "eager",
+     "eager_median_us": 36238.41667175293,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 671088640,
+   "int8_wire_bytes": 1107296256,
+   "fp8_wire_bytes": 1073741832
+  },
+  "L36_T1048576": {
+   "skipped": "does not fit even for one layer"
+  },
+  "L32_T1024": {
+   "L_requested": 32,
+   "layers_measured": 32,
+   "chunked": false,
+   "T": 1024,
+   "raw_bytes_KV_measured": 134217728,
+   "raw_bytes_KV_full": 134217728,
+   "copy_ceiling": {
+    "median_us": 242.43199825286865,
+    "p5_us": 241.63199961185455,
+    "p95_us": 243.80800127983093,
+    "GBps_moved": 553.6304158166622,
+    "GBps_input": 276.8152079083311,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 297.58399724960327,
+     "p5_us": 297.3119914531708,
+     "p95_us": 297.85600304603577,
+     "GBps_moved": 591.9698963255821,
+     "GBps_input": 451.0246829147293,
+     "n": 20,
+     "pct_of_copy_ceiling": 106.92510371785936,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 363.3439987897873,
+     "p5_us": 362.7839982509613,
+     "p95_us": 364.0640079975128,
+     "GBps_moved": 559.8654296687334,
+     "GBps_input": 369.3957474102983,
+     "n": 20,
+     "pct_of_copy_ceiling": 101.12620507723983,
+     "chosen": "compile",
+     "eager_median_us": 6117.040157318116,
+     "compile_median_us": 363.3439987897873,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 4441.504001617431,
+     "p5_us": 4436.12813949585,
+     "p95_us": 4444.2877769470215,
+     "GBps_moved": 45.32853013904395,
+     "GBps_input": 30.21898166727372,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.187507196868813,
+     "chosen": "eager",
+     "eager_median_us": 4441.504001617431,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 332.35201239585876,
+     "p5_us": 331.4560055732727,
+     "p95_us": 333.3440124988556,
+     "GBps_moved": 530.0427300863698,
+     "GBps_input": 403.8420800658056,
+     "n": 20,
+     "pct_of_copy_ceiling": 95.73945270049911,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 356.84800148010254,
+     "p5_us": 356.00000619888306,
+     "p95_us": 358.11200737953186,
+     "GBps_moved": 570.0571199957881,
+     "GBps_input": 376.1201616467056,
+     "n": 20,
+     "pct_of_copy_ceiling": 102.96708846006858,
+     "chosen": "compile",
+     "eager_median_us": 3276.73602104187,
+     "compile_median_us": 356.84800148010254,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 2276.0159969329834,
+     "p5_us": 2271.7440128326416,
+     "p95_us": 2281.9199562072754,
+     "GBps_moved": 88.45581413807963,
+     "GBps_input": 58.970467773892366,
+     "n": 20,
+     "pct_of_copy_ceiling": 15.977412297262992,
+     "chosen": "eager",
+     "eager_median_us": 2276.0159969329834,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 41943040,
+   "int8_wire_bytes": 69206016,
+   "fp8_wire_bytes": 67109120
+  },
+  "L32_T4096": {
+   "L_requested": 32,
+   "layers_measured": 32,
+   "chunked": false,
+   "T": 4096,
+   "raw_bytes_KV_measured": 536870912,
+   "raw_bytes_KV_full": 536870912,
+   "copy_ceiling": {
+    "median_us": 957.96799659729,
+    "p5_us": 955.8719992637634,
+    "p95_us": 963.1680250167847,
+    "GBps_moved": 560.426771987133,
+    "GBps_input": 280.2133859935665,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 1171.5520024299622,
+     "p5_us": 1170.591950416565,
+     "p95_us": 1191.8079853057861,
+     "GBps_moved": 601.4611989382222,
+     "GBps_input": 458.25615157197876,
+     "n": 20,
+     "pct_of_copy_ceiling": 107.32199620042981,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 1445.1040029525757,
+     "p5_us": 1439.9679899215698,
+     "p95_us": 1492.959976196289,
+     "GBps_moved": 563.0701834175898,
+     "GBps_input": 371.5102241105747,
+     "n": 20,
+     "pct_of_copy_ceiling": 100.47167829279174,
+     "chosen": "compile",
+     "eager_median_us": 24187.647819519043,
+     "compile_median_us": 1445.1040029525757,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 17464.591979980465,
+     "p5_us": 17453.535079956055,
+     "p95_us": 17474.464416503906,
+     "GBps_moved": 46.110818101168185,
+     "GBps_input": 30.74053562862569,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.227804310217154,
+     "chosen": "eager",
+     "eager_median_us": 17464.591979980465,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 1310.6399774551392,
+     "p5_us": 1308.7040185928345,
+     "p95_us": 1312.6720190048218,
+     "GBps_moved": 537.632823750883,
+     "GBps_input": 409.62500857210125,
+     "n": 20,
+     "pct_of_copy_ceiling": 95.93275172143751,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 1400.9920358657837,
+     "p5_us": 1397.887945175171,
+     "p95_us": 1408.128023147583,
+     "GBps_moved": 580.7991445841114,
+     "GBps_input": 383.20768302456844,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.63515335370991,
+     "chosen": "compile",
+     "eager_median_us": 12995.264053344727,
+     "compile_median_us": 1400.9920358657837,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 9085.536003112793,
+     "p5_us": 9072.735786437988,
+     "p95_us": 9100.000381469727,
+     "GBps_moved": 88.63611609970992,
+     "GBps_input": 59.0907252820376,
+     "n": 20,
+     "pct_of_copy_ceiling": 15.815824748241141,
+     "chosen": "eager",
+     "eager_median_us": 9085.536003112793,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 167772160,
+   "int8_wire_bytes": 276824064,
+   "fp8_wire_bytes": 268435712
+  },
+  "L32_T16384": {
+   "L_requested": 32,
+   "layers_measured": 32,
+   "chunked": false,
+   "T": 16384,
+   "raw_bytes_KV_measured": 2147483648,
+   "raw_bytes_KV_full": 2147483648,
+   "copy_ceiling": {
+    "median_us": 3826.080083847046,
+    "p5_us": 3819.488048553467,
+    "p95_us": 3830.4319381713867,
+    "GBps_moved": 561.2751434728854,
+    "GBps_input": 280.6375717364427,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 4759.088039398192,
+     "p5_us": 4667.200088500977,
+     "p95_us": 4766.240119934082,
+     "GBps_moved": 592.2505035978322,
+     "GBps_input": 451.23847893168175,
+     "n": 20,
+     "pct_of_copy_ceiling": 105.51874788776269,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 6300.368070602417,
+     "p5_us": 5763.487815856934,
+     "p95_us": 6357.408046722412,
+     "GBps_moved": 516.6015489137591,
+     "GBps_input": 340.85050649979974,
+     "n": 20,
+     "pct_of_copy_ceiling": 92.04069606882842,
+     "chosen": "compile",
+     "eager_median_us": 96807.77359008788,
+     "compile_median_us": 6300.368070602417,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 69563.77792358398,
+     "p5_us": 69543.07556152344,
+     "p95_us": 69594.46716308594,
+     "GBps_moved": 46.306078021503176,
+     "GBps_input": 30.87071622761802,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.250156551559488,
+     "chosen": "eager",
+     "eager_median_us": 69563.77792358398,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 5219.280004501343,
+     "p5_us": 5216.320037841797,
+     "p95_us": 5222.271919250488,
+     "GBps_moved": 540.0308635614751,
+     "GBps_input": 411.4520865230287,
+     "n": 20,
+     "pct_of_copy_ceiling": 96.21499719728163,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 5592.272043228149,
+     "p5_us": 5589.727878570557,
+     "p95_us": 5596.960067749023,
+     "GBps_moved": 582.013871793185,
+     "GBps_input": 384.0091525233385,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.6949308305333,
+     "chosen": "compile",
+     "eager_median_us": 51755.93566894532,
+     "compile_median_us": 5592.272043228149,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 36246.49429321289,
+     "p5_us": 36224.735260009766,
+     "p95_us": 36266.273498535156,
+     "GBps_moved": 88.8699939349216,
+     "GBps_input": 59.24665791477974,
+     "n": 20,
+     "pct_of_copy_ceiling": 15.8335880304692,
+     "chosen": "eager",
+     "eager_median_us": 36246.49429321289,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 671088640,
+   "int8_wire_bytes": 1107296256,
+   "fp8_wire_bytes": 1073742080
+  },
+  "L32_T65536": {
+   "L_requested": 32,
+   "layers_measured": 12,
+   "chunked": true,
+   "T": 65536,
+   "raw_bytes_KV_measured": 3221225472,
+   "raw_bytes_KV_full": 8589934592,
+   "copy_ceiling": {
+    "median_us": 5723.663806915283,
+    "p5_us": 5715.392112731934,
+    "p95_us": 5731.520175933838,
+    "GBps_moved": 562.7908243157367,
+    "GBps_input": 281.39541215786835,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 7134.320020675658,
+     "p5_us": 6997.056007385254,
+     "p95_us": 7145.535945892334,
+     "GBps_moved": 592.6084644012926,
+     "GBps_input": 451.5112109724134,
+     "n": 20,
+     "pct_of_copy_ceiling": 105.2981745254659,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 9617.36011505127,
+     "p5_us": 9204.575538635254,
+     "p95_us": 9619.392395019531,
+     "GBps_moved": 507.64136910703314,
+     "GBps_input": 334.9386352871146,
+     "n": 20,
+     "pct_of_copy_ceiling": 90.20071884154181,
+     "chosen": "compile",
+     "eager_median_us": 145196.8994140625,
+     "compile_median_us": 9617.36011505127,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 104475.64697265624,
+     "p5_us": 104425.0259399414,
+     "p95_us": 104506.72149658203,
+     "GBps_moved": 46.24846501562806,
+     "GBps_input": 30.832309397835758,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.217700612276108,
+     "chosen": "eager",
+     "eager_median_us": 104475.64697265624,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 7824.67222213745,
+     "p5_us": 7820.735931396484,
+     "p95_us": 7828.06396484375,
+     "GBps_moved": 540.3240304480236,
+     "GBps_input": 411.67545176992274,
+     "n": 20,
+     "pct_of_copy_ceiling": 96.0079672771799,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 8396.495819091799,
+     "p5_us": 8383.008003234863,
+     "p95_us": 8397.791862487793,
+     "GBps_moved": 581.4532587390815,
+     "GBps_input": 383.63926349795076,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.31605165134584,
+     "chosen": "compile",
+     "eager_median_us": 77620.55969238281,
+     "compile_median_us": 8396.495819091799,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 54404.048919677734,
+     "p5_us": 54372.703552246094,
+     "p95_us": 54446.590423583984,
+     "GBps_moved": 88.81394675484057,
+     "GBps_input": 59.20929666017735,
+     "n": 20,
+     "pct_of_copy_ceiling": 15.780986987985116,
+     "chosen": "eager",
+     "eager_median_us": 54404.048919677734,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 1006632960,
+   "int8_wire_bytes": 1660944384,
+   "fp8_wire_bytes": 1610612832
+  },
+  "L32_T131072": {
+   "L_requested": 32,
+   "layers_measured": 6,
+   "chunked": true,
+   "T": 131072,
+   "raw_bytes_KV_measured": 3221225472,
+   "raw_bytes_KV_full": 17179869184,
+   "copy_ceiling": {
+    "median_us": 6186.592102050781,
+    "p5_us": 5730.879783630371,
+    "p95_us": 6197.887897491455,
+    "GBps_moved": 520.6784961517346,
+    "GBps_input": 260.3392480758673,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 7138.319969177246,
+     "p5_us": 6999.040126800537,
+     "p95_us": 7147.168159484863,
+     "GBps_moved": 592.276397003159,
+     "GBps_input": 451.2582072405021,
+     "n": 20,
+     "pct_of_copy_ceiling": 113.75088492814567,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 9617.568016052246,
+     "p5_us": 9199.392318725586,
+     "p95_us": 9619.551658630371,
+     "GBps_moved": 507.6303955273716,
+     "GBps_input": 334.9313949871318,
+     "n": 20,
+     "pct_of_copy_ceiling": 97.49401968377802,
+     "chosen": "compile",
+     "eager_median_us": 145169.00634765625,
+     "compile_median_us": 9617.568016052246,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 104539.79110717773,
+     "p5_us": 104500.19073486328,
+     "p95_us": 104559.80682373047,
+     "GBps_moved": 46.22008715366798,
+     "GBps_input": 30.813391129675118,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.876895722653131,
+     "chosen": "eager",
+     "eager_median_us": 104539.79110717773,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 7824.496030807496,
+     "p5_us": 7821.792125701905,
+     "p95_us": 7826.047897338867,
+     "GBps_moved": 540.3361974181589,
+     "GBps_input": 411.6847218424068,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.77540102226455,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 8407.279968261717,
+     "p5_us": 8394.304275512695,
+     "p95_us": 8410.4642868042,
+     "GBps_moved": 580.7074195733527,
+     "GBps_input": 383.14716342984093,
+     "n": 20,
+     "pct_of_copy_ceiling": 111.5289807175222,
+     "chosen": "compile",
+     "eager_median_us": 77615.52047729492,
+     "compile_median_us": 8407.279968261717,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 54435.99891662598,
+     "p5_us": 54407.48977661133,
+     "p95_us": 54459.77783203125,
+     "GBps_moved": 88.76181850544214,
+     "GBps_input": 59.17454508244847,
+     "n": 20,
+     "pct_of_copy_ceiling": 17.0473371113785,
+     "chosen": "eager",
+     "eager_median_us": 54435.99891662598,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 1006632960,
+   "int8_wire_bytes": 1660944384,
+   "fp8_wire_bytes": 1610612784
+  },
+  "L32_T262144": {
+   "L_requested": 32,
+   "layers_measured": 3,
+   "chunked": true,
+   "T": 262144,
+   "raw_bytes_KV_measured": 3221225472,
+   "raw_bytes_KV_full": 34359738368,
+   "copy_ceiling": {
+    "median_us": 6195.535898208618,
+    "p5_us": 6186.0480308532715,
+    "p95_us": 6204.415798187256,
+    "GBps_moved": 519.9268513529859,
+    "GBps_input": 259.96342567649293,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 7128.288030624391,
+     "p5_us": 6998.015880584717,
+     "p95_us": 7149.5361328125,
+     "GBps_moved": 593.1099324040176,
+     "GBps_input": 451.8932818316325,
+     "n": 20,
+     "pct_of_copy_ceiling": 114.07564946118674,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 9617.504119873049,
+     "p5_us": 9285.759925842285,
+     "p95_us": 9619.775772094727,
+     "GBps_moved": 507.63376809080535,
+     "GBps_input": 334.93362018362416,
+     "n": 20,
+     "pct_of_copy_ceiling": 97.63561292705104,
+     "chosen": "compile",
+     "eager_median_us": 145203.1173706055,
+     "compile_median_us": 9617.504119873049,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 104467.39578247069,
+     "p5_us": 104425.98724365234,
+     "p95_us": 104504.82940673828,
+     "GBps_moved": 46.25211718746384,
+     "GBps_input": 30.834744638484725,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.895889309641099,
+     "chosen": "eager",
+     "eager_median_us": 104467.39578247069,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 7826.5118598938,
+     "p5_us": 7821.568012237549,
+     "p95_us": 7829.887866973877,
+     "GBps_moved": 540.1970261701448,
+     "GBps_input": 411.57868660582466,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.89865896797033,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 8410.848140716553,
+     "p5_us": 8407.039642333984,
+     "p95_us": 8413.536071777344,
+     "GBps_moved": 580.4610634170919,
+     "GBps_input": 382.9846191617925,
+     "n": 20,
+     "pct_of_copy_ceiling": 111.64283243048135,
+     "chosen": "compile",
+     "eager_median_us": 77622.87902832031,
+     "compile_median_us": 8410.848140716553,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 54376.54304504394,
+     "p5_us": 54344.478607177734,
+     "p95_us": 54398.36883544922,
+     "GBps_moved": 88.85887114959563,
+     "GBps_input": 59.23924713881923,
+     "n": 20,
+     "pct_of_copy_ceiling": 17.09064860150261,
+     "chosen": "eager",
+     "eager_median_us": 54376.54304504394,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 1006632960,
+   "int8_wire_bytes": 1660944384,
+   "fp8_wire_bytes": 1610612760
+  },
+  "L32_T524288": {
+   "L_requested": 32,
+   "layers_measured": 1,
+   "chunked": true,
+   "T": 524288,
+   "raw_bytes_KV_measured": 2147483648,
+   "raw_bytes_KV_full": 68719476736,
+   "copy_ceiling": {
+    "median_us": 4122.416019439697,
+    "p5_us": 4114.431858062744,
+    "p95_us": 4127.711772918701,
+    "GBps_moved": 520.92841621838,
+    "GBps_input": 260.46420810919,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 5205.503940582275,
+     "p5_us": 4667.679786682129,
+     "p95_us": 5224.480152130127,
+     "GBps_moved": 541.4600238847809,
+     "GBps_input": 412.54097057888066,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.94134914264185,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 5883.983850479126,
+     "p5_us": 5759.456157684326,
+     "p95_us": 5889.279842376709,
+     "GBps_moved": 553.159217752606,
+     "GBps_input": 364.97103026976066,
+     "n": 20,
+     "pct_of_copy_ceiling": 106.18718436751863,
+     "chosen": "compile",
+     "eager_median_us": 96806.89239501953,
+     "compile_median_us": 5883.983850479126,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 69616.65344238281,
+     "p5_us": 69596.99249267578,
+     "p95_us": 69653.12194824219,
+     "GBps_moved": 46.27090388172708,
+     "GBps_input": 30.847269177874704,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.882391983456268,
+     "chosen": "eager",
+     "eager_median_us": 69616.65344238281,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 5218.191862106323,
+     "p5_us": 5216.256141662598,
+     "p95_us": 5221.663951873779,
+     "GBps_moved": 540.1434754570874,
+     "GBps_input": 411.5378860625428,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.68861798290772,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 5601.232051849365,
+     "p5_us": 5598.81591796875,
+     "p95_us": 5609.183788299561,
+     "GBps_moved": 581.0828535349407,
+     "GBps_input": 383.3948724354248,
+     "n": 20,
+     "pct_of_copy_ceiling": 111.54754385511255,
+     "chosen": "compile",
+     "eager_median_us": 51744.84634399413,
+     "compile_median_us": 5601.232051849365,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 36239.40849304199,
+     "p5_us": 36227.00881958008,
+     "p95_us": 36273.406982421875,
+     "GBps_moved": 88.88736361738573,
+     "GBps_input": 59.25824226442105,
+     "n": 20,
+     "pct_of_copy_ceiling": 17.063258760705228,
+     "chosen": "eager",
+     "eager_median_us": 36239.40849304199,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 671088640,
+   "int8_wire_bytes": 1107296256,
+   "fp8_wire_bytes": 1073741832
+  },
+  "L32_T1048576": {
+   "skipped": "does not fit even for one layer"
+  },
+  "L80_T1024": {
+   "L_requested": 80,
+   "layers_measured": 80,
+   "chunked": false,
+   "T": 1024,
+   "raw_bytes_KV_measured": 335544320,
+   "raw_bytes_KV_full": 335544320,
+   "copy_ceiling": {
+    "median_us": 600.3679931163787,
+    "p5_us": 598.3359813690186,
+    "p95_us": 602.5919914245605,
+    "GBps_moved": 558.8977491259368,
+    "GBps_input": 279.4488745629684,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 734.3360185623169,
+     "p5_us": 733.7920069694519,
+     "p95_us": 734.71999168396,
+     "GBps_moved": 599.7280657187686,
+     "GBps_input": 456.93566911906174,
+     "n": 20,
+     "pct_of_copy_ceiling": 107.30550743077539,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 901.8079936504364,
+     "p5_us": 899.1680145263672,
+     "p95_us": 909.6639752388,
+     "GBps_moved": 563.93308063438,
+     "GBps_input": 372.07955835670435,
+     "n": 20,
+     "pct_of_copy_ceiling": 100.90093966495981,
+     "chosen": "compile",
+     "eager_median_us": 15146.463871002195,
+     "compile_median_us": 901.8079936504364,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 10924.607753753664,
+     "p5_us": 10916.319847106934,
+     "p95_us": 10931.551933288574,
+     "GBps_moved": 46.07187107720748,
+     "GBps_input": 30.714541662578956,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.243345253985998,
+     "chosen": "eager",
+     "eager_median_us": 10924.607753753664,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 821.5520083904266,
+     "p5_us": 820.6719756126404,
+     "p95_us": 822.4959969520569,
+     "GBps_moved": 536.0609133715459,
+     "GBps_input": 408.42736256879687,
+     "n": 20,
+     "pct_of_copy_ceiling": 95.91395102411747,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 885.7600092887878,
+     "p5_us": 883.3919763565063,
+     "p95_us": 888.5120153427124,
+     "GBps_moved": 574.150282996342,
+     "GBps_input": 378.82080527593695,
+     "n": 20,
+     "pct_of_copy_ceiling": 102.72903834274851,
+     "chosen": "compile",
+     "eager_median_us": 8139.344215393066,
+     "compile_median_us": 885.7600092887878,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 5672.384023666382,
+     "p5_us": 5659.071922302246,
+     "p95_us": 5684.256076812744,
+     "GBps_moved": 88.7311433605438,
+     "GBps_input": 59.1540203554693,
+     "n": 20,
+     "pct_of_copy_ceiling": 15.876096029964499,
+     "chosen": "eager",
+     "eager_median_us": 5672.384023666382,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 104857600,
+   "int8_wire_bytes": 173015040,
+   "fp8_wire_bytes": 167772800
+  },
+  "L80_T4096": {
+   "L_requested": 80,
+   "layers_measured": 80,
+   "chunked": false,
+   "T": 4096,
+   "raw_bytes_KV_measured": 1342177280,
+   "raw_bytes_KV_full": 1342177280,
+   "copy_ceiling": {
+    "median_us": 2389.7279500961304,
+    "p5_us": 2386.9121074676514,
+    "p95_us": 2393.887996673584,
+    "GBps_moved": 561.6443829708769,
+    "GBps_input": 280.82219148543845,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 2936.959981918335,
+     "p5_us": 2917.759895324707,
+     "p95_us": 2979.423999786377,
+     "GBps_moved": 599.8064974822606,
+     "GBps_input": 456.99542665315096,
+     "n": 20,
+     "pct_of_copy_ceiling": 106.7947113277482,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 3907.6960086822514,
+     "p5_us": 3601.2160778045654,
+     "p95_us": 3941.504001617432,
+     "GBps_moved": 520.5720801925897,
+     "GBps_input": 343.47023847758504,
+     "n": 20,
+     "pct_of_copy_ceiling": 92.68713370531172,
+     "chosen": "compile",
+     "eager_median_us": 60531.15272521972,
+     "compile_median_us": 3907.6960086822514,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 43489.24827575684,
+     "p5_us": 43474.04861450195,
+     "p95_us": 43510.719299316406,
+     "GBps_moved": 46.293432050935195,
+     "GBps_input": 30.862278223102766,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.242481088488988,
+     "chosen": "eager",
+     "eager_median_us": 43489.24827575684,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 3264.527916908264,
+     "p5_us": 3262.7201080322266,
+     "p95_us": 3266.432046890259,
+     "GBps_moved": 539.6209574058001,
+     "GBps_input": 411.1397770710858,
+     "n": 20,
+     "pct_of_copy_ceiling": 96.0787597574498,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 3495.0079917907715,
+     "p5_us": 3492.799997329712,
+     "p95_us": 3500.0319480895996,
+     "GBps_moved": 582.0408550647398,
+     "GBps_input": 384.0269559190036,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.631563443397,
+     "chosen": "compile",
+     "eager_median_us": 32368.127822875973,
+     "compile_median_us": 3495.0079917907715,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 22659.37614440918,
+     "p5_us": 22646.560668945312,
+     "p95_us": 22683.135986328125,
+     "GBps_moved": 88.8491610346801,
+     "GBps_input": 59.232755193534295,
+     "n": 20,
+     "pct_of_copy_ceiling": 15.819469352600507,
+     "chosen": "eager",
+     "eager_median_us": 22659.37614440918,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 419430400,
+   "int8_wire_bytes": 692060160,
+   "fp8_wire_bytes": 671089280
+  },
+  "L80_T16384": {
+   "L_requested": 80,
+   "layers_measured": 52,
+   "chunked": true,
+   "T": 16384,
+   "raw_bytes_KV_measured": 3489660928,
+   "raw_bytes_KV_full": 5368709120,
+   "copy_ceiling": {
+    "median_us": 6207.808017730713,
+    "p5_us": 6200.160026550293,
+    "p95_us": 6216.415882110596,
+    "GBps_moved": 562.1406006810852,
+    "GBps_input": 281.0703003405426,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 7740.000009536743,
+     "p5_us": 7693.312168121338,
+     "p95_us": 7746.592044830322,
+     "GBps_moved": 591.7545171003345,
+     "GBps_input": 450.8605844573977,
+     "n": 20,
+     "pct_of_copy_ceiling": 105.26806218646533,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 10416.159629821777,
+     "p5_us": 10143.391609191895,
+     "p95_us": 10419.008255004883,
+     "GBps_moved": 507.77038102002433,
+     "GBps_input": 335.02375654929443,
+     "n": 20,
+     "pct_of_copy_ceiling": 90.32800342206447,
+     "chosen": "compile",
+     "eager_median_us": 157332.58819580075,
+     "compile_median_us": 10416.159629821777,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 113062.78228759766,
+     "p5_us": 113038.01727294922,
+     "p95_us": 113113.05236816406,
+     "GBps_moved": 46.29721383191358,
+     "GBps_input": 30.864806768361262,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.23587795932552,
+     "chosen": "eager",
+     "eager_median_us": 113062.78228759766,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 8474.367618560791,
+     "p5_us": 8472.09644317627,
+     "p95_us": 8477.727890014648,
+     "GBps_moved": 540.4745432530405,
+     "GBps_input": 411.79012819279274,
+     "n": 20,
+     "pct_of_copy_ceiling": 96.14579388114036,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 9102.464199066162,
+     "p5_us": 9098.624229431152,
+     "p95_us": 9105.82447052002,
+     "GBps_moved": 581.0533530626366,
+     "GBps_input": 383.3754082062756,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.36441672397206,
+     "chosen": "compile",
+     "eager_median_us": 84121.7269897461,
+     "compile_median_us": 9102.464199066162,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 58934.79919433594,
+     "p5_us": 58910.945892333984,
+     "p95_us": 58955.806732177734,
+     "GBps_moved": 88.8183531556526,
+     "GBps_input": 59.21223073133643,
+     "n": 20,
+     "pct_of_copy_ceiling": 15.800024593142886,
+     "chosen": "eager",
+     "eager_median_us": 58934.79919433594,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 1090519040,
+   "int8_wire_bytes": 1799356416,
+   "fp8_wire_bytes": 1744830880
+  },
+  "L80_T65536": {
+   "L_requested": 80,
+   "layers_measured": 11,
+   "chunked": true,
+   "T": 65536,
+   "raw_bytes_KV_measured": 2952790016,
+   "raw_bytes_KV_full": 21474836480,
+   "copy_ceiling": {
+    "median_us": 5662.352085113525,
+    "p5_us": 5646.048069000244,
+    "p95_us": 5668.735980987549,
+    "GBps_moved": 521.4776424381952,
+    "GBps_input": 260.7388212190976,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 6550.816059112549,
+     "p5_us": 6513.376235961914,
+     "p95_us": 6553.952217102051,
+     "GBps_moved": 591.6113139230818,
+     "GBps_input": 450.751477274729,
+     "n": 20,
+     "pct_of_copy_ceiling": 113.4490274898408,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 8818.8157081604,
+     "p5_us": 8297.151565551758,
+     "p95_us": 8820.320129394531,
+     "GBps_moved": 507.4743044985968,
+     "GBps_input": 334.82840709185774,
+     "n": 20,
+     "pct_of_copy_ceiling": 97.31468105245604,
+     "chosen": "compile",
+     "eager_median_us": 133105.1483154297,
+     "compile_median_us": 8818.8157081604,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 95785.7894897461,
+     "p5_us": 95752.89916992188,
+     "p95_us": 95799.61395263672,
+     "GBps_moved": 46.24052414866974,
+     "GBps_input": 30.827015486635393,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.867211244660426,
+     "chosen": "eager",
+     "eager_median_us": 95785.7894897461,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 7173.887968063354,
+     "p5_us": 7169.600009918213,
+     "p95_us": 7176.703929901123,
+     "GBps_moved": 540.2282434926609,
+     "GBps_input": 411.60247123250355,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.59566729779561,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 7695.711851119995,
+     "p5_us": 7693.439960479736,
+     "p95_us": 7701.216220855713,
+     "GBps_moved": 581.5345551625201,
+     "GBps_input": 383.692902375271,
+     "n": 20,
+     "pct_of_copy_ceiling": 111.51668026332361,
+     "chosen": "compile",
+     "eager_median_us": 71176.71966552736,
+     "compile_median_us": 7695.711851119995,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 49852.76794433594,
+     "p5_us": 49836.03286743164,
+     "p95_us": 49884.35363769531,
+     "GBps_moved": 88.84531982146892,
+     "GBps_input": 59.23021203751403,
+     "n": 20,
+     "pct_of_copy_ceiling": 17.03722510634744,
+     "chosen": "eager",
+     "eager_median_us": 49852.76794433594,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 922746880,
+   "int8_wire_bytes": 1522532352,
+   "fp8_wire_bytes": 1476395096
+  },
+  "L80_T131072": {
+   "L_requested": 80,
+   "layers_measured": 6,
+   "chunked": true,
+   "T": 131072,
+   "raw_bytes_KV_measured": 3221225472,
+   "raw_bytes_KV_full": 42949672960,
+   "copy_ceiling": {
+    "median_us": 6191.2641525268555,
+    "p5_us": 6182.9118728637695,
+    "p95_us": 6202.144145965576,
+    "GBps_moved": 520.2855818525063,
+    "GBps_input": 260.14279092625316,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 7131.52003288269,
+     "p5_us": 7077.919960021973,
+     "p95_us": 7148.287773132324,
+     "GBps_moved": 592.8411352006008,
+     "GBps_input": 451.6884839623625,
+     "n": 20,
+     "pct_of_copy_ceiling": 113.94533230956667,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 9619.647979736328,
+     "p5_us": 9228.22380065918,
+     "p95_us": 9620.736122131348,
+     "GBps_moved": 507.5206355039427,
+     "GBps_input": 334.85897600260137,
+     "n": 20,
+     "pct_of_copy_ceiling": 97.54655004985659,
+     "chosen": "compile",
+     "eager_median_us": 145193.63403320312,
+     "compile_median_us": 9619.647979736328,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 104490.2572631836,
+     "p5_us": 104461.60125732422,
+     "p95_us": 104507.48443603516,
+     "GBps_moved": 46.241997891055675,
+     "GBps_input": 30.827998287788468,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.887810753165294,
+     "chosen": "eager",
+     "eager_median_us": 104490.2572631836,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 7824.175834655762,
+     "p5_us": 7819.93579864502,
+     "p95_us": 7827.3282051086435,
+     "GBps_moved": 540.3583101076885,
+     "GBps_input": 411.70156960585786,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.85802123974146,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 8410.815715789795,
+     "p5_us": 8408.767700195312,
+     "p95_us": 8413.151741027832,
+     "GBps_moved": 580.4633011795282,
+     "GBps_input": 382.9860956236062,
+     "n": 20,
+     "pct_of_copy_ceiling": 111.5662861755184,
+     "chosen": "compile",
+     "eager_median_us": 77627.56729125977,
+     "compile_median_us": 8410.815715789795,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 54379.98390197754,
+     "p5_us": 54349.246978759766,
+     "p95_us": 54419.36111450195,
+     "GBps_moved": 88.85324910558293,
+     "GBps_input": 59.23549881527014,
+     "n": 20,
+     "pct_of_copy_ceiling": 17.0777842409578,
+     "chosen": "eager",
+     "eager_median_us": 54379.98390197754,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 1006632960,
+   "int8_wire_bytes": 1660944384,
+   "fp8_wire_bytes": 1610612784
+  },
+  "L80_T262144": {
+   "L_requested": 80,
+   "layers_measured": 3,
+   "chunked": true,
+   "T": 262144,
+   "raw_bytes_KV_measured": 3221225472,
+   "raw_bytes_KV_full": 85899345920,
+   "copy_ceiling": {
+    "median_us": 6192.176103591919,
+    "p5_us": 6176.511764526367,
+    "p95_us": 6201.536178588867,
+    "GBps_moved": 520.2089569338075,
+    "GBps_input": 260.10447846690374,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 7131.53600692749,
+     "p5_us": 6996.384143829346,
+     "p95_us": 7145.21598815918,
+     "GBps_moved": 592.8398072859911,
+     "GBps_input": 451.68747221789795,
+     "n": 20,
+     "pct_of_copy_ceiling": 113.9618607838437,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 9532.671928405762,
+     "p5_us": 9203.519821166992,
+     "p95_us": 9700.223922729492,
+     "GBps_moved": 512.1512512616692,
+     "GBps_input": 337.9142276365653,
+     "n": 20,
+     "pct_of_copy_ceiling": 98.45106364188122,
+     "chosen": "compile",
+     "eager_median_us": 145207.09991455078,
+     "compile_median_us": 9532.671928405762,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 104464.33639526367,
+     "p5_us": 104433.28094482422,
+     "p95_us": 104502.11334228516,
+     "GBps_moved": 46.253471746737404,
+     "GBps_input": 30.835647677995947,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.891325520299105,
+     "chosen": "eager",
+     "eager_median_us": 104464.33639526367,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 7823.776006698608,
+     "p5_us": 7820.92809677124,
+     "p95_us": 7826.848030090332,
+     "GBps_moved": 540.3859246967406,
+     "GBps_input": 411.7226092927548,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.87862751957584,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 8393.056392669678,
+     "p5_us": 8390.848159790039,
+     "p95_us": 8395.135879516602,
+     "GBps_moved": 581.6915349531056,
+     "GBps_input": 383.79647667009027,
+     "n": 20,
+     "pct_of_copy_ceiling": 111.81882341697575,
+     "chosen": "compile",
+     "eager_median_us": 77641.79229736328,
+     "compile_median_us": 8393.056392669678,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 54373.51989746094,
+     "p5_us": 54340.70587158203,
+     "p95_us": 54412.79983520508,
+     "GBps_moved": 88.86381166994545,
+     "GBps_input": 59.24254081903608,
+     "n": 20,
+     "pct_of_copy_ceiling": 17.082330183955804,
+     "chosen": "eager",
+     "eager_median_us": 54373.51989746094,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 1006632960,
+   "int8_wire_bytes": 1660944384,
+   "fp8_wire_bytes": 1610612760
+  },
+  "L80_T524288": {
+   "L_requested": 80,
+   "layers_measured": 1,
+   "chunked": true,
+   "T": 524288,
+   "raw_bytes_KV_measured": 2147483648,
+   "raw_bytes_KV_full": 171798691840,
+   "copy_ceiling": {
+    "median_us": 4131.167888641357,
+    "p5_us": 4118.1440353393555,
+    "p95_us": 4137.824058532715,
+    "GBps_moved": 519.8248306258636,
+    "GBps_input": 259.9124153129318,
+    "n": 20
+   },
+   "quant": {
+    "kv4": {
+     "median_us": 4765.904188156127,
+     "p5_us": 4668.288230895996,
+     "p95_us": 5218.016147613525,
+     "GBps_moved": 591.4034728193881,
+     "GBps_input": 450.5931221481052,
+     "n": 20,
+     "pct_of_copy_ceiling": 113.76976203836676,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 5885.280132293701,
+     "p5_us": 5812.960147857666,
+     "p95_us": 6075.776100158691,
+     "GBps_moved": 553.0373798420192,
+     "GBps_input": 364.890642369992,
+     "n": 20,
+     "pct_of_copy_ceiling": 106.38918098163337,
+     "chosen": "compile",
+     "eager_median_us": 96813.92288208008,
+     "compile_median_us": 5885.280132293701,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 69625.56838989258,
+     "p5_us": 69590.27099609375,
+     "p95_us": 69643.93615722656,
+     "GBps_moved": 46.26497929556033,
+     "GBps_input": 30.843319453773343,
+     "n": 20,
+     "pct_of_copy_ceiling": 8.900109531100657,
+     "chosen": "eager",
+     "eager_median_us": 69625.56838989258,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "dequant": {
+    "kv4": {
+     "median_us": 5217.952013015747,
+     "p5_us": 5215.199947357178,
+     "p95_us": 5223.264217376709,
+     "GBps_moved": 540.1683037654057,
+     "GBps_input": 411.5568028688805,
+     "n": 20,
+     "pct_of_copy_ceiling": 103.91352469928164,
+     "meets_90pct_target": true
+    },
+    "int8_row": {
+     "median_us": 5591.887950897217,
+     "p5_us": 5587.935924530029,
+     "p95_us": 5614.367961883545,
+     "GBps_moved": 582.0538488218046,
+     "GBps_input": 384.03552911954125,
+     "n": 20,
+     "pct_of_copy_ceiling": 111.971151535993,
+     "chosen": "compile",
+     "eager_median_us": 51756.14356994629,
+     "compile_median_us": 5591.887950897217,
+     "meets_90pct_target": true
+    },
+    "fp8": {
+     "median_us": 36253.69644165039,
+     "p5_us": 36228.89709472656,
+     "p95_us": 36281.69631958008,
+     "GBps_moved": 88.8523322079584,
+     "GBps_input": 59.23488799152749,
+     "n": 20,
+     "pct_of_copy_ceiling": 17.09274489658009,
+     "chosen": "eager",
+     "eager_median_us": 36253.69644165039,
+     "compile_median_us": null,
+     "compile_error": "InductorError: SubprocException: An exception occurred in a subprocess:\n\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/subproc_pool.py\", line 340, in do_job\n    result = job()\n             ^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/compile_tasks.py\", line 62, in _worker_compile_triton\n    kernel.precompile(warm_cache_only=True)\n  File \"/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py\", line 399, in precompile\n    self._precompile_worker()\n  File \"/usr/local",
+     "meets_90pct_target": false
+    }
+   },
+   "kv4_wire_bytes": 671088640,
+   "int8_wire_bytes": 1107296256,
+   "fp8_wire_bytes": 1073741832
+  },
+  "L80_T1048576": {
+   "skipped": "does not fit even for one layer"
+  }
+ }
+}

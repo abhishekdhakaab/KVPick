@@ -1,0 +1,69 @@
+{
+ "info": {
+  "command": "scripts/ext_determinism.py --model llama-3.1-8b",
+  "seed": 0,
+  "commit": "c30e13bb9402eef0990c3bff559b95dc89acf7fa",
+  "dirty": false,
+  "python": "3.12.3",
+  "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.39",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA A40",
+  "gpu_start": {
+   "t": "2026-11-24T01:02:56",
+   "gpus": [
+    {
+     "name": "NVIDIA A40",
+     "driver_version": "595.112.07",
+     "clocks.sm": "1740",
+     "clocks.max.sm": "1740",
+     "clocks.mem": "7251",
+     "temperature.gpu": "53",
+     "power.draw": "123.18",
+     "clocks_throttle_reasons.active": "0x0000000000000001",
+     "memory.used": "3",
+     "memory.total": "46068"
+    }
+   ]
+  },
+  "t_start": 1795482176.9525414,
+  "transformers": "5.24.0",
+  "datasets": "5.2.0",
+  "numpy": "2.5.2",
+  "accelerate": "1.16.0",
+  "model": "llama-3.1-8b",
+  "gpu_end": {
+   "t": "2026-11-24T01:04:18",
+   "gpus": [
+    {
+     "name": "NVIDIA A40",
+     "driver_version": "595.112.07",
+     "clocks.sm": "1590",
+     "clocks.max.sm": "1740",
+     "clocks.mem": "7251",
+     "temperature.gpu": "63",
+     "power.draw": "288.37",
+     "clocks_throttle_reasons.active": "0x0000000000000004",
+     "memory.used": "17653",
+     "memory.total": "46068"
+    }
+   ]
+  },
+  "seconds": 81.75545191764832,
+  "throttled": false
+ },
+ "result": {
+  "gsm8k": {
+   "n": 32,
+   "identical": true,
+   "n_different": 0
+  },
+  "niah": {
+   "n": 3,
+   "identical": true,
+   "n_different": 0
+  },
+  "raw_injection_first_token_equal": true,
+  "PASS": true
+ }
+}

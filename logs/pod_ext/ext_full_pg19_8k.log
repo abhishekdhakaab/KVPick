@@ -1,0 +1,84 @@
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 5028.93it/s]
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+W1124 04:04:27.631000 9059 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+W1124 04:04:27.631000 9059 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'] to specific architectures.
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+pg19 prefix=8192 book=21 prefill 1.4s
+pg19 prefix=8192 book=22 prefill 1.1s
+pg19 prefix=8192 book=23 prefill 1.1s
+pg19 prefix=8192 book=24 prefill 1.1s
+pg19 prefix=8192 book=25 prefill 1.1s
+pg19 prefix=8192 book=26 prefill 1.1s
+pg19 prefix=8192 book=27 prefill 1.1s
+pg19 prefix=8192 book=29 prefill 1.1s
+pg19 prefix=8192 book=30 prefill 1.1s
+pg19 prefix=8192 book=31 prefill 1.1s
+pg19 prefix=8192 book=32 prefill 1.1s
+pg19 prefix=8192 book=33 prefill 1.1s
+pg19 prefix=8192 book=34 prefill 1.1s
+pg19 prefix=8192 book=35 prefill 1.1s
+pg19 prefix=8192 book=36 prefill 1.1s
+pg19 prefix=8192 book=37 prefill 1.1s
+pg19 prefix=8192 book=38 prefill 1.1s
+pg19 prefix=8192 book=39 prefill 1.1s
+pg19 prefix=8192 book=40 prefill 1.1s
+pg19 prefix=8192 book=41 prefill 1.1s
+pg19 prefix=8192 book=43 prefill 1.1s
+pg19 prefix=8192 book=44 prefill 1.1s
+pg19 prefix=8192 book=45 prefill 1.1s
+pg19 prefix=8192 book=46 prefill 1.1s
+pg19 prefix=8192 book=47 prefill 1.1s
+pg19 prefix=8192 book=48 prefill 1.1s
+pg19 prefix=8192 book=49 prefill 1.1s
+pg19 prefix=8192 book=50 prefill 1.1s
+pg19 prefix=8192 book=51 prefill 1.1s
+pg19 prefix=8192 book=52 prefill 1.1s
+pg19 prefix=8192 book=53 prefill 1.1s
+pg19 prefix=8192 book=54 prefill 1.1s
+pg19 prefix=8192 book=55 prefill 1.1s
+pg19 prefix=8192 book=56 prefill 1.1s
+pg19 prefix=8192 book=57 prefill 1.1s
+pg19 prefix=8192 book=58 prefill 1.1s
+pg19 prefix=8192 book=59 prefill 1.1s
+pg19 prefix=8192 book=60 prefill 1.1s
+pg19 prefix=8192 book=61 prefill 1.1s
+pg19 prefix=8192 book=62 prefill 1.1s
+pg19 prefix=8192 book=63 prefill 1.1s
+pg19 prefix=8192 book=64 prefill 1.1s
+pg19 prefix=8192 book=65 prefill 1.1s
+pg19 prefix=8192 book=66 prefill 1.1s
+pg19 prefix=8192 book=67 prefill 1.1s
+pg19 prefix=8192 book=68 prefill 1.1s
+pg19 prefix=8192 book=69 prefill 1.1s
+pg19 prefix=8192 book=70 prefill 1.1s
+pg19 prefix=8192 book=71 prefill 1.1s
+pg19 prefix=8192 book=72 prefill 1.1s
+pg19 prefix=8192 book=73 prefill 1.1s
+pg19 prefix=8192 book=74 prefill 1.1s
+pg19 prefix=8192 book=75 prefill 1.1s
+pg19 prefix=8192 book=76 prefill 1.1s
+pg19 prefix=8192 book=77 prefill 1.1s
+pg19 prefix=8192 book=78 prefill 1.1s
+pg19 prefix=8192 book=79 prefill 1.1s
+pg19 prefix=8192 book=80 prefill 1.1s
+pg19 prefix=8192 book=81 prefill 1.1s
+pg19 prefix=8192 book=82 prefill 1.1s
+pg19 prefix=8192 book=83 prefill 1.1s
+pg19 prefix=8192 book=84 prefill 1.1s
+pg19 prefix=8192 book=85 prefill 1.1s
+pg19 prefix=8192 book=86 prefill 1.1s
+pg19 prefix=8192 book=87 prefill 1.1s
+pg19 prefix=8192 book=88 prefill 1.1s
+pg19 prefix=8192 book=89 prefill 1.1s
+pg19 prefix=8192 book=90 prefill 1.1s
+pg19 prefix=8192 book=91 prefill 1.1s
+pg19 prefix=8192 book=92 prefill 1.1s
+pg19 prefix=8192 book=93 prefill 1.1s
+pg19 prefix=8192 book=94 prefill 1.1s
+pg19 prefix=8192 book=95 prefill 1.1s
+pg19 prefix=8192 book=96 prefill 1.1s
+pg19 prefix=8192 book=99 prefill 1.1s
+{"task": "pg19_8192", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "kv4"], "samples_total_in_sink": 100, "limit": null, "seconds": 234.02309489250183, "seconds_per_sample": 2.340230948925018}

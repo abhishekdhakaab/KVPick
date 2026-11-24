@@ -1,0 +1,13 @@
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 6018.66it/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (429038 > 131072). Running this sequence through the model will result in indexing errors
+Generating train split:   0%|          | 0/7473 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 7473/7473 [00:00<00:00, 232107.54 examples/s]
+Generating test split:   0%|          | 0/1319 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1319/1319 [00:00<00:00, 159298.77 examples/s]
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+/workspace/kvpick/kvpick/study/tasks.py:174: FutureWarning: `past_key_values` is deprecated and will be removed in version 6.0.0 for `LlamaForCausalLM.generate`. Use `cache` instead.
+  gen = model.generate(input_ids=ids, attention_mask=mask, past_key_values=c, max_new_tokens=max_new, do_sample=False, pad_token_id=tok.pad_token_id)
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+gsm8k {'n': 32, 'identical': True, 'n_different': 0}
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+niah {'n': 3, 'identical': True, 'n_different': 0}
+{"gsm8k": {"n": 32, "identical": true, "n_different": 0}, "niah": {"n": 3, "identical": true, "n_different": 0}, "raw_injection_first_token_equal": true, "PASS": true}

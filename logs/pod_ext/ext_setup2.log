@@ -1,0 +1,14 @@
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+NVIDIA A40, 46068 MiB, 595.112.07, 1740 MHz
+torch 2.8.0+cu128 cuda 12.8 transformers 5.24.0
+               total        used        free      shared  buff/cache   available
+Mem:             503          61         310          13         147         442
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          50G  824M   50G   2% /
+overlay          50G  824M   50G   2% /
+downloading meta-llama/Llama-3.1-8B-Instruct
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files:  17%|█▋        | 2/12 [00:00<00:00, 19.03it/s]Fetching 12 files:  58%|█████▊    | 7/12 [00:00<00:00, 16.50it/s]Fetching 12 files:  75%|███████▌  | 9/12 [00:09<00:04,  1.46s/it]Fetching 12 files:  83%|████████▎ | 10/12 [00:15<00:04,  2.19s/it]Fetching 12 files:  92%|█████████▏| 11/12 [00:19<00:02,  2.57s/it]Fetching 12 files: 100%|██████████| 12/12 [00:38<00:00,  6.39s/it]Fetching 12 files: 100%|██████████| 12/12 [00:38<00:00,  3.22s/it]
+downloading Qwen/Qwen3-4B-Instruct-2507
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  10%|█         | 1/10 [00:00<00:00,  9.33it/s]Fetching 10 files:  50%|█████     | 5/10 [00:00<00:00, 25.52it/s]Fetching 10 files:  80%|████████  | 8/10 [00:01<00:00,  3.73it/s]Fetching 10 files: 100%|██████████| 10/10 [00:13<00:00,  2.07s/it]Fetching 10 files: 100%|██████████| 10/10 [00:13<00:00,  1.39s/it]
+kvq built, cuda = True
+SETUP_OK

@@ -1,0 +1,30 @@
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights:  82%|████████▏ | 240/291 [00:00<00:00, 2372.61it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 2635.63it/s]
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+W1124 01:04:33.115000 4839 torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+W1124 01:04:33.115000 4839 torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'] to specific architectures.
+/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1784: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `LlamaForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+niah N=8192 depth=0 trial=0 prefill 1.5s
+niah N=8192 depth=0 trial=1 prefill 1.2s
+niah N=8192 depth=0 trial=2 prefill 1.2s
+niah N=8192 depth=0 trial=3 prefill 1.2s
+niah N=8192 depth=0 trial=4 prefill 1.2s
+niah N=8192 depth=10 trial=0 prefill 1.2s
+niah N=8192 depth=10 trial=1 prefill 1.2s
+niah N=8192 depth=10 trial=2 prefill 1.2s
+niah N=8192 depth=10 trial=3 prefill 1.2s
+niah N=8192 depth=10 trial=4 prefill 1.2s
+niah N=8192 depth=20 trial=0 prefill 1.2s
+niah N=8192 depth=20 trial=1 prefill 1.2s
+niah N=8192 depth=20 trial=2 prefill 1.2s
+niah N=8192 depth=20 trial=3 prefill 1.2s
+niah N=8192 depth=20 trial=4 prefill 1.2s
+niah N=8192 depth=30 trial=0 prefill 1.2s
+niah N=8192 depth=30 trial=1 prefill 1.2s
+niah N=8192 depth=30 trial=2 prefill 1.2s
+niah N=8192 depth=30 trial=3 prefill 1.2s
+niah N=8192 depth=30 trial=4 prefill 1.2s
+{"task": "niah", "model": "llama-3.1-8b", "formats": ["raw", "int8_row", "kv4"], "samples_total_in_sink": 20, "limit": 20, "seconds": 53.21181273460388, "seconds_per_sample": 2.660590636730194}
