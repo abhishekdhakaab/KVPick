@@ -12,3 +12,12 @@ smoke:           ## 1-minute end-to-end smoke of every GPU script
 	cd feasibility/scripts && $(PY) kv_capture.py --smoke --tiny-random && $(PY) bench_quant.py --smoke
 clean:
 	rm -rf ~/.cache/torch_extensions/*/kvq_* .pytest_cache
+
+.PHONY: ext-report ext-test
+ext-test:        ## CPU tests of the extension (cost model, overlap, formats, stats, shapes)
+	$(PY) -m pytest -q tests -m "not gpu"
+ext-report:      ## rebuild profiles, sweep, tables and figures of the extension from results/ext/*.json (CPU only)
+	$(PY) scripts/ext_build_profile.py --kernels results/ext/kernels_a40.json --prefill results/ext/prefill_llama-3.1-8b_a40.json --prefill results/ext/prefill_qwen3-4b_a40.json
+	$(PY) scripts/ext_build_profile.py --kernels $(FAST_KERNELS) --prefill $(FAST_PREFILL)
+	$(PY) scripts/ext_sweep.py --profile results/ext/profile_a40.json --profile $(FAST_PROFILE)
+	$(PY) scripts/ext_tables.py && $(PY) scripts/ext_figures.py && $(PY) scripts/ext_acc_report.py

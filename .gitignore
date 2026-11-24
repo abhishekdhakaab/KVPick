@@ -12,3 +12,12 @@ data/
 results/*smoke*.json
 logs/*.log
 scripts/_debug_mismatch.py
+
+results/ext/*provisional*
+results/ext/*PROVISIONAL*
+results/ext/*cpusmoke*
+results/ext/*_tiny*
+results/ext/acc_tiny/
+.commit
+kvpick_extension_agent_prompt*
+logs/pod_ext_session1/
